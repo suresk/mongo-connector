@@ -24,6 +24,7 @@ import org.mule.api.annotations.Connect;
 import org.mule.api.annotations.ConnectionIdentifier;
 import org.mule.api.annotations.Connector;
 import org.mule.api.annotations.Disconnect;
+import org.mule.api.annotations.Mime;
 import org.mule.api.annotations.Processor;
 import org.mule.api.annotations.Transformer;
 import org.mule.api.annotations.ValidateConnection;
@@ -39,6 +40,7 @@ import org.mule.module.mongo.api.MongoClientAdaptor;
 import org.mule.module.mongo.api.MongoClientImpl;
 import org.mule.module.mongo.api.MongoCollection;
 import org.mule.module.mongo.api.WriteConcern;
+import org.mule.transformer.types.MimeTypes;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -749,6 +751,7 @@ public class MongoCloudConnector
      * @param input the input for this transformer
      * @return the converted string representation
      */
+    @Mime(MimeTypes.JSON)
     @Transformer(sourceTypes = {DBObject.class})
     public static String dbobjectToJson(Object input)
     {
@@ -763,6 +766,7 @@ public class MongoCloudConnector
      * @param input the input for this transformer
      * @return the converted string representation
      */
+    @Mime(MimeTypes.JSON)
     @Transformer(sourceTypes = {BasicBSONList.class})
     public static String bsonListToJson(Object input)
     {
@@ -778,6 +782,7 @@ public class MongoCloudConnector
      * @param input the input for this transformer
      * @return the converted string representation
      */
+    @Mime(MimeTypes.JSON)
     @Transformer(sourceTypes = {MongoCollection.class})
     public static String mongoCollectionToJson(Object input)
     {
