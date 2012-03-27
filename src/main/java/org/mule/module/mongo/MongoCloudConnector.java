@@ -55,6 +55,8 @@ import java.util.Map;
 
 import static org.mule.module.mongo.api.DBObjects.adapt;
 import static org.mule.module.mongo.api.DBObjects.from;
+import static org.mule.module.mongo.api.DBObjects.fromFunction;
+import static org.mule.module.mongo.api.DBObjects.fromCommand;
 
 /**
  * MongoDB is an open source, high-performance, schema-free, document-oriented database that manages collections of
@@ -191,7 +193,7 @@ public class MongoCloudConnector
      */
     @Processor
     public String insertObjectFromMap(String collection,
-                                      @Placement(group = "Element Attributes") @Optional Map<String, String> elementAttributes,
+                                      @Placement(group = "Element Attributes") @Optional Map<String, Object> elementAttributes,
                                       @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
         return client.insertObject(collection, (DBObject) adapt(elementAttributes), writeConcern);
@@ -224,6 +226,33 @@ public class MongoCloudConnector
     {
         client.updateObjects(collection, query, element, upsert, multi, writeConcern);
     }
+    
+    /**
+     * Updates objects that matches the given query. If parameter multi is set to
+     * false, only the first document matching it will be updated. Otherwise, all the
+     * documents matching it will be updated.
+     * <p/>
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:update-objects-using-query-map}
+     * 
+     * @param collection the name of the collection to update
+     * @param queryAttributes the query object used to detect the element to update.
+     * @param element the {@link DBObject} mandatory object that will replace that
+     *            one which matches the query.
+     * @param upsert if the database should create the element if it does not exist
+     * @param multi if all or just the first object matching the query will be
+     *            updated
+     * @param writeConcern the write concern used to update
+     */
+    @Processor
+    public void updateObjectsUsingQueryMap(String collection,
+    						  Map<String, Object> queryAttributes,
+                              DBObject element,
+                              @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
+                              @Optional @Default("true") boolean multi,
+                              @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
+    {
+        client.updateObjects(collection, (DBObject) adapt(queryAttributes), element, upsert, multi, writeConcern);
+    }
 
     /**
      * Updates objects that matches the given query. If parameter multi is set to
@@ -244,14 +273,76 @@ public class MongoCloudConnector
      */
     @Processor
     public void updateObjectsUsingMap(String collection,
-                                      @Placement(group = "Query Attributes") Map<String, String> queryAttributes,
-                                      @Placement(group = "Element Attributes") Map<String, String> elementAttributes,
+                                      @Placement(group = "Query Attributes") Map<String, Object> queryAttributes,
+                                      @Placement(group = "Element Attributes") Map<String, Object> elementAttributes,
                                       @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
                                       @Optional @Default("true") boolean multi,
                                       @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
         client.updateObjects(collection, (DBObject) adapt(queryAttributes), (DBObject) adapt(elementAttributes), upsert, multi,
             writeConcern);
+    }
+    
+    /**
+     * Update objects using a mongo function
+     * 
+     * <p/>
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:update-objects-by-function}
+     * 
+     * @param collection the name of the collection to update
+     * @param function the function used to execute the update
+     * @param query the {@link DBObject} query object used to detect the element to
+     *            update.
+     * @param element the {@link DBObject} mandatory object that will replace that
+     *            one which matches the query.
+     * @param upsert if the database should create the element if it does not exist
+     * @param multi if all or just the first object matching the query will be
+     *            updated
+     * @param writeConcern the write concern used to update
+     * 
+     */
+    @Processor
+    public void updateObjectsByFunction(String collection,
+				    		  String function,
+				    		  DBObject query,	
+                              DBObject element,
+                              @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
+                              @Optional @Default(value="true")  boolean multi,
+                              @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
+    {
+    	DBObject functionDbObject = fromFunction(function, element);
+    	
+        client.updateObjects(collection, query, functionDbObject, upsert, multi, writeConcern);
+    }
+    
+    /**
+     * Update objects using a mongo function
+     * 
+     * <p/>
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:update-objects-by-function-using-map}
+     * 
+     * @param collection the name of the collection to update
+     * @param function the function used to execute the update
+     * @param queryAttributes the query object used to detect the element to update.
+     * @param elementAttributes the mandatory object that will replace that one which
+     *            matches the query.
+     * @param upsert if the database should create the element if it does not exist
+     * @param multi if all or just the first object matching the query will be
+     *            updated
+     * @param writeConcern the write concern used to update
+     */
+    @Processor
+    public void updateObjectsByFunctionUsingMap(String collection,
+                              String function,
+                              Map<String, Object> queryAttributes,
+                              Map<String, Object> elementAttributes,
+                              @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
+                              @Optional @Default(value="true")  boolean multi,
+                              @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
+    {
+    	DBObject functionDbObject = fromFunction(function, (DBObject) adapt(elementAttributes));
+    	
+        client.updateObjects(collection, (DBObject) adapt(queryAttributes), functionDbObject, upsert, multi, writeConcern);
     }
 
     /**
@@ -283,7 +374,7 @@ public class MongoCloudConnector
      */
     @Processor
     public void saveObjectFromMap(String collection,
-                                  @Placement(group = "Element Attributes") Map<String, String> elementAttributes,
+                                  @Placement(group = "Element Attributes") Map<String, Object> elementAttributes,
                                   @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
         client.saveObject(collection, (DBObject) adapt(elementAttributes), writeConcern);
@@ -326,7 +417,7 @@ public class MongoCloudConnector
      */
     @Processor
     public void removeUsingQueryMap(String collection,
-                                    @Placement(group = "Query Attributes") Map<String, String> queryAttributes,
+                                    @Placement(group = "Query Attributes") Map<String, Object> queryAttributes,
                                     @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
         client.removeObjects(collection, (DBObject) adapt(queryAttributes), writeConcern);
@@ -397,7 +488,7 @@ public class MongoCloudConnector
      * @return the amount of objects that matches the query
      */
     @Processor
-    public long countObjectsUsingQueryMap(String collection, @Placement(group = "Query Attributes") @Optional Map<String, String> queryAttributes)
+    public long countObjectsUsingQueryMap(String collection, @Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes)
     {
         return client.countObjects(collection, (DBObject) adapt(queryAttributes));
     }
@@ -439,7 +530,7 @@ public class MongoCloudConnector
      */
     @Processor
     public Iterable<DBObject> findObjectsUsingQueryMap(String collection,
-                                                       @Placement(group = "Query Attributes") @Optional Map<String, String> queryAttributes,
+                                                       @Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes,
                                                        @Placement(group = "Fields") @Optional List<String> fields)
     {
         return client.findObjects(collection, (DBObject) adapt(queryAttributes), fields);
@@ -479,7 +570,7 @@ public class MongoCloudConnector
      */
     @Processor
     public DBObject findOneObjectUsingQueryMap(String collection,
-                                               @Placement(group = "Query Attributes") Map<String, String> queryAttributes,
+                                               @Placement(group = "Query Attributes") Map<String, Object> queryAttributes,
                                                @Placement(group = "Fields") @Optional List<String> fields)
     {
         return client.findOneObject(collection, (DBObject) adapt(queryAttributes), fields);
@@ -602,7 +693,7 @@ public class MongoCloudConnector
      * @return a {@link DBObject} files iterable
      */
     @Processor
-    public Iterable<DBObject> findFilesUsingQueryMap(@Placement(group = "Query Attributes") @Optional Map<String, String> queryAttributes)
+    public Iterable<DBObject> findFilesUsingQueryMap(@Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes)
     {
         return client.findFiles((DBObject) adapt(queryAttributes));
     }
@@ -633,7 +724,7 @@ public class MongoCloudConnector
      * @return a {@link DBObject}
      */
     @Processor
-    public DBObject findOneFileUsingQueryMap(@Placement(group = "Query Attributes") Map<String, String> queryAttributes)
+    public DBObject findOneFileUsingQueryMap(@Placement(group = "Query Attributes") Map<String, Object> queryAttributes)
     {
         return client.findOneFile((DBObject) adapt(queryAttributes));
     }
@@ -664,7 +755,7 @@ public class MongoCloudConnector
      * @return an InputStream to the file contents
      */
     @Processor
-    public InputStream getFileContentUsingQueryMap(@Placement(group = "Query Attributes") Map<String, String> queryAttributes)
+    public InputStream getFileContentUsingQueryMap(@Placement(group = "Query Attributes") Map<String, Object> queryAttributes)
     {
         return client.getFileContent((DBObject) adapt(queryAttributes));
     }
@@ -695,7 +786,7 @@ public class MongoCloudConnector
      * @return an iterable of {@link DBObject}
      */
     @Processor
-    public Iterable<DBObject> listFilesUsingQueryMap(@Placement(group = "Query Attributes") @Optional Map<String, String> queryAttributes)
+    public Iterable<DBObject> listFilesUsingQueryMap(@Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes)
     {
         return client.listFiles((DBObject) adapt(queryAttributes));
     }
@@ -724,9 +815,27 @@ public class MongoCloudConnector
      * @param queryAttributes the optional query
      */
     @Processor
-    public void removeFilesUsingQueryMap(@Placement(group = "Query Attributes") @Optional Map<String, String> queryAttributes)
+    public void removeFilesUsingQueryMap(@Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes)
     {
         client.removeFiles((DBObject) adapt(queryAttributes));
+    }
+    
+    /**
+     * Executes a command on the database
+     * 
+     * <p/>
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:remove-files}
+     * 
+     * @param commandName The command to execute on the database
+     * @param commandValue The value for the command
+     * @return The result of the command
+     */
+    @Processor
+    public DBObject executeCommand(String commandName, @Optional String commandValue)
+    {
+    	DBObject dbObject = fromCommand(commandName, commandValue);
+    	 
+    	return client.executeComamnd(dbObject);
     }
 
     /**
@@ -738,7 +847,7 @@ public class MongoCloudConnector
      * @return the converted {@link DBObject}
      */
     @Transformer(sourceTypes = {String.class})
-    public static DBObject jsonToDbobject(Object input)
+    public static DBObject jsonToDbobject(String input)
     {
         return (DBObject) JSON.parse((String) input);
     }
@@ -753,7 +862,7 @@ public class MongoCloudConnector
      */
     @Mime(MimeTypes.JSON)
     @Transformer(sourceTypes = {DBObject.class})
-    public static String dbobjectToJson(Object input)
+    public static String dbobjectToJson(DBObject input)
     {
         return JSON.serialize(input);
     }
@@ -768,7 +877,7 @@ public class MongoCloudConnector
      */
     @Mime(MimeTypes.JSON)
     @Transformer(sourceTypes = {BasicBSONList.class})
-    public static String bsonListToJson(Object input)
+    public static String bsonListToJson(BasicBSONList input)
     {
         return JSON.serialize(input);
     }
@@ -784,7 +893,7 @@ public class MongoCloudConnector
      */
     @Mime(MimeTypes.JSON)
     @Transformer(sourceTypes = {MongoCollection.class})
-    public static String mongoCollectionToJson(Object input)
+    public static String mongoCollectionToJson(MongoCollection input)
     {
         return JSON.serialize(input);
     }
@@ -799,9 +908,9 @@ public class MongoCloudConnector
      * @param input the input for this transformer
      * @return the converted Map representation
      */
-    @Transformer(sourceTypes = {DBObject.class})
-    @SuppressWarnings("unchecked")
-    public static Map dbObjectToMap(Object input)
+    @SuppressWarnings("rawtypes")
+	@Transformer(sourceTypes = {DBObject.class})
+    public static Map dbObjectToMap(DBObject input)
     {
         return ((DBObject) input).toMap();
     }
