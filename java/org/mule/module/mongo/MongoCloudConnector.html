@@ -597,7 +597,7 @@ Summary:
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#bsonListToJson(java.lang.Object)">bsonListToJson</a></span>(Object input)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#bsonListToJson(org.bson.types.BasicBSONList)">bsonListToJson</a></span>(BasicBSONList input)</nobr>
         
         <div class="jd-descrdiv">Convert a BasicBSONList into Json.</div>
   
@@ -667,7 +667,7 @@ Summary:
             long</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#countObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>)">countObjectsUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#countObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>)">countObjectsUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes)</nobr>
         
         <div class="jd-descrdiv">Counts the number of objects that match the given query.</div>
   
@@ -742,7 +742,7 @@ Summary:
             Map</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#dbObjectToMap(java.lang.Object)">dbObjectToMap</a></span>(Object input)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#dbObjectToMap(com.mongodb.DBObject)">dbObjectToMap</a></span>(DBObject input)</nobr>
         
         <div class="jd-descrdiv">Convert a DBObject into Map.</div>
   
@@ -760,7 +760,7 @@ Summary:
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#dbobjectToJson(java.lang.Object)">dbobjectToJson</a></span>(Object input)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#dbobjectToJson(com.mongodb.DBObject)">dbobjectToJson</a></span>(DBObject input)</nobr>
         
         <div class="jd-descrdiv">Convert DBObject to Json.</div>
   
@@ -831,6 +831,27 @@ Summary:
             
             
             
+            DBObject</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#executeCommand(java.lang.String, java.lang.String)">executeCommand</a></span>(String commandName, String commandValue)</nobr>
+        
+        <div class="jd-descrdiv">Executes a command on the database
+ 
+ <p/>
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -844,7 +865,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -864,7 +885,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -874,7 +895,7 @@ Summary:
             Iterable&lt;DBObject&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)">findFilesUsingQueryMap</a></span>(Map&lt;String,&nbsp;String&gt; queryAttributes)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">findFilesUsingQueryMap</a></span>(Map&lt;String,&nbsp;Object&gt; queryAttributes)</nobr>
         
         <div class="jd-descrdiv">Lists all the files that match the given query
  <p/>
@@ -884,7 +905,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -902,7 +923,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -912,7 +933,7 @@ Summary:
             Iterable&lt;DBObject&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, java.util.List<java.lang.String>)">findObjectsUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, List&lt;String&gt; fields)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.List<java.lang.String>)">findObjectsUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, List&lt;String&gt; fields)</nobr>
         
         <div class="jd-descrdiv">Finds all objects that match a given query.</div>
   
@@ -920,7 +941,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -938,7 +959,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -948,7 +969,7 @@ Summary:
             DBObject</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findOneFileUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)">findOneFileUsingQueryMap</a></span>(Map&lt;String,&nbsp;String&gt; queryAttributes)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findOneFileUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">findOneFileUsingQueryMap</a></span>(Map&lt;String,&nbsp;Object&gt; queryAttributes)</nobr>
         
         <div class="jd-descrdiv">Answers the first file that matches the given query.</div>
   
@@ -956,7 +977,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -974,7 +995,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -984,7 +1005,7 @@ Summary:
             DBObject</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findOneObjectUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, java.util.List<java.lang.String>)">findOneObjectUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, List&lt;String&gt; fields)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#findOneObjectUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.List<java.lang.String>)">findOneObjectUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, List&lt;String&gt; fields)</nobr>
         
         <div class="jd-descrdiv">Finds the first object that matches a given query.</div>
   
@@ -992,7 +1013,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1008,7 +1029,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1027,7 +1048,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1037,7 +1058,7 @@ Summary:
             InputStream</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getFileContentUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)">getFileContentUsingQueryMap</a></span>(Map&lt;String,&nbsp;String&gt; queryAttributes)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getFileContentUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">getFileContentUsingQueryMap</a></span>(Map&lt;String,&nbsp;Object&gt; queryAttributes)</nobr>
         
         <div class="jd-descrdiv">Answers an inputstream to the contents of the first file that matches the
  given queryAttributes.</div>
@@ -1046,7 +1067,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1062,7 +1083,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1078,7 +1099,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1096,7 +1117,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1106,7 +1127,7 @@ Summary:
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#insertObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, org.mule.module.mongo.api.WriteConcern)">insertObjectFromMap</a></span>(String collection, Map&lt;String,&nbsp;String&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#insertObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)">insertObjectFromMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Inserts an object in a collection, setting its id if necessary.</div>
   
@@ -1114,7 +1135,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1130,7 +1151,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1140,7 +1161,7 @@ Summary:
             DBObject</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#jsonToDbobject(java.lang.Object)">jsonToDbobject</a></span>(Object input)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#jsonToDbobject(java.lang.String)">jsonToDbobject</a></span>(String input)</nobr>
         
         <div class="jd-descrdiv">Convert JSON to DBObject.</div>
   
@@ -1148,7 +1169,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1168,7 +1189,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1186,7 +1207,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1196,7 +1217,7 @@ Summary:
             Iterable&lt;DBObject&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#listFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)">listFilesUsingQueryMap</a></span>(Map&lt;String,&nbsp;String&gt; queryAttributes)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#listFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">listFilesUsingQueryMap</a></span>(Map&lt;String,&nbsp;Object&gt; queryAttributes)</nobr>
         
         <div class="jd-descrdiv">Lists all the files that match the given query, sorting them by filename.</div>
   
@@ -1204,7 +1225,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1224,7 +1245,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1245,7 +1266,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1255,7 +1276,7 @@ Summary:
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#mongoCollectionToJson(java.lang.Object)">mongoCollectionToJson</a></span>(Object input)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#mongoCollectionToJson(org.mule.module.mongo.api.MongoCollection)">mongoCollectionToJson</a></span>(<a href="../../../../../java/org/mule/module/mongo/api/MongoCollection.html">MongoCollection</a> input)</nobr>
         
         <div class="jd-descrdiv">Convert a BasicBSONList into Json.</div>
   
@@ -1263,7 +1284,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1281,7 +1302,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1291,7 +1312,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#removeFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)">removeFilesUsingQueryMap</a></span>(Map&lt;String,&nbsp;String&gt; queryAttributes)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#removeFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">removeFilesUsingQueryMap</a></span>(Map&lt;String,&nbsp;Object&gt; queryAttributes)</nobr>
         
         <div class="jd-descrdiv">Removes all the files that match the given query.</div>
   
@@ -1299,7 +1320,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1317,7 +1338,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1327,7 +1348,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#removeUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, org.mule.module.mongo.api.WriteConcern)">removeUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#removeUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)">removeUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Removes all the objects that match the a given optional query.</div>
   
@@ -1335,7 +1356,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1353,7 +1374,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1363,7 +1384,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#saveObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, org.mule.module.mongo.api.WriteConcern)">saveObjectFromMap</a></span>(String collection, Map&lt;String,&nbsp;String&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#saveObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)">saveObjectFromMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Inserts or updates an object based on its object _id.</div>
   
@@ -1371,7 +1392,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1387,7 +1408,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1403,7 +1424,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1419,7 +1440,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1437,6 +1458,27 @@ Summary:
 
 
 	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunction(java.lang.String, java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunction</a></span>(String collection, String function, DBObject query, DBObject element, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
+        
+        <div class="jd-descrdiv">Update objects using a mongo function
+ 
+ <p/>
+ </div>
+  
+  </td></tr>
+
+
+	 
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
@@ -1447,7 +1489,46 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsUsingMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, java.util.Map<java.lang.String, java.lang.String>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsUsingMap</a></span>(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, Map&lt;String,&nbsp;String&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunctionUsingMap(java.lang.String, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunctionUsingMap</a></span>(String collection, String function, Map&lt;String,&nbsp;Object&gt; queryAttributes, Map&lt;String,&nbsp;Object&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
+        
+        <div class="jd-descrdiv">Update objects using a mongo function
+ 
+ <p/>
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsUsingMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsUsingMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, Map&lt;String,&nbsp;Object&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
+        
+        <div class="jd-descrdiv">Updates objects that matches the given query.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsUsingQueryMap</a></span>(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, DBObject element, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Updates objects that matches the given query.</div>
   
@@ -1990,7 +2071,7 @@ From class
 
 
 
-<A NAME="bsonListToJson(java.lang.Object)"></A>
+<A NAME="bsonListToJson(org.bson.types.BasicBSONList)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2003,7 +2084,7 @@ From class
         String
       </span>
       <span class="sympad">bsonListToJson</span>
-      <span class="normal">(Object input)</span>
+      <span class="normal">(BasicBSONList input)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2180,7 +2261,7 @@ From class
 </div>
 
 
-<A NAME="countObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>)"></A>
+<A NAME="countObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2193,7 +2274,7 @@ From class
         long
       </span>
       <span class="sympad">countObjectsUsingQueryMap</span>
-      <span class="normal">(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes)</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2411,7 +2492,7 @@ From class
 </div>
 
 
-<A NAME="dbObjectToMap(java.lang.Object)"></A>
+<A NAME="dbObjectToMap(com.mongodb.DBObject)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2424,7 +2505,7 @@ From class
         Map
       </span>
       <span class="sympad">dbObjectToMap</span>
-      <span class="normal">(Object input)</span>
+      <span class="normal">(DBObject input)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2458,7 +2539,7 @@ From class
 </div>
 
 
-<A NAME="dbobjectToJson(java.lang.Object)"></A>
+<A NAME="dbobjectToJson(com.mongodb.DBObject)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2471,7 +2552,7 @@ From class
         String
       </span>
       <span class="sympad">dbobjectToJson</span>
-      <span class="normal">(Object input)</span>
+      <span class="normal">(DBObject input)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2628,6 +2709,58 @@ From class
 </div>
 
 
+<A NAME="executeCommand(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        DBObject
+      </span>
+      <span class="sympad">executeCommand</span>
+      <span class="normal">(String commandName, String commandValue)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Executes a command on the database
+ 
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>commandName</td>
+          <td>The command to execute on the database</td>
+        </tr>
+        <tr>
+          <th>commandValue</td>
+          <td>The value for the command</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The result of the command
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="existsCollection(java.lang.String)"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -2722,7 +2855,7 @@ From class
 </div>
 
 
-<A NAME="findFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)"></A>
+<A NAME="findFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2735,7 +2868,7 @@ From class
         Iterable&lt;DBObject&gt;
       </span>
       <span class="sympad">findFilesUsingQueryMap</span>
-      <span class="normal">(Map&lt;String,&nbsp;String&gt; queryAttributes)</span>
+      <span class="normal">(Map&lt;String,&nbsp;Object&gt; queryAttributes)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2827,7 +2960,7 @@ From class
 </div>
 
 
-<A NAME="findObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, java.util.List<java.lang.String>)"></A>
+<A NAME="findObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.List<java.lang.String>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2840,7 +2973,7 @@ From class
         Iterable&lt;DBObject&gt;
       </span>
       <span class="sympad">findObjectsUsingQueryMap</span>
-      <span class="normal">(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, List&lt;String&gt; fields)</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, List&lt;String&gt; fields)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2933,7 +3066,7 @@ From class
 </div>
 
 
-<A NAME="findOneFileUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)"></A>
+<A NAME="findOneFileUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2946,7 +3079,7 @@ From class
         DBObject
       </span>
       <span class="sympad">findOneFileUsingQueryMap</span>
-      <span class="normal">(Map&lt;String,&nbsp;String&gt; queryAttributes)</span>
+      <span class="normal">(Map&lt;String,&nbsp;Object&gt; queryAttributes)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3038,7 +3171,7 @@ From class
 </div>
 
 
-<A NAME="findOneObjectUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, java.util.List<java.lang.String>)"></A>
+<A NAME="findOneObjectUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.List<java.lang.String>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3051,7 +3184,7 @@ From class
         DBObject
       </span>
       <span class="sympad">findOneObjectUsingQueryMap</span>
-      <span class="normal">(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, List&lt;String&gt; fields)</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, List&lt;String&gt; fields)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3174,7 +3307,7 @@ From class
 </div>
 
 
-<A NAME="getFileContentUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)"></A>
+<A NAME="getFileContentUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3187,7 +3320,7 @@ From class
         InputStream
       </span>
       <span class="sympad">getFileContentUsingQueryMap</span>
-      <span class="normal">(Map&lt;String,&nbsp;String&gt; queryAttributes)</span>
+      <span class="normal">(Map&lt;String,&nbsp;Object&gt; queryAttributes)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3339,7 +3472,7 @@ From class
 </div>
 
 
-<A NAME="insertObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, org.mule.module.mongo.api.WriteConcern)"></A>
+<A NAME="insertObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3352,7 +3485,7 @@ From class
         String
       </span>
       <span class="sympad">insertObjectFromMap</span>
-      <span class="normal">(String collection, Map&lt;String,&nbsp;String&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3429,7 +3562,7 @@ From class
 </div>
 
 
-<A NAME="jsonToDbobject(java.lang.Object)"></A>
+<A NAME="jsonToDbobject(java.lang.String)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3442,7 +3575,7 @@ From class
         DBObject
       </span>
       <span class="sympad">jsonToDbobject</span>
-      <span class="normal">(Object input)</span>
+      <span class="normal">(String input)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3562,7 +3695,7 @@ From class
 </div>
 
 
-<A NAME="listFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)"></A>
+<A NAME="listFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3575,7 +3708,7 @@ From class
         Iterable&lt;DBObject&gt;
       </span>
       <span class="sympad">listFilesUsingQueryMap</span>
-      <span class="normal">(Map&lt;String,&nbsp;String&gt; queryAttributes)</span>
+      <span class="normal">(Map&lt;String,&nbsp;Object&gt; queryAttributes)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3729,7 +3862,7 @@ From class
 </div>
 
 
-<A NAME="mongoCollectionToJson(java.lang.Object)"></A>
+<A NAME="mongoCollectionToJson(org.mule.module.mongo.api.MongoCollection)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3742,7 +3875,7 @@ From class
         String
       </span>
       <span class="sympad">mongoCollectionToJson</span>
-      <span class="normal">(Object input)</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/mongo/api/MongoCollection.html">MongoCollection</a> input)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3820,7 +3953,7 @@ From class
 </div>
 
 
-<A NAME="removeFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)"></A>
+<A NAME="removeFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3833,7 +3966,7 @@ From class
         void
       </span>
       <span class="sympad">removeFilesUsingQueryMap</span>
-      <span class="normal">(Map&lt;String,&nbsp;String&gt; queryAttributes)</span>
+      <span class="normal">(Map&lt;String,&nbsp;Object&gt; queryAttributes)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3919,7 +4052,7 @@ From class
 </div>
 
 
-<A NAME="removeUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, org.mule.module.mongo.api.WriteConcern)"></A>
+<A NAME="removeUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3932,7 +4065,7 @@ From class
         void
       </span>
       <span class="sympad">removeUsingQueryMap</span>
-      <span class="normal">(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -4025,7 +4158,7 @@ From class
 </div>
 
 
-<A NAME="saveObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, org.mule.module.mongo.api.WriteConcern)"></A>
+<A NAME="saveObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -4038,7 +4171,7 @@ From class
         void
       </span>
       <span class="sympad">saveObjectFromMap</span>
-      <span class="normal">(String collection, Map&lt;String,&nbsp;String&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; elementAttributes, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -4264,7 +4397,149 @@ From class
 </div>
 
 
-<A NAME="updateObjectsUsingMap(java.lang.String, java.util.Map<java.lang.String, java.lang.String>, java.util.Map<java.lang.String, java.lang.String>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)"></A>
+<A NAME="updateObjectsByFunction(java.lang.String, java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">updateObjectsByFunction</span>
+      <span class="normal">(String collection, String function, DBObject query, DBObject element, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Update objects using a mongo function
+ 
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>collection</td>
+          <td>The name of the collection to update</td>
+        </tr>
+        <tr>
+          <th>function</td>
+          <td>The function used to execute the update</td>
+        </tr>
+        <tr>
+          <th>query</td>
+          <td>The DBObject query object used to detect the element to
+            update.</td>
+        </tr>
+        <tr>
+          <th>element</td>
+          <td>The DBObject mandatory object that will replace that
+            one which matches the query.</td>
+        </tr>
+        <tr>
+          <th>upsert</td>
+          <td>If the database should create the element if it does not exist</td>
+        </tr>
+        <tr>
+          <th>multi</td>
+          <td>If all or just the first object matching the query will be
+            updated</td>
+        </tr>
+        <tr>
+          <th>writeConcern</td>
+          <td>The write concern used to update
+ 
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateObjectsByFunctionUsingMap(java.lang.String, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">updateObjectsByFunctionUsingMap</span>
+      <span class="normal">(String collection, String function, Map&lt;String,&nbsp;Object&gt; queryAttributes, Map&lt;String,&nbsp;Object&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Update objects using a mongo function
+ 
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>collection</td>
+          <td>The name of the collection to update</td>
+        </tr>
+        <tr>
+          <th>function</td>
+          <td>The function used to execute the update</td>
+        </tr>
+        <tr>
+          <th>queryAttributes</td>
+          <td>The query object used to detect the element to update.</td>
+        </tr>
+        <tr>
+          <th>elementAttributes</td>
+          <td>The mandatory object that will replace that one which
+            matches the query.</td>
+        </tr>
+        <tr>
+          <th>upsert</td>
+          <td>If the database should create the element if it does not exist</td>
+        </tr>
+        <tr>
+          <th>multi</td>
+          <td>If all or just the first object matching the query will be
+            updated</td>
+        </tr>
+        <tr>
+          <th>writeConcern</td>
+          <td>The write concern used to update
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateObjectsUsingMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -4277,7 +4552,7 @@ From class
         void
       </span>
       <span class="sympad">updateObjectsUsingMap</span>
-      <span class="normal">(String collection, Map&lt;String,&nbsp;String&gt; queryAttributes, Map&lt;String,&nbsp;String&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, Map&lt;String,&nbsp;Object&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -4309,6 +4584,73 @@ From class
           <th>elementAttributes</td>
           <td>The mandatory object that will replace that one which
             matches the query.</td>
+        </tr>
+        <tr>
+          <th>upsert</td>
+          <td>If the database should create the element if it does not exist</td>
+        </tr>
+        <tr>
+          <th>multi</td>
+          <td>If all or just the first object matching the query will be
+            updated</td>
+        </tr>
+        <tr>
+          <th>writeConcern</td>
+          <td>The write concern used to update
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">updateObjectsUsingQueryMap</span>
+      <span class="normal">(String collection, Map&lt;String,&nbsp;Object&gt; queryAttributes, DBObject element, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Updates objects that matches the given query. If parameter multi is set to
+ false, only the first document matching it will be updated. Otherwise, all the
+ documents matching it will be updated.
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>collection</td>
+          <td>The name of the collection to update</td>
+        </tr>
+        <tr>
+          <th>queryAttributes</td>
+          <td>The query object used to detect the element to update.</td>
+        </tr>
+        <tr>
+          <th>element</td>
+          <td>The DBObject mandatory object that will replace that
+            one which matches the query.</td>
         </tr>
         <tr>
           <th>upsert</td>

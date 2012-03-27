@@ -206,6 +206,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DbObjectToMapTransformer.html">DbObjectToMapTransformer</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexMessageProcessor.html">DropIndexMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandMessageProcessor.html">ExecuteCommandMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExistsCollectionMessageProcessor.html">ExistsCollectionMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesMessageProcessor.html">FindFilesMessageProcessor</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesUsingQueryMapMessageProcessor.html">FindFilesUsingQueryMapMessageProcessor</a></li>
@@ -242,8 +243,11 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingQueryMapMessageProcessor.html">RemoveUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapMessageProcessor.html">SaveObjectFromMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectMessageProcessor.html">SaveObjectMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionMessageProcessor.html">UpdateObjectsByFunctionMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionUsingMapMessageProcessor.html">UpdateObjectsByFunctionUsingMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsMessageProcessor.html">UpdateObjectsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingMapMessageProcessor.html">UpdateObjectsUsingMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingQueryMapMessageProcessor.html">UpdateObjectsUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/WriteConcernEnumTransformer.html">WriteConcernEnumTransformer</a></li>
       </ul>
     </li>
@@ -472,7 +476,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>FindFilesUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.String>)">findFilesUsingQueryMap(java.util.Map)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
+<p>FindFilesUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">findFilesUsingQueryMap(java.util.Map)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
  
 </p>
 
@@ -680,7 +684,7 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          Map&lt;String,&nbsp;String&gt;</nobr></td>
+          Map&lt;String,&nbsp;Object&gt;</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/config/FindFilesUsingQueryMapMessageProcessor.html#_queryAttributesType">_queryAttributesType</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
@@ -1663,7 +1667,7 @@ From interface
         private 
          
          
-        Map&lt;String,&nbsp;String&gt;
+        Map&lt;String,&nbsp;Object&gt;
       </span>
         _queryAttributesType
     </h4>
