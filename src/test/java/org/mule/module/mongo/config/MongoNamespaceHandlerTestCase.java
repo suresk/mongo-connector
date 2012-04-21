@@ -33,7 +33,7 @@ public class MongoNamespaceHandlerTestCase extends FunctionalTestCase
 
     public void testSendMessageToFlow() throws Exception
     {
-        lookupFlowConstruct("InsertObject").process(getTestEvent(new BasicDBObject()));
+        // verify schema can be parsed.
     }
 
     private Flow lookupFlowConstruct(String name)
