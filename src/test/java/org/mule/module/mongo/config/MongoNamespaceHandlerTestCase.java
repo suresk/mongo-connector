@@ -14,30 +14,25 @@
 
 package org.mule.module.mongo.config;
 
-import com.mongodb.BasicDBObject;
 import org.mule.construct.Flow;
-import org.mule.tck.FunctionalTestCase;
+import org.mule.tck.junit4.FunctionalTestCase;
 
 /**
  * Namespace configuration test for the Connector
- * 
+ *
  * @author flbulgarelli
  */
-public class MongoNamespaceHandlerTestCase extends FunctionalTestCase
-{
+public class MongoNamespaceHandlerTestCase extends FunctionalTestCase {
     @Override
-    protected String getConfigResources()
-    {
+    protected String getConfigResources() {
         return "mongo-namespace-config.xml";
     }
 
-    public void testSendMessageToFlow() throws Exception
-    {
+    public void testSendMessageToFlow() throws Exception {
         // verify schema can be parsed.
     }
 
-    private Flow lookupFlowConstruct(String name)
-    {
+    private Flow lookupFlowConstruct(String name) {
         return (Flow) muleContext.getRegistry().lookupFlowConstruct(name);
     }
 }
