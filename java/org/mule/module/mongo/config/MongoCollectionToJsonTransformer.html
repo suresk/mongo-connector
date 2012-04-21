@@ -63,6 +63,8 @@
 
 
 
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -84,6 +86,7 @@
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
 <script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
 <script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
 <script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
 <script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -102,6 +105,27 @@
     #resize-packages-nav{border-bottom:3px solid #666;}
   </style>
 </noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Mongo Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
 </head>
 
 <body class="">
@@ -181,11 +205,17 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/package-summary.html">org.mule.module.mongo</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/adapters/package-summary.html">org.mule.module.mongo.adapters</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/api/package-summary.html">org.mule.module.mongo.api</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/package-summary.html">org.mule.module.mongo.config</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/spring/package-summary.html">org.mule.module.mongo.config.spring</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/processors/package-summary.html">org.mule.module.mongo.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/transformers/package-summary.html">org.mule.module.mongo.transformers</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
@@ -196,57 +226,98 @@
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/BsonListToJsonTransformer.html">BsonListToJsonTransformer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsDefinitionParser.html">CountObjectsDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsMessageProcessor.html">CountObjectsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsUsingMapQueryMessageProcessor.html">CountObjectsUsingMapQueryMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsUsingQueryMapDefinitionParser.html">CountObjectsUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsUsingQueryMapMessageProcessor.html">CountObjectsUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CreateCollectionDefinitionParser.html">CreateCollectionDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CreateCollectionMessageProcessor.html">CreateCollectionMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CreateFileFromPayloadDefinitionParser.html">CreateFileFromPayloadDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CreateFileFromPayloadMessageProcessor.html">CreateFileFromPayloadMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CreateIndexDefinitionParser.html">CreateIndexDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CreateIndexMessageProcessor.html">CreateIndexMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DbobjectToJsonTransformer.html">DbobjectToJsonTransformer</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DbObjectToMapTransformer.html">DbObjectToMapTransformer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionDefinitionParser.html">DropCollectionDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexDefinitionParser.html">DropIndexDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexMessageProcessor.html">DropIndexMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandDefinitionParser.html">ExecuteCommandDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandMessageProcessor.html">ExecuteCommandMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExistsCollectionDefinitionParser.html">ExistsCollectionDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExistsCollectionMessageProcessor.html">ExistsCollectionMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesDefinitionParser.html">FindFilesDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesMessageProcessor.html">FindFilesMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesUsingQueryMapDefinitionParser.html">FindFilesUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesUsingQueryMapMessageProcessor.html">FindFilesUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsDefinitionParser.html">FindObjectsDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsMessageProcessor.html">FindObjectsMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsUsingQueryMapDefinitionParser.html">FindObjectsUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsUsingQueryMapMessageProcessor.html">FindObjectsUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileDefinitionParser.html">FindOneFileDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileMessageProcessor.html">FindOneFileMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileUsingQueryMapDefinitionParser.html">FindOneFileUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileUsingQueryMapMessageProcessor.html">FindOneFileUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectDefinitionParser.html">FindOneObjectDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectMessageProcessor.html">FindOneObjectMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectUsingQueryMapDefinitionParser.html">FindOneObjectUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectUsingQueryMapMessageProcessor.html">FindOneObjectUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentDefinitionParser.html">GetFileContentDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentMessageProcessor.html">GetFileContentMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapDefinitionParser.html">GetFileContentUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapMessageProcessor.html">GetFileContentUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/IndexOrderEnumTransformer.html">IndexOrderEnumTransformer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectDefinitionParser.html">InsertObjectDefinitionParser</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectFromMapDefinitionParser.html">InsertObjectFromMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectFromMapMessageProcessor.html">InsertObjectFromMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectMessageProcessor.html">InsertObjectMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/JsonToDbobjectTransformer.html">JsonToDbobjectTransformer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListCollectionsDefinitionParser.html">ListCollectionsDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListCollectionsMessageProcessor.html">ListCollectionsMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListFilesDefinitionParser.html">ListFilesDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListFilesMessageProcessor.html">ListFilesMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListFilesUsingQueryMapDefinitionParser.html">ListFilesUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListFilesUsingQueryMapMessageProcessor.html">ListFilesUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListIndicesDefinitionParser.html">ListIndicesDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ListIndicesMessageProcessor.html">ListIndicesMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MapReduceObjectsDefinitionParser.html">MapReduceObjectsDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MapReduceObjectsMessageProcessor.html">MapReduceObjectsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorCapabilitiesAdapter.html">MongoCloudConnectorCapabilitiesAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorConfigDefinitionParser.html">MongoCloudConnectorConfigDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorConnectionManager.html">MongoCloudConnectorConnectionManager</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorConnectionManager.ConnectionParameters.html">MongoCloudConnectorConnectionManager.ConnectionParameters</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorLifecycleAdapter.html">MongoCloudConnectorLifecycleAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorNamespaceHandler.html">MongoCloudConnectorNamespaceHandler</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorSessionManagerAdapter.html">MongoCloudConnectorSessionManagerAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCloudConnectorSessionManagerAdapter.SessionKey.html">MongoCloudConnectorSessionManagerAdapter.SessionKey</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoCollectionToJsonTransformer.html">MongoCollectionToJsonTransformer</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoObjectStoreCapabilitiesAdapter.html">MongoObjectStoreCapabilitiesAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoObjectStoreConfigDefinitionParser.html">MongoObjectStoreConfigDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoObjectStoreLifecycleAdapter.html">MongoObjectStoreLifecycleAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/MongoObjectStoreNamespaceHandler.html">MongoObjectStoreNamespaceHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveFilesDefinitionParser.html">RemoveFilesDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveFilesMessageProcessor.html">RemoveFilesMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveFilesUsingQueryMapDefinitionParser.html">RemoveFilesUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveFilesUsingQueryMapMessageProcessor.html">RemoveFilesUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveObjectsDefinitionParser.html">RemoveObjectsDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveObjectsMessageProcessor.html">RemoveObjectsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingMapQueryMessageProcessor.html">RemoveUsingMapQueryMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingQueryMapDefinitionParser.html">RemoveUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingQueryMapMessageProcessor.html">RemoveUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectDefinitionParser.html">SaveObjectDefinitionParser</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapDefinitionParser.html">SaveObjectFromMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapMessageProcessor.html">SaveObjectFromMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectMessageProcessor.html">SaveObjectMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionDefinitionParser.html">UpdateObjectsByFunctionDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionMessageProcessor.html">UpdateObjectsByFunctionMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionUsingMapDefinitionParser.html">UpdateObjectsByFunctionUsingMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionUsingMapMessageProcessor.html">UpdateObjectsByFunctionUsingMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsDefinitionParser.html">UpdateObjectsDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsMessageProcessor.html">UpdateObjectsMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingMapDefinitionParser.html">UpdateObjectsUsingMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingMapMessageProcessor.html">UpdateObjectsUsingMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingQueryMapDefinitionParser.html">UpdateObjectsUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingQueryMapMessageProcessor.html">UpdateObjectsUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/WriteConcernEnumTransformer.html">WriteConcernEnumTransformer</a></li>
       </ul>
@@ -368,6 +439,11 @@
   
   
    
+  
+  
+  
+
+  
   
   
   
@@ -668,16 +744,16 @@ org.mule.api.lifecycle.Initialisable
 <tr class="api apilevel-" >
 <td colspan="12">
 
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.api.transformer.DiscoverableTransformer" class="jd-expando-trigger closed"
-          ><img id="inherited-constants-org.mule.api.transformer.DiscoverableTransformer-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.api.transformer.Converter" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.api.transformer.Converter-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>From interface
-org.mule.api.transformer.DiscoverableTransformer
-<div id="inherited-constants-org.mule.api.transformer.DiscoverableTransformer">
-  <div id="inherited-constants-org.mule.api.transformer.DiscoverableTransformer-list"
+org.mule.api.transformer.Converter
+<div id="inherited-constants-org.mule.api.transformer.Converter">
+  <div id="inherited-constants-org.mule.api.transformer.Converter-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-constants-org.mule.api.transformer.DiscoverableTransformer-summary" style="display: none;">
+  <div id="inherited-constants-org.mule.api.transformer.Converter-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -707,6 +783,8 @@ org.mule.api.transformer.DiscoverableTransformer
   </div>
 </div>
 </td></tr>
+
+
 
 
 
@@ -924,6 +1002,8 @@ org.mule.transformer.AbstractTransformer
 
 
 
+
+
 </table>
 
 
@@ -1062,22 +1142,6 @@ From class
             
             
             
-            Object</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">checkReturnClass</span>(Object arg0)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -1087,7 +1151,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -1103,7 +1167,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1119,7 +1183,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1135,7 +1199,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1151,7 +1215,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1167,7 +1231,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1183,7 +1247,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1199,7 +1263,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1215,7 +1279,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1231,7 +1295,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1247,7 +1311,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1263,7 +1327,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1279,7 +1343,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1295,7 +1359,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1311,7 +1375,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1327,7 +1391,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1343,7 +1407,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1359,7 +1423,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1375,7 +1439,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1391,7 +1455,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1407,7 +1471,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1423,7 +1487,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1439,7 +1503,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1455,7 +1519,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1471,7 +1535,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1487,7 +1551,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1503,7 +1567,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             synchronized
@@ -1519,7 +1583,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1535,7 +1599,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1551,7 +1615,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1567,7 +1631,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1583,7 +1647,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1599,7 +1663,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1615,7 +1679,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1631,7 +1695,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1647,7 +1711,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1663,7 +1727,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1679,7 +1743,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1695,7 +1759,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1711,7 +1775,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2263,19 +2327,19 @@ From interface
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.transformer.DiscoverableTransformer" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.transformer.DiscoverableTransformer-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.transformer.Converter" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.api.transformer.Converter-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From interface
 
-  org.mule.api.transformer.DiscoverableTransformer
+  org.mule.api.transformer.Converter
 
-<div id="inherited-methods-org.mule.api.transformer.DiscoverableTransformer">
-  <div id="inherited-methods-org.mule.api.transformer.DiscoverableTransformer-list"
+<div id="inherited-methods-org.mule.api.transformer.Converter">
+  <div id="inherited-methods-org.mule.api.transformer.Converter-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.api.transformer.DiscoverableTransformer-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.api.transformer.Converter-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -2316,6 +2380,8 @@ From interface
   </div>
 </div>
 </td></tr>
+
+
 
 
 
