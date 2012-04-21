@@ -14,6 +14,7 @@
 
 package org.mule.module.mongo.config;
 
+import org.junit.Test;
 import org.mule.construct.Flow;
 import org.mule.tck.junit4.FunctionalTestCase;
 
@@ -28,6 +29,7 @@ public class MongoNamespaceHandlerTestCase extends FunctionalTestCase {
         return "mongo-namespace-config.xml";
     }
 
+    @Test
     public void testSendMessageToFlow() throws Exception {
         // verify schema can be parsed.
     }
