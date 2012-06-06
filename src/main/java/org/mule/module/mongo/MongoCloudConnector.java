@@ -916,11 +916,10 @@ public class MongoCloudConnector
     }
 
     /**
-     * Method invoked when a {@link MongoSession} needs to be created.
+     * Method invoked when a {@link MongoSession} needs to be created.  
      * 
-     * @param username the username to use in case authentication is required
-     * @param password the password to use in case authentication is required, null
-     *            if no authentication is desired
+     * @param username the username to use for authentication. NOTE: Please use a dummy user if you have disabled Mongo authentication
+     * @param password the password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication
      * @return the newly created {@link MongoSession}
      * @throws org.mule.api.ConnectionException
      */
