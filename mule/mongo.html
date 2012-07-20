@@ -2024,7 +2024,7 @@ attribute on each operation.</p>
  objects of the collection are retrieved. If no fields object is specified, all
  fields are retrieved.
  <p/>
- <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:find-objects collection="myCollection" query-ref="dbObject"&gt;
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:find-objects collection="myCollection" query-ref="dbObject" limit="5" numToSkip="10"&gt;
     &lt;mongo:fields&gt;
         &lt;mongo:field&gt;field1&lt;/mongo:field&gt;
         &lt;mongo:field&gt;field2&lt;/mongo:field&gt;
@@ -2060,6 +2060,24 @@ attribute on each operation.</p>
                 
                 
           
+                
+          
+                
+                <tr class=" api apilevel-" >
+                    <td class="jd-linkcol"><nobr>numToSkip</nobr></td>
+                    <td class="jd-descrcol"></td>
+                    <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Number of objects skip (offset)</td>
+                </tr>
+                
+                
+          
+                
+                <tr class="alt-color api apilevel-" >
+                    <td class="jd-linkcol"><nobr>limit</nobr></td>
+                    <td class="jd-descrcol"></td>
+                    <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Limit of objects to return</td>
+                </tr>
+                
                 
           
           
@@ -2107,6 +2125,10 @@ attribute on each operation.</p>
             
             
           
+            
+          
+            
+          
       </table>
   </div>
   
@@ -2139,7 +2161,7 @@ attribute on each operation.</p>
  objects of the collection are retrieved. If no fields object is specified, all
  fields are retrieved.
  <p/>
- <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:find-objects-using-query-map collection="myCollection"&gt;
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:find-objects-using-query-map collection="myCollection" limit="5" numToSkip="10"&gt;
      &lt;mongo:fields&gt;
          &lt;mongo:field&gt;field1&lt;/mongo:field&gt;
          &lt;mongo:field&gt;field2&lt;/mongo:field&gt;
@@ -2167,6 +2189,24 @@ attribute on each operation.</p>
           
                 
           
+                
+          
+                
+                <tr class="alt-color api apilevel-" >
+                    <td class="jd-linkcol"><nobr>numToSkip</nobr></td>
+                    <td class="jd-descrcol"></td>
+                    <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Number of objects skip (offset)</td>
+                </tr>
+                
+                
+          
+                
+                <tr class=" api apilevel-" >
+                    <td class="jd-linkcol"><nobr>limit</nobr></td>
+                    <td class="jd-descrcol"></td>
+                    <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Limit of objects to return</td>
+                </tr>
+                
                 
           
           
@@ -2216,6 +2256,10 @@ attribute on each operation.</p>
             
             <tr><th colspan="12"><nobr>&lt;mongo:fields&gt;</nobr></br><span style="font-weight: normal;"><i>Optional.&nbsp;</i>Alternative way of passing fields as a literal List</span></th></tr>
             
+            
+          
+            
+          
             
           
       </table>

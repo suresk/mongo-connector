@@ -489,7 +489,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>FindObjectsMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findObjects(java.lang.String, com.mongodb.DBObject, java.util.List<java.lang.String>)">findObjects(java.lang.String, com.mongodb.DBObject, java.util.List)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
+<p>FindObjectsMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findObjects(java.lang.String, com.mongodb.DBObject, java.util.List<java.lang.String>, java.lang.Integer, java.lang.Integer)">findObjects(java.lang.String, com.mongodb.DBObject, java.util.List, java.lang.Integer, java.lang.Integer)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
  
 </p>
 
@@ -708,6 +708,28 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
+          Integer</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#_limitType">_limitType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Integer</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#_numToSkipType">_numToSkipType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
           String</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#_passwordType">_passwordType</a></td>
           <td class="jd-descrcol" width="100%"></td>
@@ -787,6 +809,17 @@ org.mule.api.lifecycle.Stoppable
       <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#limit">limit</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
           static
           
           Logger</nobr></td>
@@ -795,7 +828,7 @@ org.mule.api.lifecycle.Stoppable
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
@@ -808,7 +841,7 @@ org.mule.api.lifecycle.Stoppable
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
@@ -818,6 +851,17 @@ org.mule.api.lifecycle.Stoppable
           <td class="jd-descrcol" width="100%">Mule Context
  
 </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#numToSkip">numToSkip</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -1051,9 +1095,9 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#setModuleObject(java.lang.Object)">setModuleObject</a></span>(Object moduleObject)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#setLimit(java.lang.Object)">setLimit</a></span>(Object value)</nobr>
         
-        <div class="jd-descrdiv">Sets the instance of the object under which the processor will execute</div>
+        <div class="jd-descrdiv">Sets limit</div>
   
   </td></tr>
 
@@ -1069,9 +1113,45 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#setModuleObject(java.lang.Object)">setModuleObject</a></span>(Object moduleObject)</nobr>
+        
+        <div class="jd-descrdiv">Sets the instance of the object under which the processor will execute</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#setMuleContext(org.mule.api.MuleContext)">setMuleContext</a></span>(MuleContext context)</nobr>
         
         <div class="jd-descrdiv">Set the Mule context</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/FindObjectsMessageProcessor.html#setNumToSkip(java.lang.Object)">setNumToSkip</a></span>(Object value)</nobr>
+        
+        <div class="jd-descrdiv">Sets numToSkip</div>
   
   </td></tr>
 
@@ -1782,6 +1862,66 @@ From interface
 
 
 
+<A NAME="_limitType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        Integer
+      </span>
+        _limitType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_numToSkipType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        Integer
+      </span>
+        _numToSkipType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
 <A NAME="_passwordType"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -1996,6 +2136,36 @@ From interface
 
 
 
+<A NAME="limit"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        Object
+      </span>
+        limit
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
 <A NAME="logger"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -2083,6 +2253,36 @@ From interface
   <div class="jd-tagdata jd-tagdescr"><p>Mule Context
  
 </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="numToSkip"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        Object
+      </span>
+        numToSkip
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     
     </div>
@@ -2574,6 +2774,47 @@ From interface
 </div>
 
 
+<A NAME="setLimit(java.lang.Object)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLimit</span>
+      <span class="normal">(Object value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets limit</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Value to set
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="setModuleObject(java.lang.Object)"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -2647,6 +2888,47 @@ From interface
         <tr>
           <th>context</td>
           <td>Mule context to set
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setNumToSkip(java.lang.Object)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setNumToSkip</span>
+      <span class="normal">(Object value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets numToSkip</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Value to set
 </td>
         </tr>
       </table>

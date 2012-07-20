@@ -604,7 +604,7 @@ Summary:
             Iterable&lt;DBObject&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/api/MongoClient.html#findObjects(java.lang.String, com.mongodb.DBObject, java.util.List<java.lang.String>)">findObjects</a></span>(String collection, DBObject query, List&lt;String&gt; fields)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/api/MongoClient.html#findObjects(java.lang.String, com.mongodb.DBObject, java.util.List<java.lang.String>, java.lang.Integer, java.lang.Integer)">findObjects</a></span>(String collection, DBObject query, List&lt;String&gt; fields, Integer numToSkip, Integer limit)</nobr>
         
   </td></tr>
 
@@ -1249,7 +1249,7 @@ Summary:
 </div>
 
 
-<A NAME="findObjects(java.lang.String, com.mongodb.DBObject, java.util.List<java.lang.String>)"></A>
+<A NAME="findObjects(java.lang.String, com.mongodb.DBObject, java.util.List<java.lang.String>, java.lang.Integer, java.lang.Integer)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1262,7 +1262,7 @@ Summary:
         Iterable&lt;DBObject&gt;
       </span>
       <span class="sympad">findObjects</span>
-      <span class="normal">(String collection, DBObject query, List&lt;String&gt; fields)</span>
+      <span class="normal">(String collection, DBObject query, List&lt;String&gt; fields, Integer numToSkip, Integer limit)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1288,6 +1288,14 @@ Summary:
         </tr>
         <tr>
           <th>fields</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>numToSkip</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>limit</td>
           <td></td>
         </tr>
       </table>
