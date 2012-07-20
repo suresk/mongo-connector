@@ -87,7 +87,7 @@
 <!-- END_INCLUDE(mongo:count-objects-using-query-map) -->
 
 <!-- BEGIN_INCLUDE(mongo:find-objects) -->
-        <mongo:find-objects collection="myCollection" query-ref="dbObject">
+        <mongo:find-objects collection="myCollection" query-ref="dbObject" limit="5" numToSkip="10">
             <mongo:fields>
                 <mongo:field>field1</mongo:field>
                 <mongo:field>field2</mongo:field>
@@ -96,7 +96,7 @@
 <!-- END_INCLUDE(mongo:find-objects) -->
 
 <!-- BEGIN_INCLUDE(mongo:find-objects-using-query-map) -->
-       <mongo:find-objects-using-query-map collection="myCollection">
+       <mongo:find-objects-using-query-map collection="myCollection" limit="5" numToSkip="10">
             <mongo:fields>
                 <mongo:field>field1</mongo:field>
                 <mongo:field>field2</mongo:field>

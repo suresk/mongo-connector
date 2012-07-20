@@ -504,14 +504,18 @@ public class MongoCloudConnector
      * @param query the optional {@link DBObject} query object. If unspecified, all
      *            documents are returned.
      * @param fields alternative way of passing fields as a literal List
+     * @param numToSkip number of objects skip (offset)
+     * @param limit limit of objects to return
      * @return an iterable of {@link DBObject}
      */
     @Processor
     public Iterable<DBObject> findObjects(String collection,
                                           @Optional @Default("#[payload]") DBObject query,
-                                          @Placement(group = "Fields") @Optional List<String> fields)
+                                          @Placement(group = "Fields") @Optional List<String> fields,
+                                          @Optional Integer numToSkip,
+                                          @Optional Integer limit)
     {
-        return client.findObjects(collection, query, fields);
+        return client.findObjects(collection, query, fields, numToSkip, limit);
     }
 
     /**
@@ -526,14 +530,18 @@ public class MongoCloudConnector
      * @param queryAttributes the optional query object. If unspecified, all
      *            documents are returned.
      * @param fields alternative way of passing fields as a literal List
+     * @param numToSkip number of objects skip (offset)
+     * @param limit limit of objects to return
      * @return an iterable of {@link DBObject}
      */
     @Processor
     public Iterable<DBObject> findObjectsUsingQueryMap(String collection,
                                                        @Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes,
-                                                       @Placement(group = "Fields") @Optional List<String> fields)
+                                                       @Placement(group = "Fields") @Optional List<String> fields,
+                                                       @Optional Integer numToSkip,
+                                                       @Optional Integer limit)
     {
-        return client.findObjects(collection, (DBObject) adapt(queryAttributes), fields);
+        return client.findObjects(collection, (DBObject) adapt(queryAttributes), fields, numToSkip, limit);
     }
 
     /**

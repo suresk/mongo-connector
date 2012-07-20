@@ -276,6 +276,22 @@ public class MongoTestDriver
     }
 
     @Test
+    public void findWithSkipAndLimit()
+    {
+        insertInTestDb(new BasicDBObject("x", 1));
+        insertInTestDb(new BasicDBObject("x", 2));
+        insertInTestDb(new BasicDBObject("x", 3));
+        insertInTestDb(new BasicDBObject("x", 4));
+        insertInTestDb(new BasicDBObject("x", 5));
+
+        Iterator<DBObject> iter = connector.findObjects(MAIN_COLLECTION, null, null, 2, 2).iterator();
+
+        assertEquals(3, iter.next().get("x"));
+        assertEquals(4, iter.next().get("x"));
+        assertEquals(null, iter.next().get("x"));
+    }
+
+    @Test
     public void updateMulti() throws Exception
     {
         insertInTestDb(new BasicDBObject("x", 50));
@@ -286,7 +302,7 @@ public class MongoTestDriver
             new BasicDBObject("x", new BasicDBObject("$gt", 55)), new BasicDBObject("$inc",
                 new BasicDBObject("x", 2)), false, true, WriteConcern.DATABASE_DEFAULT);
 
-        Iterator<DBObject> iter = connector.findObjects(MAIN_COLLECTION, null, null).iterator();
+        Iterator<DBObject> iter = connector.findObjects(MAIN_COLLECTION, null, null, null, null).iterator();
         assertEquals(50, iter.next().get("x"));
         assertEquals(62, iter.next().get("x"));
         assertEquals(62, iter.next().get("x"));
@@ -303,7 +319,7 @@ public class MongoTestDriver
             new BasicDBObject("x", new BasicDBObject("$gt", 55)), new BasicDBObject("$inc",
                 new BasicDBObject("x", 2)), false, false, WriteConcern.DATABASE_DEFAULT);
 
-        Iterator<DBObject> iter = connector.findObjects(MAIN_COLLECTION, null, null).iterator();
+        Iterator<DBObject> iter = connector.findObjects(MAIN_COLLECTION, null, null, null, null).iterator();
         assertEquals(50, iter.next().get("x"));
         assertEquals(62, iter.next().get("x"));
         assertEquals(60, iter.next().get("x"));

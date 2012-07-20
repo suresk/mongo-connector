@@ -16,14 +16,11 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
+import com.mongodb.*;
 import org.apache.commons.lang.Validate;
 import org.bson.types.ObjectId;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBObject;
 import com.mongodb.MapReduceCommand.OutputType;
-import com.mongodb.MongoException;
 import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSDBFile;
 import com.mongodb.gridfs.GridFSInputFile;
@@ -75,10 +72,21 @@ public class MongoClientImpl implements MongoClient
         return openSession().collectionExists(collection);
     }
 
-    public Iterable<DBObject> findObjects(@NotNull String collection, DBObject query, List<String> fields)
+    public Iterable<DBObject> findObjects(@NotNull String collection, DBObject query, List<String> fields, Integer numToSkip, Integer limit)
     {
         Validate.notNull(collection);
-        return bug5588Workaournd(openSession().getCollection(collection).find(query, FieldsSet.from(fields)));
+
+        DBCursor dbCursor = openSession().getCollection(collection).find(query, FieldsSet.from(fields));
+        if (numToSkip != null)
+        {
+            dbCursor = dbCursor.skip(numToSkip);
+        }
+        if (limit != null)
+        {
+            dbCursor = dbCursor.limit(limit);
+        }
+
+        return bug5588Workaournd(dbCursor);
     }
 
     public DBObject findOneObject(@NotNull String collection, DBObject query, List<String> fields)

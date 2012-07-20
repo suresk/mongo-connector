@@ -54,7 +54,7 @@ public interface MongoClient
 
     long countObjects(@NotNull String collection, DBObject query);
 
-    Iterable<DBObject> findObjects(@NotNull String collection, DBObject query, List<String> fields);
+    Iterable<DBObject> findObjects(@NotNull String collection, DBObject query, List<String> fields, Integer numToSkip, Integer limit);
 
     DBObject findOneObject(@NotNull String collection, DBObject query, List<String> fields);
 
