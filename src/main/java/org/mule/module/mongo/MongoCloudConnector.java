@@ -10,10 +10,7 @@
 
 package org.mule.module.mongo;
 
-import com.mongodb.DB;
-import com.mongodb.DBObject;
-import com.mongodb.Mongo;
-import com.mongodb.MongoException;
+import com.mongodb.*;
 import com.mongodb.util.JSON;
 import org.apache.commons.lang.Validate;
 import org.bson.types.BasicBSONList;
@@ -49,6 +46,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -72,7 +70,7 @@ public class MongoCloudConnector
     private static final String WRITE_CONCERN_DEFAULT_VALUE = "DATABASE_DEFAULT";
 
     /**
-     * The host of the Mongo server
+     * The host of the Mongo server, it can also be a list of comma separated hosts for replicas
      */
     @Configurable
     @Optional
@@ -937,7 +935,21 @@ public class MongoCloudConnector
         DB db = null;
         try
         {
-            db = getDatabase(new Mongo(host, port), username, password);
+            List servers = new ArrayList<ServerAddress>();
+            String[] hosts = host.split(",\\s?");
+            if (hosts.length == 1)
+            {
+                db = getDatabase(new Mongo(host, port), username, password);
+            }
+            else
+            {
+                for (String host : hosts)
+                {
+                    servers.add(new ServerAddress(host, port));
+                }
+                Mongo mongo = new Mongo(servers);
+                db = getDatabase(mongo, username, password);
+            }
         }
         catch (UnknownHostException e)
         {
