@@ -90,6 +90,34 @@ public class MongoCloudConnector
     @Optional
     @Default("test")
     private String database;
+    /**
+     * The connection timeout in milliseconds; this is for establishing the socket connections (open). 0 is default and infinite.
+     */
+    @Configurable
+    @Optional
+    @Default("0")
+    private int connectTimeout;
+    /**
+     * The socket timeout. 0 is default and infinite.
+     */
+    @Configurable
+    @Optional
+    @Default("0")
+    private int socketTimeout;
+    /**
+     * This controls whether the system retries automatically on connection errors.
+     */
+    @Configurable
+    @Optional
+    @Default("false")
+    private boolean autoConnectRetry;
+    /**
+     * Specifies if the driver is allowed to read from secondaries or slaves.
+     */
+    @Configurable
+    @Optional
+    @Default("false")
+    private boolean slaveOk;
 
     private MongoClient client;
 
@@ -935,19 +963,25 @@ public class MongoCloudConnector
         DB db = null;
         try
         {
-            List servers = new ArrayList<ServerAddress>();
+            MongoOptions options = new MongoOptions();
+            options.connectTimeout = connectTimeout;
+            options.socketTimeout = socketTimeout;
+            options.autoConnectRetry = autoConnectRetry;
+            options.slaveOk = slaveOk;
+
             String[] hosts = host.split(",\\s?");
             if (hosts.length == 1)
             {
-                db = getDatabase(new Mongo(host, port), username, password);
+                db = getDatabase(new Mongo(new ServerAddress(host, port), options), username, password);
             }
             else
             {
+                List servers = new ArrayList<ServerAddress>();
                 for (String host : hosts)
                 {
                     servers.add(new ServerAddress(host, port));
                 }
-                Mongo mongo = new Mongo(servers);
+                Mongo mongo = new Mongo(servers, options);
                 db = getDatabase(mongo, username, password);
             }
         }
@@ -1021,5 +1055,45 @@ public class MongoCloudConnector
     public void setPort(int port)
     {
         this.port = port;
+    }
+
+    public boolean getSlaveOk()
+    {
+        return slaveOk;
+    }
+
+    public void setSlaveOk(boolean slaveOk)
+    {
+        this.slaveOk = slaveOk;
+    }
+
+    public boolean getAutoConnectRetry()
+    {
+        return autoConnectRetry;
+    }
+
+    public void setAutoConnectRetry(boolean autoConnectRetry)
+    {
+        this.autoConnectRetry = autoConnectRetry;
+    }
+
+    public int getSocketTimeout()
+    {
+        return socketTimeout;
+    }
+
+    public void setSocketTimeout(int socketTimeout)
+    {
+        this.socketTimeout = socketTimeout;
+    }
+
+    public int getConnectTimeout()
+    {
+        return connectTimeout;
+    }
+
+    public void setConnectTimeout(int connectTimeout)
+    {
+        this.connectTimeout = connectTimeout;
     }
 }
