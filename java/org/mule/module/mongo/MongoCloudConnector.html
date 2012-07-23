@@ -531,9 +531,31 @@ Summary:
           private
           
           
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#autoConnectRetry">autoConnectRetry</a></td>
+          <td class="jd-descrcol" width="100%">This controls whether the system retries automatically on connection errors.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
           <a href="../../../../../java/org/mule/module/mongo/api/MongoClient.html">MongoClient</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#client">client</a></td>
           <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#connectTimeout">connectTimeout</a></td>
+          <td class="jd-descrcol" width="100%">The connection timeout in milliseconds; this is for establishing the socket connections (open).</td>
       </tr>
       
     
@@ -570,6 +592,28 @@ Summary:
           <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#port">port</a></td>
           <td class="jd-descrcol" width="100%">The port of the Mongo server
 </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#slaveOk">slaveOk</a></td>
+          <td class="jd-descrcol" width="100%">Specifies if the driver is allowed to read from secondaries or slaves.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#socketTimeout">socketTimeout</a></td>
+          <td class="jd-descrcol" width="100%">The socket timeout.</td>
       </tr>
       
     
@@ -1050,6 +1094,38 @@ Summary:
             
             
             
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getAutoConnectRetry()">getAutoConnectRetry</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getConnectTimeout()">getConnectTimeout</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -1124,6 +1200,38 @@ Summary:
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getPort()">getPort</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getSlaveOk()">getSlaveOk</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getSocketTimeout()">getSocketTimeout</a></span>()</nobr>
         
   </td></tr>
 
@@ -1432,6 +1540,38 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#setAutoConnectRetry(boolean)">setAutoConnectRetry</a></span>(boolean autoConnectRetry)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#setConnectTimeout(int)">setConnectTimeout</a></span>(int connectTimeout)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#setDatabase(java.lang.String)">setDatabase</a></span>(String database)</nobr>
         
   </td></tr>
@@ -1465,6 +1605,38 @@ Summary:
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#setPort(int)">setPort</a></span>(int port)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSlaveOk(boolean)">setSlaveOk</a></span>(boolean slaveOk)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSocketTimeout(int)">setSocketTimeout</a></span>(int socketTimeout)</nobr>
         
   </td></tr>
 
@@ -1923,6 +2095,37 @@ From class
 
 
 
+<A NAME="autoConnectRetry"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        autoConnectRetry
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This controls whether the system retries automatically on connection errors.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
 <A NAME="client"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -1946,6 +2149,37 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="connectTimeout"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        int
+      </span>
+        connectTimeout
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The connection timeout in milliseconds; this is for establishing the socket connections (open). 0 is default and infinite.
+</p></div>
 
     
     </div>
@@ -2038,6 +2272,68 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>The port of the Mongo server
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="slaveOk"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        slaveOk
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Specifies if the driver is allowed to read from secondaries or slaves.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="socketTimeout"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        int
+      </span>
+        socketTimeout
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The socket timeout. 0 is default and infinite.
 </p></div>
 
     
@@ -3273,6 +3569,68 @@ From class
 </div>
 
 
+<A NAME="getAutoConnectRetry()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">getAutoConnectRetry</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getConnectTimeout()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getConnectTimeout</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <A NAME="getDatabase()"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -3444,6 +3802,68 @@ From class
         int
       </span>
       <span class="sympad">getPort</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getSlaveOk()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">getSlaveOk</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getSocketTimeout()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getSocketTimeout</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -4254,6 +4674,86 @@ From class
 </div>
 
 
+<A NAME="setAutoConnectRetry(boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setAutoConnectRetry</span>
+      <span class="normal">(boolean autoConnectRetry)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>autoConnectRetry</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setConnectTimeout(int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setConnectTimeout</span>
+      <span class="normal">(int connectTimeout)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>connectTimeout</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="setDatabase(java.lang.String)"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -4365,6 +4865,86 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>port</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setSlaveOk(boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setSlaveOk</span>
+      <span class="normal">(boolean slaveOk)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>slaveOk</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setSocketTimeout(int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setSocketTimeout</span>
+      <span class="normal">(int socketTimeout)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>socketTimeout</td>
           <td></td>
         </tr>
       </table>

@@ -935,9 +935,31 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#autoConnectRetry">autoConnectRetry</a></td>
+          <td class="jd-descrcol" width="100%">This controls whether the system retries automatically on connection errors.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
           <a href="../../../../../../java/org/mule/module/mongo/api/MongoClient.html">MongoClient</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#client">client</a></td>
           <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#connectTimeout">connectTimeout</a></td>
+          <td class="jd-descrcol" width="100%">The connection timeout in milliseconds; this is for establishing the socket connections (open).</td>
       </tr>
       
     
@@ -974,6 +996,28 @@ org.mule.api.lifecycle.Stoppable
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#port">port</a></td>
           <td class="jd-descrcol" width="100%">The port of the Mongo server
 </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#slaveOk">slaveOk</a></td>
+          <td class="jd-descrcol" width="100%">Specifies if the driver is allowed to read from secondaries or slaves.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#socketTimeout">socketTimeout</a></td>
+          <td class="jd-descrcol" width="100%">The socket timeout.</td>
       </tr>
       
     
@@ -1832,6 +1876,38 @@ From class
             
             
             
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getAutoConnectRetry()">getAutoConnectRetry</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getConnectTimeout()">getConnectTimeout</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -1906,6 +1982,38 @@ From class
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getPort()">getPort</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getSlaveOk()">getSlaveOk</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getSocketTimeout()">getSocketTimeout</a></span>()</nobr>
         
   </td></tr>
 
@@ -2214,6 +2322,38 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setAutoConnectRetry(boolean)">setAutoConnectRetry</a></span>(boolean autoConnectRetry)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setConnectTimeout(int)">setConnectTimeout</a></span>(int connectTimeout)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setDatabase(java.lang.String)">setDatabase</a></span>(String database)</nobr>
         
   </td></tr>
@@ -2247,6 +2387,38 @@ From class
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setPort(int)">setPort</a></span>(int port)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSlaveOk(boolean)">setSlaveOk</a></span>(boolean slaveOk)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSocketTimeout(int)">setSocketTimeout</a></span>(int socketTimeout)</nobr>
         
   </td></tr>
 
