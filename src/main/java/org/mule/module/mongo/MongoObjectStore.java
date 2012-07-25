@@ -49,7 +49,7 @@ import com.mongodb.QueryBuilder;
  * 
  * @author MuleSoft Inc.
  */
-@Module(name = "mongo-object-store", schemaVersion = "2.0")
+//@Module(name = "mongo-object-store", schemaVersion = "2.0")
 public class MongoObjectStore implements PartitionableExpirableObjectStore<Serializable>
 {
     private static final String OBJECTSTORE_COLLECTION_PREFIX = "mule.objectstore.";
