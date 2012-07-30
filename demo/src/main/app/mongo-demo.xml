@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mongo="http://www.mulesoft.org/schema/mule/mongo" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="CE-3.3.0" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/mongo http://www.mulesoft.org/schema/mule/mongo/2.0/mule-mongo.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd ">
+    <mongo:config name="Mongo_DB" username="${jira.username}" password="${jira.password}" doc:name="Mongo DB"/>
+    <flow name="mongo-demo" doc:name="mongo-demo">
+        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" doc:name="HTTP"/>
+        <mongo:create-collection config-ref="Mongo_DB" collection="movies" doc:name="Create movies collection"/>
+        <expression-transformer expression="#[['The Godfather', 'Pulp Fiction', 'The Dark Knight', 'Fight Club', 'Star Wars']]" doc:name="Define movies"/>
+        <foreach collection="#[payload]" doc:name="Insert all movies">
+            <mongo:insert-object-from-map config-ref="Mongo_DB" collection="movies" doc:name="Insert a movie">
+                <mongo:element-attributes>
+                    <mongo:element-attribute key="name" value-ref="#[payload]"/>
+                </mongo:element-attributes>
+            </mongo:insert-object-from-map>
+        </foreach>
+        <mongo:find-objects config-ref="Mongo_DB" collection="movies" doc:name="Get all movies"/>
+        <mongo:mongo-collection-to-json doc:name="Transform objects to json"/>
+        <mongo:drop-collection config-ref="Mongo_DB" collection="movies" doc:name="Drop movies collection"/>
+    </flow>
+</mule>

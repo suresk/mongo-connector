@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="mongo-demo">
+    <global-element type="http://www.mulesoft.org/schema/mule/mongo/config" name="Mongo DB" entity-id="cd3cf2f2-75eb-4d21-89c1-84fd4b1fe134">
+        <properties>
+            <property value="Mongo_DB" name="name"/>
+            <property value="${jira.username}" name="username"/>
+            <property value="${jira.password}" name="password"/>
+            <property name="host"/>
+            <property name="port"/>
+            <property name="database"/>
+            <property name="connectTimeout"/>
+            <property name="socketTimeout"/>
+            <property name="autoConnectRetry"/>
+            <property name="slaveOk"/>
+        </properties>
+    </global-element>
+    <flow SubFlow="false" name="mongo-demo">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+        </properties>
+        <lane hadOnlyOneElement="false" entity-id="bdaf073a-f5a9-43fb-a703-ff7c563db681">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="d9a25487-cd16-4dd9-90bb-ebafe5ad0f14">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="request-response" name="exchange-pattern"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property name="httpLabel"/>
+                    <property value="localhost" name="host"/>
+                    <property value="8081" name="port"/>
+                    <property name="path"/>
+                    <property name="method"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="followRedirects"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="user"/>
+                    <property name="password"/>
+                    <property name="contentType"/>
+                    <property name="keep-alive"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/mongo/mongo-connector" name="Create movies collection" entity-id="48b6d40b-2754-4b00-b130-ffc9416cb8fb">
+                <properties>
+                    <property value="Mongo_DB" name="config-ref"/>
+                    <property value="http://www.mulesoft.org/schema/mule/mongo/create-collection" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="Mongo_DB" name="config-ref"/>
+                    <property value="movies" name="collection"/>
+                    <property name="maxObjects"/>
+                    <property name="size"/>
+                    <property name="capped"/>
+                    <property name=""/>
+                    <property name="username"/>
+                    <property name="password"/>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/expression-transformer" name="Define movies" entity-id="b317e11d-eb68-4674-9cff-7e89a08101eb">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="mimeType"/>
+                    <property name="evaluator"/>
+                    <property value="#[['The Godfather', 'Pulp Fiction', 'The Dark Knight', 'Fight Club', 'Star Wars']]" name="expression"/>
+                    <property name="custom-evaluator"/>
+                    <property name="returnSourceIfNull"/>
+                </properties>
+            </pattern>
+            <scope type="http://www.mulesoft.org/schema/mule/core/foreach" name="Insert all movies" entity-id="cee6e73d-ddb5-46bd-ab86-45faa9f8c567">
+                <properties>
+                    <property value="#[payload]" name="collection"/>
+                    <property name="counterVariableName"/>
+                    <property name="batchSize"/>
+                    <property name="rootMessageVariableName"/>
+                </properties>
+                <compartment entity-id="c98732c3-54e9-4bfa-b9c9-7d8263d19fbf">
+                    <lane hadOnlyOneElement="false" entity-id="3a756418-c7ee-49dd-874d-c9a914a6c9c4">
+                        <pattern type="http://www.mulesoft.org/schema/mule/mongo/mongo-connector" name="Insert a movie" entity-id="61673f4d-bcb9-459b-af5d-167c19c8471b">
+                            <properties>
+<property value="Mongo_DB" name="config-ref"/>
+<property value="http://www.mulesoft.org/schema/mule/mongo/insert-object-from-map" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+<property value="Mongo_DB" name="config-ref"/>
+<property value="movies" name="collection"/>
+<property name="writeConcern"/>
+<property name=""/>
+<property name="username"/>
+<property name="password"/>
+<property-collection name="@http://www.mulesoft.org/schema/mule/mongo/insert-object-from-map-element-attributess;0">
+    <property-collection name="@http://www.mulesoft.org/schema/mule/mongo/insert-object-from-map-element-attributes;1">
+        <property value="" name="value"/>
+        <property value="#[payload]" name="value-ref"/>
+        <property value="name" name="key"/>
+    </property-collection>
+</property-collection>
+                            </properties>
+                        </pattern>
+                    </lane>
+                </compartment>
+            </scope>
+            <pattern type="http://www.mulesoft.org/schema/mule/mongo/mongo-connector" name="Get all movies" entity-id="70571e13-b67e-4b19-b5a5-401aab419e19">
+                <properties>
+                    <property value="Mongo_DB" name="config-ref"/>
+                    <property value="http://www.mulesoft.org/schema/mule/mongo/find-objects" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="Mongo_DB" name="config-ref"/>
+                    <property value="movies" name="collection"/>
+                    <property name="query-ref"/>
+                    <property name="limit"/>
+                    <property name="numToSkip"/>
+                    <property name=""/>
+                    <property name="username"/>
+                    <property name="password"/>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/mongo/mongo-transformer" name="Transform objects to json" entity-id="e586efd6-778f-4624-b4bf-3253500005c6">
+                <properties>
+                    <property value="http://www.mulesoft.org/schema/mule/mongo/mongo-collection-to-json" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="http://www.mulesoft.org/schema/mule/mongo/mongo-collection-to-json" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="mimeType"/>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/mongo/mongo-connector" name="Drop movies collection" entity-id="d3701e0f-d7ad-4176-a07a-9f07fc063c77">
+                <properties>
+                    <property value="Mongo_DB" name="config-ref"/>
+                    <property value="http://www.mulesoft.org/schema/mule/mongo/drop-collection" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="Mongo_DB" name="config-ref"/>
+                    <property value="movies" name="collection"/>
+                    <property name=""/>
+                    <property name="username"/>
+                    <property name="password"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <description></description>
+</mule-configuration>
