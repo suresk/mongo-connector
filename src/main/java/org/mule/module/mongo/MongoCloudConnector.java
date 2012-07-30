@@ -536,7 +536,7 @@ public class MongoCloudConnector
      */
     @Processor
     public Iterable<DBObject> findObjects(String collection,
-                                          @Optional @Default("#[payload]") DBObject query,
+                                          @Optional @Default("") DBObject query,
                                           @Placement(group = "Fields") @Optional List<String> fields,
                                           @Optional Integer numToSkip,
                                           @Optional Integer limit)
