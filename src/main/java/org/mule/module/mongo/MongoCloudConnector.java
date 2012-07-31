@@ -76,6 +76,7 @@ public class MongoCloudConnector
     @Optional
     @Default("localhost")
     private String host;
+
     /**
      * The port of the Mongo server
      */
@@ -83,6 +84,7 @@ public class MongoCloudConnector
     @Optional
     @Default("27017")
     private int port;
+
     /**
      * The database name of the Mongo server
      */
@@ -90,34 +92,83 @@ public class MongoCloudConnector
     @Optional
     @Default("test")
     private String database;
+
+    /**
+     * The number of connections allowed per host (the pool size, per host)
+     */
+    @Configurable
+    @Optional
+    public Integer connectionsPerHost;
+
+    /**
+     * Multiplier for connectionsPerHost for # of threads that can block
+     */
+    @Configurable
+    @Optional
+    public Integer threadsAllowedToBlockForConnectionMultiplier;
+
+    /**
+     * The max wait time for a blocking thread for a connection from the pool in ms.
+     */
+    @Configurable
+    @Optional
+    public Integer maxWaitTime;
+
     /**
      * The connection timeout in milliseconds; this is for establishing the socket connections (open). 0 is default and infinite.
      */
     @Configurable
     @Optional
-    @Default("0")
-    private int connectTimeout;
+    private Integer connectTimeout;
+
     /**
      * The socket timeout. 0 is default and infinite.
      */
     @Configurable
     @Optional
-    @Default("0")
-    private int socketTimeout;
+    private Integer socketTimeout;
+
     /**
      * This controls whether the system retries automatically on connection errors.
      */
     @Configurable
     @Optional
-    @Default("false")
-    private boolean autoConnectRetry;
+    private Boolean autoConnectRetry;
+
     /**
      * Specifies if the driver is allowed to read from secondaries or slaves.
      */
     @Configurable
     @Optional
-    @Default("false")
-    private boolean slaveOk;
+    private Boolean slaveOk;
+
+    /**
+     * If the driver sends a getLastError command after every update to ensure it succeeded.
+     */
+    @Configurable
+    @Optional
+    public Boolean safe;
+
+    /**
+     * If set, the w value of WriteConcern for the connection is set to this.
+     */
+    @Configurable
+    @Optional
+    public Integer w;
+
+    /**
+     * If set, the wtimeout value of WriteConcern for the connection is set to this.
+     */
+    @Configurable
+    @Optional
+    public Integer wtimeout;
+
+    /**
+     * Sets the fsync value of WriteConcern for the connection.
+     */
+    @Configurable
+    @Optional
+    public Boolean fsync;
 
     private MongoClient client;
 
@@ -964,10 +1015,18 @@ public class MongoCloudConnector
         try
         {
             MongoOptions options = new MongoOptions();
-            options.connectTimeout = connectTimeout;
-            options.socketTimeout = socketTimeout;
-            options.autoConnectRetry = autoConnectRetry;
-            options.slaveOk = slaveOk;
+
+            if (connectionsPerHost != null) options.connectionsPerHost = connectionsPerHost;
+            if (threadsAllowedToBlockForConnectionMultiplier != null) options.threadsAllowedToBlockForConnectionMultiplier = threadsAllowedToBlockForConnectionMultiplier;
+            if (maxWaitTime != null) options.maxWaitTime = maxWaitTime;
+            if (connectTimeout != null) options.connectTimeout = connectTimeout;
+            if (socketTimeout != null) options.socketTimeout = socketTimeout;
+            if (autoConnectRetry != null) options.autoConnectRetry = autoConnectRetry;
+            if (slaveOk != null) options.slaveOk = slaveOk;
+            if (safe != null) options.safe = safe;
+            if (w != null) options.w = w;
+            if (wtimeout != null) options.wtimeout = wtimeout;
+            if (fsync != null) options.fsync = fsync;
 
             String[] hosts = host.split(",\\s?");
             if (hosts.length == 1)
@@ -1027,16 +1086,6 @@ public class MongoCloudConnector
         return MongoClientAdaptor.adapt(client);
     }
 
-    public String getDatabase()
-    {
-        return database;
-    }
-
-    public void setDatabase(String database)
-    {
-        this.database = database;
-    }
-
     public String getHost()
     {
         return host;
@@ -1057,43 +1106,123 @@ public class MongoCloudConnector
         this.port = port;
     }
 
-    public boolean getSlaveOk()
+    public String getDatabase()
     {
-        return slaveOk;
+        return database;
     }
 
-    public void setSlaveOk(boolean slaveOk)
+    public void setDatabase(String database)
     {
-        this.slaveOk = slaveOk;
+        this.database = database;
     }
 
-    public boolean getAutoConnectRetry()
+    public Integer getConnectionsPerHost()
     {
-        return autoConnectRetry;
+        return connectionsPerHost;
     }
 
-    public void setAutoConnectRetry(boolean autoConnectRetry)
+    public void setConnectionsPerHost(Integer connectionsPerHost)
     {
-        this.autoConnectRetry = autoConnectRetry;
+        this.connectionsPerHost = connectionsPerHost;
     }
 
-    public int getSocketTimeout()
+    public Integer getThreadsAllowedToBlockForConnectionMultiplier()
     {
-        return socketTimeout;
+        return threadsAllowedToBlockForConnectionMultiplier;
     }
 
-    public void setSocketTimeout(int socketTimeout)
+    public void setThreadsAllowedToBlockForConnectionMultiplier(Integer threadsAllowedToBlockForConnectionMultiplier)
     {
-        this.socketTimeout = socketTimeout;
+        this.threadsAllowedToBlockForConnectionMultiplier = threadsAllowedToBlockForConnectionMultiplier;
     }
 
-    public int getConnectTimeout()
+    public Integer getMaxWaitTime()
+    {
+        return maxWaitTime;
+    }
+
+    public void setMaxWaitTime(Integer maxWaitTime)
+    {
+        this.maxWaitTime = maxWaitTime;
+    }
+
+    public Integer getConnectTimeout()
     {
         return connectTimeout;
     }
 
-    public void setConnectTimeout(int connectTimeout)
+    public void setConnectTimeout(Integer connectTimeout)
     {
         this.connectTimeout = connectTimeout;
+    }
+
+    public Integer getSocketTimeout()
+    {
+        return socketTimeout;
+    }
+
+    public void setSocketTimeout(Integer socketTimeout)
+    {
+        this.socketTimeout = socketTimeout;
+    }
+
+    public Boolean getAutoConnectRetry()
+    {
+        return autoConnectRetry;
+    }
+
+    public void setAutoConnectRetry(Boolean autoConnectRetry)
+    {
+        this.autoConnectRetry = autoConnectRetry;
+    }
+
+    public Boolean getSlaveOk()
+    {
+        return slaveOk;
+    }
+
+    public void setSlaveOk(Boolean slaveOk)
+    {
+        this.slaveOk = slaveOk;
+    }
+
+    public Boolean getSafe()
+    {
+        return safe;
+    }
+
+    public void setSafe(Boolean safe)
+    {
+        this.safe = safe;
+    }
+
+    public Integer getW()
+    {
+        return w;
+    }
+
+    public void setW(Integer w)
+    {
+        this.w = w;
+    }
+
+    public Integer getWtimeout()
+    {
+        return wtimeout;
+    }
+
+    public void setWtimeout(Integer wtimeout)
+    {
+        this.wtimeout = wtimeout;
+    }
+
+    public Boolean getFsync()
+    {
+        return fsync;
+    }
+
+    public void setFsync(Boolean fsync)
+    {
+        this.fsync = fsync;
     }
 }
