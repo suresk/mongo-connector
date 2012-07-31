@@ -700,7 +700,7 @@ Summary:
           private
           
           
-          boolean</nobr></td>
+          Boolean</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#autoConnectRetry">autoConnectRetry</a></td>
           <td class="jd-descrcol" width="100%">This controls whether the system retries automatically on connection errors.</td>
       </tr>
@@ -722,13 +722,25 @@ Summary:
           private
           
           
-          int</nobr></td>
+          Integer</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#connectTimeout">connectTimeout</a></td>
           <td class="jd-descrcol" width="100%">The connection timeout in milliseconds; this is for establishing the socket connections (open).</td>
       </tr>
       
     
       <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Integer</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#connectionsPerHost">connectionsPerHost</a></td>
+          <td class="jd-descrcol" width="100%">The number of connections allowed per host (the pool size, per host)
+</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
@@ -737,6 +749,17 @@ Summary:
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#database">database</a></td>
           <td class="jd-descrcol" width="100%">The database name of the Mongo server
 </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#fsync">fsync</a></td>
+          <td class="jd-descrcol" width="100%">Sets the fsync value of WriteConcern for the connection.</td>
       </tr>
       
     
@@ -754,6 +777,17 @@ Summary:
     
       <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Integer</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#maxWaitTime">maxWaitTime</a></td>
+          <td class="jd-descrcol" width="100%">The max wait time for a blocking thread for a connection from the pool in ms.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
           private
           
           
@@ -764,12 +798,23 @@ Summary:
       </tr>
       
     
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#safe">safe</a></td>
+          <td class="jd-descrcol" width="100%">If the driver sends a getLastError command after every update to ensure it succeeded.</td>
+      </tr>
+      
+    
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
           
-          boolean</nobr></td>
+          Boolean</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#slaveOk">slaveOk</a></td>
           <td class="jd-descrcol" width="100%">Specifies if the driver is allowed to read from secondaries or slaves.</td>
       </tr>
@@ -780,9 +825,43 @@ Summary:
           private
           
           
-          int</nobr></td>
+          Integer</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#socketTimeout">socketTimeout</a></td>
           <td class="jd-descrcol" width="100%">The socket timeout.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Integer</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#threadsAllowedToBlockForConnectionMultiplier">threadsAllowedToBlockForConnectionMultiplier</a></td>
+          <td class="jd-descrcol" width="100%">Multiplier for connectionsPerHost for # of threads that can block
+</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Integer</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#w">w</a></td>
+          <td class="jd-descrcol" width="100%">If set, the w value of WriteConcern for the connection is set to this.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Integer</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#wtimeout">wtimeout</a></td>
+          <td class="jd-descrcol" width="100%">If set, the wtimeout value of WriteConcern for the connection is set to this.</td>
       </tr>
       
     
@@ -1339,7 +1418,7 @@ From class
             
             
             
-            boolean</nobr>
+            Boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getAutoConnectRetry()">getAutoConnectRetry</a></span>()</nobr>
@@ -1355,7 +1434,7 @@ From class
             
             
             
-            int</nobr>
+            Integer</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getConnectTimeout()">getConnectTimeout</a></span>()</nobr>
@@ -1371,6 +1450,22 @@ From class
             
             
             
+            Integer</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getConnectionsPerHost()">getConnectionsPerHost</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -1380,7 +1475,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1399,7 +1494,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1414,6 +1509,22 @@ From class
         <div class="jd-descrdiv">Answers an inputstream to the contents of the first file that matches the
  given queryAttributes.</div>
   
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getFsync()">getFsync</a></span>()</nobr>
+        
   </td></tr>
 
 
@@ -1441,10 +1552,10 @@ From class
             
             
             
-            int</nobr>
+            Integer</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getPort()">getPort</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getMaxWaitTime()">getMaxWaitTime</a></span>()</nobr>
         
   </td></tr>
 
@@ -1457,7 +1568,39 @@ From class
             
             
             
-            boolean</nobr>
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getPort()">getPort</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getSafe()">getSafe</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getSlaveOk()">getSlaveOk</a></span>()</nobr>
@@ -1473,7 +1616,7 @@ From class
             
             
             
-            int</nobr>
+            Integer</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getSocketTimeout()">getSocketTimeout</a></span>()</nobr>
@@ -1483,6 +1626,54 @@ From class
 
 	 
     <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Integer</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getThreadsAllowedToBlockForConnectionMultiplier()">getThreadsAllowedToBlockForConnectionMultiplier</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Integer</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getW()">getW</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Integer</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getWtimeout()">getWtimeout</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1500,7 +1691,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1518,7 +1709,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1534,7 +1725,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1552,7 +1743,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1572,7 +1763,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1590,7 +1781,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1608,7 +1799,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1628,7 +1819,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1649,7 +1840,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1667,7 +1858,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1685,7 +1876,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1703,7 +1894,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1721,7 +1912,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1739,7 +1930,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1757,7 +1948,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1775,6 +1966,22 @@ From class
 
 
 	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setAutoConnectRetry(java.lang.Boolean)">setAutoConnectRetry</a></span>(Boolean autoConnectRetry)</nobr>
+        
+  </td></tr>
+
+
+	 
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
@@ -1785,7 +1992,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setAutoConnectRetry(boolean)">setAutoConnectRetry</a></span>(boolean autoConnectRetry)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setConnectTimeout(java.lang.Integer)">setConnectTimeout</a></span>(Integer connectTimeout)</nobr>
         
   </td></tr>
 
@@ -1801,7 +2008,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setConnectTimeout(int)">setConnectTimeout</a></span>(int connectTimeout)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setConnectionsPerHost(java.lang.Integer)">setConnectionsPerHost</a></span>(Integer connectionsPerHost)</nobr>
         
   </td></tr>
 
@@ -1833,7 +2040,39 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setFsync(java.lang.Boolean)">setFsync</a></span>(Boolean fsync)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setHost(java.lang.String)">setHost</a></span>(String host)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setMaxWaitTime(java.lang.Integer)">setMaxWaitTime</a></span>(Integer maxWaitTime)</nobr>
         
   </td></tr>
 
@@ -1865,7 +2104,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSlaveOk(boolean)">setSlaveOk</a></span>(boolean slaveOk)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSafe(java.lang.Boolean)">setSafe</a></span>(Boolean safe)</nobr>
         
   </td></tr>
 
@@ -1881,7 +2120,71 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSocketTimeout(int)">setSocketTimeout</a></span>(int socketTimeout)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSlaveOk(java.lang.Boolean)">setSlaveOk</a></span>(Boolean slaveOk)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setSocketTimeout(java.lang.Integer)">setSocketTimeout</a></span>(Integer socketTimeout)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setThreadsAllowedToBlockForConnectionMultiplier(java.lang.Integer)">setThreadsAllowedToBlockForConnectionMultiplier</a></span>(Integer threadsAllowedToBlockForConnectionMultiplier)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setW(java.lang.Integer)">setW</a></span>(Integer w)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#setWtimeout(java.lang.Integer)">setWtimeout</a></span>(Integer wtimeout)</nobr>
         
   </td></tr>
 

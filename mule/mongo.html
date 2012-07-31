@@ -803,7 +803,7 @@ specify which configuration to use.</p>
           <td class="jd-typecol"><nobr>
           xs:boolean</nobr></td>
           <td class="jd-linkcol"><nobr>autoConnectRetry</nobr></td>
-          <td class="jd-descrcol">false</td>
+          <td class="jd-descrcol"></td>
           <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>This controls whether the system retries automatically on connection errors.</td>
       </tr>
       
@@ -812,18 +812,37 @@ specify which configuration to use.</p>
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>connectTimeout</nobr></td>
-          <td class="jd-descrcol">0</td>
+          <td class="jd-descrcol"></td>
           <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The connection timeout in milliseconds; this is for establishing the socket connections (open).</td>
       </tr>
       
     
       <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
+          xs:int</nobr></td>
+          <td class="jd-linkcol"><nobr>connectionsPerHost</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The number of connections allowed per host (the pool size, per host)
+</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
           xs:string</nobr></td>
           <td class="jd-linkcol"><nobr>database</nobr></td>
           <td class="jd-descrcol">test</td>
           <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The database name of the Mongo server
 </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          xs:boolean</nobr></td>
+          <td class="jd-linkcol"><nobr>fsync</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Sets the fsync value of WriteConcern for the connection.</td>
       </tr>
       
     
@@ -840,6 +859,15 @@ specify which configuration to use.</p>
       <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
+          <td class="jd-linkcol"><nobr>maxWaitTime</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The max wait time for a blocking thread for a connection from the pool in ms.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>port</nobr></td>
           <td class="jd-descrcol">27017</td>
           <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The port of the Mongo server
@@ -847,11 +875,20 @@ specify which configuration to use.</p>
       </tr>
       
     
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          xs:boolean</nobr></td>
+          <td class="jd-linkcol"><nobr>safe</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>If the driver sends a getLastError command after every update to ensure it succeeded.</td>
+      </tr>
+      
+    
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:boolean</nobr></td>
           <td class="jd-linkcol"><nobr>slaveOk</nobr></td>
-          <td class="jd-descrcol">false</td>
+          <td class="jd-descrcol"></td>
           <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Specifies if the driver is allowed to read from secondaries or slaves.</td>
       </tr>
       
@@ -860,8 +897,36 @@ specify which configuration to use.</p>
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>socketTimeout</nobr></td>
-          <td class="jd-descrcol">0</td>
+          <td class="jd-descrcol"></td>
           <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The socket timeout.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          xs:int</nobr></td>
+          <td class="jd-linkcol"><nobr>threadsAllowedToBlockForConnectionMultiplier</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Multiplier for connectionsPerHost for # of threads that can block
+</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          xs:int</nobr></td>
+          <td class="jd-linkcol"><nobr>w</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>If set, the w value of WriteConcern for the connection is set to this.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          xs:int</nobr></td>
+          <td class="jd-linkcol"><nobr>wtimeout</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>If set, the wtimeout value of WriteConcern for the connection is set to this.</td>
       </tr>
       
     
@@ -2089,7 +2154,7 @@ attribute on each operation.</p>
                 
                 <tr class="alt-color api apilevel-" >
                     <td class="jd-linkcol"><nobr>query</nobr></td>
-                    <td class="jd-descrcol">#[payload]</td>
+                    <td class="jd-descrcol"></td>
                     <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The optional DBObject query object. If unspecified, all
             documents are returned.</td>
                 </tr>
