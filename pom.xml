@@ -17,6 +17,9 @@
 
     <properties>
         <mongo.version>2.5</mongo.version>
+        <category>Community</category>
+        <licensePath>LICENSE.md</licensePath>
+        <devkit.studio.package.skip>false</devkit.studio.package.skip>
     </properties>
 
     <dependencies>
