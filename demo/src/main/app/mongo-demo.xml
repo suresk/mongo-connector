@@ -6,7 +6,7 @@ http://www.mulesoft.org/schema/mule/mongo http://www.mulesoft.org/schema/mule/mo
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd ">
-    <mongo:config name="Mongo_DB" username="${jira.username}" password="${jira.password}" doc:name="Mongo DB"/>
+    <mongo:config name="Mongo_DB" username="${username}" password="${password}" doc:name="Mongo DB"/>
     <flow name="mongo-demo" doc:name="mongo-demo">
         <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" doc:name="HTTP"/>
         <mongo:create-collection config-ref="Mongo_DB" collection="movies" doc:name="Create movies collection"/>
