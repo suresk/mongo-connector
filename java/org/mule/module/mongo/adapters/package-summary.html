@@ -208,11 +208,19 @@
     <li class="selected api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/adapters/package-summary.html">org.mule.module.mongo.adapters</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/agents/package-summary.html">org.mule.module.mongo.agents</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/api/package-summary.html">org.mule.module.mongo.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/api/transformers/package-summary.html">org.mule.module.mongo.api.transformers</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/package-summary.html">org.mule.module.mongo.config</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/spring/package-summary.html">org.mule.module.mongo.config.spring</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/connectivity/package-summary.html">org.mule.module.mongo.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/process/package-summary.html">org.mule.module.mongo.process</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/processors/package-summary.html">org.mule.module.mongo.processors</a></li>
     <li class="api apilevel-">
@@ -227,9 +235,12 @@
     <li><h2>Classes</h2>
       <ul>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorCapabilitiesAdapter.html">MongoCloudConnectorCapabilitiesAdapter</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionManager.html">MongoCloudConnectorConnectionManager</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionManager.ConnectionKey.html">MongoCloudConnectorConnectionManager.ConnectionKey</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorLifecycleAdapter.html">MongoCloudConnectorLifecycleAdapter</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorMetadataAdapater.html">MongoCloudConnectorMetadataAdapater</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorProcessAdapter.html">MongoCloudConnectorProcessAdapter</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoObjectStoreCapabilitiesAdapter.html">MongoObjectStoreCapabilitiesAdapter</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoObjectStoreLifecycleAdapter.html">MongoObjectStoreLifecycleAdapter</a></li>
       </ul>
@@ -309,24 +320,36 @@
               <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorCapabilitiesAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a></td>
+              <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionIdentifierAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.api.Connection interface.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionManager.html">MongoCloudConnectorConnectionManager</a></td>
               <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionManager</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds connection management capabilities to the pojo.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionManager.ConnectionKey.html">MongoCloudConnectorConnectionManager.ConnectionKey</a></td>
               <td class="jd-descrcol" width="100%">A tuple of connection parameters
  
 &nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorLifecycleAdapter.html">MongoCloudConnectorLifecycleAdapter</a></td>
               <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
           </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorMetadataAdapater.html">MongoCloudConnectorMetadataAdapater</a></td>
+              <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorMetadataAdapater</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds support for querying metadata about the extension.&nbsp;</td>
+          </tr>
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorProcessAdapter.html">MongoCloudConnectorProcessAdapter</a></td>
+              <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorProcessAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that enables custom processing strategies.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoObjectStoreCapabilitiesAdapter.html">MongoObjectStoreCapabilitiesAdapter</a></td>
               <td class="jd-descrcol" width="100%">A <code>MongoObjectStoreCapabilitiesAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoObjectStore.html">MongoObjectStore</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoObjectStoreLifecycleAdapter.html">MongoObjectStoreLifecycleAdapter</a></td>
               <td class="jd-descrcol" width="100%">A <code>MongoObjectStoreLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoObjectStore.html">MongoObjectStore</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
           </tr>
