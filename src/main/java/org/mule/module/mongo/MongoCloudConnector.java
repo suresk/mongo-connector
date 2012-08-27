@@ -716,7 +716,7 @@ public class MongoCloudConnector
      * @param contentType the optional content type of the new file
      * @param metadata the optional {@link DBObject} metadata of the new content type
      * @return the new GridFSFile {@link DBObject}
-     * @throws IOException
+     * @throws IOException IOException
      */
     @Processor
     public DBObject createFileFromPayload(@Payload Object payload,
