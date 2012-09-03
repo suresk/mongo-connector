@@ -16,7 +16,7 @@
     <url>http://www.muleforge.org/projects/mule-module-mongo</url>
 
     <properties>
-        <mongo.version>2.5</mongo.version>
+        <mongo.version>2.8.0</mongo.version>
         <category>Community</category>
         <licensePath>LICENSE.md</licensePath>
         <devkit.studio.package.skip>false</devkit.studio.package.skip>

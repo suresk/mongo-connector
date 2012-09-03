@@ -14,6 +14,7 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
+import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 
 /**
@@ -23,6 +24,8 @@ public interface MongoClient
 {
 
     Collection<String> listCollections();
+
+    DBCollection getCollection(@NotNull String name);
 
     boolean existsCollection(@NotNull String name);
 

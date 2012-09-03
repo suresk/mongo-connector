@@ -12,6 +12,9 @@ import com.mongodb.*;
 import com.mongodb.util.JSON;
 import org.apache.commons.lang.Validate;
 import org.bson.types.BasicBSONList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.mule.api.ConnectionException;
 import org.mule.api.ConnectionExceptionCode;
 import org.mule.api.annotations.Configurable;
@@ -35,7 +38,17 @@ import org.mule.module.mongo.api.MongoClientAdaptor;
 import org.mule.module.mongo.api.MongoClientImpl;
 import org.mule.module.mongo.api.MongoCollection;
 import org.mule.module.mongo.api.WriteConcern;
+import org.mule.module.mongo.tools.BackupConstants;
+import org.mule.module.mongo.tools.BackupUtils;
+import org.mule.module.mongo.tools.BsonDumpWriter;
+import org.mule.module.mongo.tools.DumpWriter;
+import org.mule.module.mongo.tools.IncrementalMongoDump;
+import org.mule.module.mongo.tools.MongoDump;
+import org.mule.module.mongo.tools.MongoRestore;
+import org.mule.module.mongo.tools.RestoreFile;
+import org.mule.module.mongo.tools.ZipUtils;
 import org.mule.transformer.types.MimeTypes;
+import org.mule.util.FileUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -45,9 +58,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import static org.mule.module.mongo.api.DBObjects.adapt;
 import static org.mule.module.mongo.api.DBObjects.from;
@@ -64,8 +81,11 @@ import static org.mule.module.mongo.api.DBObjects.fromCommand;
 public class MongoCloudConnector
 {
 
+    private static final Logger logger = LoggerFactory.getLogger(MongoCloudConnector.class);
     private static final String CAPPED_DEFAULT_VALUE = "false";
     private static final String WRITE_CONCERN_DEFAULT_VALUE = "DATABASE_DEFAULT";
+    private static final String BACKUP_THREADS = "5";
+    private static final String DEFAULT_OUTPUT_DIRECTORY = "dump";
 
     /**
      * The host of the Mongo server, it can also be a list of comma separated hosts for replicas
@@ -167,6 +187,7 @@ public class MongoCloudConnector
     @Configurable
     @Optional
     public Boolean fsync;
+
 
     private MongoClient client;
 
@@ -922,6 +943,86 @@ public class MongoCloudConnector
     }
 
     /**
+     * Dump database
+     *
+     * <p/>
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:dump}
+     *
+     * @param outputDirectory output directory path
+     * @param outputName output name, if it's not specified the database name is used
+     * @param zip whether to zip the dump
+     * @param oplog whether to dump the oplog
+     * @param threads amount of threads to execute dump
+     * @throws IOException if an error occurs
+     */
+    @Processor
+    public void dump(@Optional @Default(DEFAULT_OUTPUT_DIRECTORY) String outputDirectory,
+                     @Optional String outputName,
+                     @Optional @Default("false") boolean zip,
+                     @Optional @Default("false") boolean oplog,
+                     @Optional @Default(BACKUP_THREADS) int threads) throws IOException
+    {
+        MongoDump mongoDump = new MongoDump(client);
+        mongoDump.setZip(zip);
+        if(oplog)
+        {
+            mongoDump.setOplog(oplog);
+            mongoDump.addDB(mongo.getDB(BackupConstants.ADMIN_DB));
+            mongoDump.addDB(mongo.getDB(BackupConstants.LOCAL_DB));
+        }
+        mongoDump.dump(outputDirectory, outputName != null? outputName : database, threads);
+    }
+
+    /**
+     * incremental dump
+     *
+     * <p/>
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:incremental-dump}
+     *
+     * @param outputDirectory output directory
+     * @param incrementalTimestampFile file that keeps track of the last timestamp processed
+     * @throws IOException if an error occurs
+     */
+    @Processor
+    public void incrementalDump(@Optional @Default(DEFAULT_OUTPUT_DIRECTORY) String outputDirectory,
+                                @Optional String incrementalTimestampFile) throws IOException
+    {
+        IncrementalMongoDump incrementalMongoDump = new IncrementalMongoDump();
+        incrementalMongoDump.addDB(mongo.getDB(BackupConstants.ADMIN_DB));
+        incrementalMongoDump.addDB(mongo.getDB(BackupConstants.LOCAL_DB));
+        incrementalMongoDump.setOutputDirectory(outputDirectory);
+        incrementalMongoDump.setIncrementalTimestampFile(incrementalTimestampFile);
+        incrementalMongoDump.dump(outputDirectory);
+    }
+
+
+    /**
+     * Restore dump
+     *
+     * <p/>
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:restore}
+     *
+     * @param inputPath input path
+     * @param drop whether to drop existing collections before restore
+     * @param oplogReplay whether to restore the oplog
+     * @param applyIncrementals whether to apply incremental dumps
+     * @throws IOException  if an error occurs
+     */
+    @Processor
+    public void restore(@Optional @Default(DEFAULT_OUTPUT_DIRECTORY) String inputPath,
+                        @Optional @Default("false") boolean drop,
+                        @Optional @Default("false") boolean oplogReplay,
+                        @Optional @Default("true") boolean applyIncrementals) throws IOException
+    {
+        MongoRestore mongoRestore = new MongoRestore(client);
+        mongoRestore.setDrop(drop);
+        mongoRestore.setOplogReplay(oplogReplay);
+        mongoRestore.setApplyIncrementals(applyIncrementals);
+        mongoRestore.restore(inputPath);
+    }
+
+
+    /**
      * Convert JSON to DBObject.
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:jsonToDbobject}
@@ -998,6 +1099,8 @@ public class MongoCloudConnector
         return ((DBObject) input).toMap();
     }
 
+    private Mongo mongo;
+
     /**
      * Method invoked when a {@link MongoSession} needs to be created.  
      * 
@@ -1014,22 +1117,55 @@ public class MongoCloudConnector
         {
             MongoOptions options = new MongoOptions();
 
-            if (connectionsPerHost != null) options.connectionsPerHost = connectionsPerHost;
-            if (threadsAllowedToBlockForConnectionMultiplier != null) options.threadsAllowedToBlockForConnectionMultiplier = threadsAllowedToBlockForConnectionMultiplier;
-            if (maxWaitTime != null) options.maxWaitTime = maxWaitTime;
-            if (connectTimeout != null) options.connectTimeout = connectTimeout;
-            if (socketTimeout != null) options.socketTimeout = socketTimeout;
-            if (autoConnectRetry != null) options.autoConnectRetry = autoConnectRetry;
-            if (slaveOk != null) options.slaveOk = slaveOk;
-            if (safe != null) options.safe = safe;
-            if (w != null) options.w = w;
-            if (wtimeout != null) options.wtimeout = wtimeout;
-            if (fsync != null) options.fsync = fsync;
+            if (connectionsPerHost != null)
+            {
+                options.connectionsPerHost = connectionsPerHost;
+            }
+            if (threadsAllowedToBlockForConnectionMultiplier != null)
+            {
+                options.threadsAllowedToBlockForConnectionMultiplier = threadsAllowedToBlockForConnectionMultiplier;
+            }
+            if (maxWaitTime != null)
+            {
+                options.maxWaitTime = maxWaitTime;
+            }
+            if (connectTimeout != null)
+            {
+                options.connectTimeout = connectTimeout;
+            }
+            if (socketTimeout != null)
+            {
+                options.socketTimeout = socketTimeout;
+            }
+            if (autoConnectRetry != null)
+            {
+                options.autoConnectRetry = autoConnectRetry;
+            }
+            if (slaveOk != null)
+            {
+                options.slaveOk = slaveOk;
+            }
+            if (safe != null)
+            {
+                options.safe = safe;
+            }
+            if (w != null)
+            {
+                options.w = w;
+            }
+            if (wtimeout != null)
+            {
+                options.wtimeout = wtimeout;
+            }
+            if (fsync != null)
+            {
+                options.fsync = fsync;
+            }
 
             String[] hosts = host.split(",\\s?");
             if (hosts.length == 1)
             {
-                db = getDatabase(new Mongo(new ServerAddress(host, port), options), username, password);
+                mongo = new Mongo(new ServerAddress(host, port), options);
             }
             else
             {
@@ -1038,9 +1174,9 @@ public class MongoCloudConnector
                 {
                     servers.add(new ServerAddress(host, port));
                 }
-                Mongo mongo = new Mongo(servers, options);
-                db = getDatabase(mongo, username, password);
+                mongo = new Mongo(servers, options);
             }
+            db = getDatabase(mongo, username, password);
         }
         catch (UnknownHostException e)
         {

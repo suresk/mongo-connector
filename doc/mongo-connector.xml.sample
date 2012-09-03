@@ -240,6 +240,18 @@
         </mongo:find-one-file-using-query-map>
 <!-- END_INCLUDE(mongo:find-one-file-using-query-map) -->
 
+<!-- BEGIN_INCLUDE(mongo:dump) -->
+        <mongo:dump oplog="true"/>
+<!-- END_INCLUDE(mongo:dump) -->
+
+<!-- BEGIN_INCLUDE(mongo:restore) -->
+        <mongo:restore inputPath="dump/test.zip" oplogReplay="true"/>
+<!-- END_INCLUDE(mongo:restore) -->
+
+<!-- BEGIN_INCLUDE(mongo:incremental-dump) -->
+        <mongo:incremental-dump />
+<!-- END_INCLUDE(mongo:incremental-dump) -->
+
 <!-- BEGIN_INCLUDE(mongo:jsonToDbobject) -->
         <mongo:json-to-dbobject />
 <!-- END_INCLUDE(mongo:jsonToDbobject) -->

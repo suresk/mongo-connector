@@ -58,6 +58,13 @@ public class MongoClientImpl implements MongoClient
         openSession().createCollection(collection, options);
     }
 
+    public DBCollection getCollection(@NotNull String collection)
+    {
+        Validate.notNull(collection);
+        return openSession().getCollection(collection);
+    }
+
+
     public void dropCollection(@NotNull String collection)
     {
         Validate.notNull(collection);
@@ -261,6 +268,7 @@ public class MongoClientImpl implements MongoClient
     {
         db.requestStart();
         db.requestEnsureConnection();
+        db.getCollection("").dropIndexes();
         return db;
     }
 
