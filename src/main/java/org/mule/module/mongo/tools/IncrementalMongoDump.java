@@ -20,13 +20,13 @@ public class IncrementalMongoDump extends AbstractMongoUtility
 {
     private Map<String, DB> dbs = new HashMap<String, DB>();
     private String incrementalTimestampFile;
-    private String outputDirectory;
 
-    public void dump(String outputDirectory) throws IOException
+    public void dump(String outputDirectory, String database) throws IOException
     {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         IncrementalOplogDump incrementalOplogDump = new IncrementalOplogDump();
         incrementalOplogDump.setOutputDirectory(outputDirectory);
+        incrementalOplogDump.setDatabase(database);
         incrementalOplogDump.setIncrementalTimestampFile(incrementalTimestampFile);
         incrementalOplogDump.setDBs(dbs);
         Future<Void> future = executor.submit(incrementalOplogDump);
@@ -41,10 +41,5 @@ public class IncrementalMongoDump extends AbstractMongoUtility
     public void setIncrementalTimestampFile(String incrementalTimestampFile)
     {
         this.incrementalTimestampFile = incrementalTimestampFile;
-    }
-
-    public void setOutputDirectory(String outputDirectory)
-    {
-        this.outputDirectory = outputDirectory;
     }
 }

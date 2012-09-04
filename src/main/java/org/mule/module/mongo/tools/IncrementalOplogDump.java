@@ -42,16 +42,19 @@ public class IncrementalOplogDump implements Callable<Void>
     private Map<String, DB> dbs = new HashMap<String, DB>();
     private String incrementalTimestampFile;
     private String outputDirectory;
+    private String database;
 
     public Void call() throws Exception
     {
-        dump(outputDirectory);
+        dump(outputDirectory, database);
         return null;
     }
 
-    private void dump(String outputDirectory) throws IOException
+    private void dump(String outputDirectory, String database) throws IOException
     {
         Validate.notNull(outputDirectory);
+        Validate.notNull(database);
+
         String incrementalFilePath = incrementalTimestampFile != null? incrementalTimestampFile :
                                      outputDirectory + File.separator + INCREMENTAL_LAST_TIMESTAMP;
         BSONTimestamp lastTimestamp = getLastTimestamp(incrementalFilePath);
@@ -60,7 +63,11 @@ public class IncrementalOplogDump implements Callable<Void>
         DBCursor oplogCursor;
         if(lastTimestamp != null)
         {
-            DBObject query = new BasicDBObject(BackupConstants.TS_FIELD, new BasicDBObject("$gt", lastTimestamp));
+            DBObject query = new BasicDBObject();
+            query.put(BackupConstants.TIMESTAMP_FIELD, new BasicDBObject("$gt", lastTimestamp));
+            // Filter only oplogs for given database
+            query.put(BackupConstants.NAMESPACE_FIELD, BackupUtils.getNamespacePattern(database));
+
             oplogCursor = oplogCollection.find(query);
             oplogCursor.addOption(Bytes.QUERYOPTION_OPLOGREPLAY);
         }
@@ -72,7 +79,6 @@ public class IncrementalOplogDump implements Callable<Void>
         DumpWriter dumpWriter = new BsonDumpWriter(outputDirectory);
         String oplogCollectionTimestamp = BackupConstants.OPLOG + appendTimestamp();
 
-        // TODO add error handling
         try
         {
             while(oplogCursor.hasNext())
@@ -156,5 +162,10 @@ public class IncrementalOplogDump implements Callable<Void>
     public void setOutputDirectory(String outputDirectory)
     {
         this.outputDirectory = outputDirectory;
+    }
+
+    public void setDatabase(String database)
+    {
+        this.database = database;
     }
 }

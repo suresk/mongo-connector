@@ -10,6 +10,7 @@
 package org.mule.module.mongo.tools;
 
 import java.io.File;
+import java.util.regex.Pattern;
 
 
 public class BackupUtils
@@ -45,6 +46,11 @@ public class BackupUtils
     public static String removeExtension(String path)
     {
         return path.substring(0, path.lastIndexOf("."));
+    }
+
+    public static Pattern getNamespacePattern(String database)
+    {
+        return Pattern.compile("^" + database + ".*");
     }
 
 }

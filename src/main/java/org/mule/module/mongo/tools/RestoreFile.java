@@ -24,7 +24,7 @@ import org.bson.BSONDecoder;
 import org.bson.BSONObject;
 import org.bson.BasicBSONObject;
 
-public class RestoreFile
+public class RestoreFile implements Comparable<RestoreFile>
 {
     private String collection;
     private File file;
@@ -68,4 +68,8 @@ public class RestoreFile
         return collection;
     }
 
+    public int compareTo(RestoreFile restoreFile)
+    {
+        return collection.compareTo(restoreFile.getCollection());
+    }
 }

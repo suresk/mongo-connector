@@ -943,17 +943,18 @@ public class MongoCloudConnector
     }
 
     /**
-     * Dump database
+     * Executes a dump of the database to the specified output directory. If no output directory is provided
+     * then the default /dump directory is used.
      *
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:dump}
      *
-     * @param outputDirectory output directory path
-     * @param outputName output name, if it's not specified the database name is used
-     * @param zip whether to zip the dump
-     * @param oplog whether to dump the oplog
-     * @param threads amount of threads to execute dump
-     * @throws IOException if an error occurs
+     * @param outputDirectory output directory path, if no output directory is provided the default /dump directory is assumed
+     * @param outputName output file name, if it's not specified the database name is used
+     * @param zip whether to zip the created dump file or not
+     * @param oplog point in time backup (requires an oplog)
+     * @param threads amount of threads to execute the dump
+     * @throws IOException if an error occurs during the dump
      */
     @Processor
     public void dump(@Optional @Default(DEFAULT_OUTPUT_DIRECTORY) String outputDirectory,
@@ -970,18 +971,18 @@ public class MongoCloudConnector
             mongoDump.addDB(mongo.getDB(BackupConstants.ADMIN_DB));
             mongoDump.addDB(mongo.getDB(BackupConstants.LOCAL_DB));
         }
-        mongoDump.dump(outputDirectory, outputName != null? outputName : database, threads);
+        mongoDump.dump(outputDirectory, database, outputName != null? outputName : database, threads);
     }
 
     /**
-     * incremental dump
+     * Executes an incremental dump of the database
      *
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:incremental-dump}
      *
-     * @param outputDirectory output directory
-     * @param incrementalTimestampFile file that keeps track of the last timestamp processed
-     * @throws IOException if an error occurs
+     * @param outputDirectory output directory path, if no output directory is provided the default /dump directory is assumed
+     * @param incrementalTimestampFile file that keeps track of the last timestamp processed, if no file is provided one is created on the output directory
+     * @throws IOException if an error occurs during the incremental dump
      */
     @Processor
     public void incrementalDump(@Optional @Default(DEFAULT_OUTPUT_DIRECTORY) String outputDirectory,
@@ -990,34 +991,31 @@ public class MongoCloudConnector
         IncrementalMongoDump incrementalMongoDump = new IncrementalMongoDump();
         incrementalMongoDump.addDB(mongo.getDB(BackupConstants.ADMIN_DB));
         incrementalMongoDump.addDB(mongo.getDB(BackupConstants.LOCAL_DB));
-        incrementalMongoDump.setOutputDirectory(outputDirectory);
         incrementalMongoDump.setIncrementalTimestampFile(incrementalTimestampFile);
-        incrementalMongoDump.dump(outputDirectory);
+        incrementalMongoDump.dump(outputDirectory, database);
     }
 
 
     /**
-     * Restore dump
+     * Takes the output from the dump and restores it. Indexes will be created on a restore.
+     * It only does inserts with the data to restore, if existing data is there, it will not be replaced.
      *
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:restore}
      *
-     * @param inputPath input path
+     * @param inputPath input path to the dump files, it can be a directory, a zip file or just a bson file
      * @param drop whether to drop existing collections before restore
-     * @param oplogReplay whether to restore the oplog
-     * @param applyIncrementals whether to apply incremental dumps
-     * @throws IOException  if an error occurs
+     * @param oplogReplay replay oplog for point-in-time restore
+     * @throws IOException  if an error occurs during restore of the database
      */
     @Processor
     public void restore(@Optional @Default(DEFAULT_OUTPUT_DIRECTORY) String inputPath,
                         @Optional @Default("false") boolean drop,
-                        @Optional @Default("false") boolean oplogReplay,
-                        @Optional @Default("true") boolean applyIncrementals) throws IOException
+                        @Optional @Default("false") boolean oplogReplay) throws IOException
     {
-        MongoRestore mongoRestore = new MongoRestore(client);
+        MongoRestore mongoRestore = new MongoRestore(client, database);
         mongoRestore.setDrop(drop);
         mongoRestore.setOplogReplay(oplogReplay);
-        mongoRestore.setApplyIncrementals(applyIncrementals);
         mongoRestore.restore(inputPath);
     }
 

@@ -24,12 +24,13 @@ public class MongoRestore extends AbstractMongoUtility
     private MongoClient mongoClient;
     private boolean drop;
     private boolean oplogReplay;
-    private boolean applyIncrementals;
+    private String database;
 
-    public MongoRestore(MongoClient mongoClient)
+    public MongoRestore(MongoClient mongoClient, String database)
     {
         Validate.notNull(mongoClient);
         this.mongoClient = mongoClient;
+        this.database = database;
     }
 
     public void restore(String inputPath) throws IOException
@@ -39,9 +40,9 @@ public class MongoRestore extends AbstractMongoUtility
         MongoRestoreDirectory mongoRestoreDirectory = new MongoRestoreDirectory();
         mongoRestoreDirectory.setInputPath(inputPath);
         mongoRestoreDirectory.setMongoClient(mongoClient);
+        mongoRestoreDirectory.setDatabase(database);
         mongoRestoreDirectory.setDrop(drop);
         mongoRestoreDirectory.setOplogReplay(oplogReplay);
-        mongoRestoreDirectory.setApplyIncrementals(applyIncrementals);
         Future<Void> future = executor.submit(mongoRestoreDirectory);
         propagateException(future);
     }
@@ -56,10 +57,4 @@ public class MongoRestore extends AbstractMongoUtility
     {
         this.oplogReplay = oplogReplay;
     }
-
-    public void setApplyIncrementals(boolean applyIncrementals)
-    {
-        this.applyIncrementals = applyIncrementals;
-    }
-
 }

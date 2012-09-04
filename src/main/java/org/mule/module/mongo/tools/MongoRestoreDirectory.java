@@ -17,11 +17,10 @@ import com.mongodb.DBObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.lang.Validate;
 
 public class MongoRestoreDirectory implements Callable<Void>
@@ -29,9 +28,8 @@ public class MongoRestoreDirectory implements Callable<Void>
     private MongoClient mongoClient;
     private boolean drop;
     private boolean oplogReplay;
-    private boolean applyIncrementals;
     private String inputPath;
-
+    private String database;
 
     public Void call() throws Exception
     {
@@ -43,7 +41,7 @@ public class MongoRestoreDirectory implements Callable<Void>
     {
         Validate.notNull(inputPath);
         List<RestoreFile> restoreFiles = getRestoreFiles(inputPath);
-        RestoreFile oplogRestore = null;
+        List<RestoreFile> oplogRestores = new ArrayList<RestoreFile>();
         for(RestoreFile restoreFile : restoreFiles)
         {
             if(!isOplog(restoreFile.getCollection()))
@@ -78,45 +76,67 @@ public class MongoRestoreDirectory implements Callable<Void>
             }
             else
             {
-                oplogRestore = restoreFile;
+                oplogRestores.add(restoreFile);
             }
         }
-        if((applyIncrementals || oplogReplay) && oplogRestore != null)
+        if(oplogReplay && !oplogRestores.isEmpty())
         {
-            mongoClient.executeComamnd(new BasicDBObject("applyOps", oplogRestore.getCollectionObjects().toArray()));
+            for(RestoreFile oplogRestore : oplogRestores)
+            {
+                mongoClient.executeComamnd(new BasicDBObject("applyOps", filterOplogForDatabase(oplogRestore).toArray()));
+            }
         }
-
     }
 
-
-        private List<RestoreFile> getRestoreFiles(String inputPath) throws IOException
+    private List<DBObject> filterOplogForDatabase(RestoreFile oplogFile) throws IOException
     {
-        List<RestoreFile> restoreFiles = new ArrayList<RestoreFile>();
-        File input = new File(inputPath);
+        List<DBObject> oplogEntries = oplogFile.getCollectionObjects();
+        List<DBObject> dbOplogEntries = new ArrayList<DBObject>();
+
+        for(DBObject oplogEntry : oplogEntries)
+        {
+            if(((String)oplogEntry.get(BackupConstants.NAMESPACE_FIELD)).startsWith(database + "."))
+            {
+                dbOplogEntries.add(oplogEntry);
+            }
+        }
+
+        return dbOplogEntries;
+    }
+
+    private void processRestoreFiles(File input, List<RestoreFile> restoreFiles) throws IOException
+    {
         if(ZipUtils.isZipFile(input))
         {
-            File unzippedFolder = new File(BackupUtils.removeExtension(inputPath));
+            File unzippedFolder = new File(BackupUtils.removeExtension(input.getPath()));
             org.mule.util.FileUtils.unzip(input, unzippedFolder);
             input = unzippedFolder;
         }
 
         if(input.isDirectory())
         {
-            for(Object file : FileUtils.listFiles(input, FileFilterUtils.suffixFileFilter("bson"), null))
+            for(File file : input.listFiles())
             {
-                restoreFiles.add(new RestoreFile((File)file));
+                processRestoreFiles(file, restoreFiles);
             }
         }
         else if(BackupUtils.isBsonFile(input))
         {
             restoreFiles.add(new RestoreFile(input));
         }
+    }
+
+    private List<RestoreFile> getRestoreFiles(String inputPath) throws IOException
+    {
+        List<RestoreFile> restoreFiles = new ArrayList<RestoreFile>();
+        processRestoreFiles(new File(inputPath), restoreFiles);
+        Collections.sort(restoreFiles);
         return restoreFiles;
     }
 
     private boolean isOplog(String collection)
     {
-        return collection.startsWith(BackupConstants.OPLOG + ".");
+        return collection.startsWith(BackupConstants.OPLOG);
     }
 
     public void setDrop(boolean drop)
@@ -129,11 +149,6 @@ public class MongoRestoreDirectory implements Callable<Void>
         this.oplogReplay = oplogReplay;
     }
 
-    public void setApplyIncrementals(boolean applyIncrementals)
-    {
-        this.applyIncrementals = applyIncrementals;
-    }
-
     public void setInputPath(String inputPath)
     {
         this.inputPath = inputPath;
@@ -143,4 +158,10 @@ public class MongoRestoreDirectory implements Callable<Void>
     {
         this.mongoClient = mongoClient;
     }
+
+    public void setDatabase(String database)
+    {
+        this.database = database;
+    }
+
 }

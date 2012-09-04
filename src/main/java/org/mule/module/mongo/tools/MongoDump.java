@@ -15,6 +15,7 @@ import com.mongodb.Bytes;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,6 +29,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.Validate;
@@ -49,14 +51,15 @@ public class MongoDump extends AbstractMongoUtility
         this.mongoClient = mongoClient;
     }
 
-    public void dump(String outputDirectory, String outputName, int threads) throws IOException
+    public void dump(String outputDirectory, String database, String outputName, int threads) throws IOException
     {
         Validate.notNull(outputDirectory);
         Validate.notNull(outputName);
+        Validate.notNull(database);
 
         outputName += appendTimestamp();
 
-        initOplog();
+        initOplog(database);
 
         Collection<String> collections = mongoClient.listCollections();
         if(collections != null)
@@ -88,7 +91,11 @@ public class MongoDump extends AbstractMongoUtility
                     dumpCollection.setName(BackupConstants.OPLOG);
                     dumpCollection.addOption(Bytes.QUERYOPTION_OPLOGREPLAY);
                     dumpCollection.addOption(Bytes.QUERYOPTION_SLAVEOK);
-                    dumpCollection.setQuery(new BasicDBObject(BackupConstants.TS_FIELD, new BasicDBObject("$gt", oplogStart)));
+                    DBObject query = new BasicDBObject();
+                    query.put(BackupConstants.TIMESTAMP_FIELD, new BasicDBObject("$gt", oplogStart));
+                    // Filter only oplogs for given database
+                    query.put(BackupConstants.NAMESPACE_FIELD, BackupUtils.getNamespacePattern(database));
+                    dumpCollection.setQuery(query);
                     dumpCollection.setDumpWriter(dumpWriter);
                     Future<Void> future = singleExecutor.submit(dumpCollection);
                     propagateException(future);
@@ -109,12 +116,14 @@ public class MongoDump extends AbstractMongoUtility
         }
     }
 
-    private void initOplog() throws IOException
+    private void initOplog(String database) throws IOException
     {
         if(oplog)
         {
             oplogCollection = new OplogCollection(dbs.get(BackupConstants.ADMIN_DB), dbs.get(BackupConstants.LOCAL_DB)).getOplogCollection();
-            DBCursor oplogCursor = oplogCollection.find();
+            // Filter for oplogs for the given database
+            DBObject query = new BasicDBObject(BackupConstants.NAMESPACE_FIELD, BackupUtils.getNamespacePattern(database));
+            DBCursor oplogCursor = oplogCollection.find(query);
             oplogCursor.sort(new BasicDBObject("$natural", -1));
             if(oplogCursor.hasNext())
             {

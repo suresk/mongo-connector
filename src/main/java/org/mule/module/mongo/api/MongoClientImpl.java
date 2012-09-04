@@ -268,7 +268,6 @@ public class MongoClientImpl implements MongoClient
     {
         db.requestStart();
         db.requestEnsureConnection();
-        db.getCollection("").dropIndexes();
         return db;
     }
 
