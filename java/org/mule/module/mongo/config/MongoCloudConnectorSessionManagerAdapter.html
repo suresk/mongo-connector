@@ -223,6 +223,8 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/processors/package-summary.html">org.mule.module.mongo.processors</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/tools/package-summary.html">org.mule.module.mongo.tools</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/transformers/package-summary.html">org.mule.module.mongo.transformers</a></li>
               </ul><br/>
             </div> <!-- end packages -->
@@ -257,6 +259,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexDefinitionParser.html">DropIndexDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexMessageProcessor.html">DropIndexMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DumpDefinitionParser.html">DumpDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandDefinitionParser.html">ExecuteCommandDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandMessageProcessor.html">ExecuteCommandMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExistsCollectionDefinitionParser.html">ExistsCollectionDefinitionParser</a></li>
@@ -281,6 +284,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentMessageProcessor.html">GetFileContentMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapDefinitionParser.html">GetFileContentUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapMessageProcessor.html">GetFileContentUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/IncrementalDumpDefinitionParser.html">IncrementalDumpDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/IndexOrderEnumTransformer.html">IndexOrderEnumTransformer</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectDefinitionParser.html">InsertObjectDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectFromMapDefinitionParser.html">InsertObjectFromMapDefinitionParser</a></li>
@@ -320,6 +324,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingMapQueryMessageProcessor.html">RemoveUsingMapQueryMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingQueryMapDefinitionParser.html">RemoveUsingQueryMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingQueryMapMessageProcessor.html">RemoveUsingQueryMapMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RestoreDefinitionParser.html">RestoreDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectDefinitionParser.html">SaveObjectDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapDefinitionParser.html">SaveObjectFromMapDefinitionParser</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapMessageProcessor.html">SaveObjectFromMapMessageProcessor</a></li>
@@ -709,7 +714,21 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#BACKUP_THREADS">BACKUP_THREADS</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#CAPPED_DEFAULT_VALUE">CAPPED_DEFAULT_VALUE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#DEFAULT_OUTPUT_DIRECTORY">DEFAULT_OUTPUT_DIRECTORY</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
@@ -1027,12 +1046,34 @@ org.mule.api.lifecycle.Stoppable
     
       <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          Logger</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#logger">logger</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
           public
           
           
           Integer</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#maxWaitTime">maxWaitTime</a></td>
           <td class="jd-descrcol" width="100%">The max wait time for a blocking thread for a connection from the pool in ms.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Mongo</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#mongo">mongo</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -1781,6 +1822,24 @@ From class
             
             
             
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#dump(java.lang.String, java.lang.String, boolean, boolean, int)">dump</a></span>(String outputDirectory, String outputName, boolean zip, boolean oplog, int threads)</nobr>
+        
+        <div class="jd-descrdiv">Executes a dump of the database to the specified output directory.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             DBObject</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -1795,7 +1854,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1815,7 +1874,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1835,7 +1894,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1855,7 +1914,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1873,7 +1932,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1891,7 +1950,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1909,7 +1968,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1927,7 +1986,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1945,7 +2004,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1963,7 +2022,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1979,7 +2038,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1995,7 +2054,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2011,7 +2070,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2027,7 +2086,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2046,7 +2105,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2065,7 +2124,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2081,7 +2140,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2097,7 +2156,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2113,7 +2172,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2129,7 +2188,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2145,7 +2204,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2161,7 +2220,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2177,7 +2236,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2193,7 +2252,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2209,7 +2268,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2221,6 +2280,27 @@ From class
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#getWtimeout()">getWtimeout</a></span>()</nobr>
         
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#incrementalDump(java.lang.String, java.lang.String)">incrementalDump</a></span>(String outputDirectory, String incrementalTimestampFile)</nobr>
+        
+        <div class="jd-descrdiv">Executes an incremental dump of the database
+
+ <p/>
+ </div>
+  
   </td></tr>
 
 
@@ -2492,6 +2572,24 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#restore(java.lang.String, boolean, boolean)">restore</a></span>(String inputPath, boolean drop, boolean oplogReplay)</nobr>
+        
+        <div class="jd-descrdiv">Takes the output from the dump and restores it.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)">saveObject</a></span>(String collection, DBObject element, <a href="../../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Inserts or updates an object based on its object _id.</div>
@@ -2500,7 +2598,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2518,7 +2616,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2534,7 +2632,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2550,7 +2648,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2566,7 +2664,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2582,7 +2680,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2598,7 +2696,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2614,7 +2712,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2630,7 +2728,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2646,7 +2744,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2662,7 +2760,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2678,7 +2776,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2694,7 +2792,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2710,7 +2808,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2726,7 +2824,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2742,7 +2840,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2760,7 +2858,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2781,7 +2879,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2802,7 +2900,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2820,7 +2918,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             

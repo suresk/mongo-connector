@@ -8,5 +8,6 @@ org.mule.module.mongo.config.spring
 org.mule.module.mongo.connectivity
 org.mule.module.mongo.process
 org.mule.module.mongo.processors
+org.mule.module.mongo.tools
 org.mule.module.mongo.transformers
 

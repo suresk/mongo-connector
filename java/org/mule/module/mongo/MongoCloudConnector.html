@@ -223,6 +223,8 @@
     <li class="api apilevel-">
   <a href="../../../../../java/org/mule/module/mongo/processors/package-summary.html">org.mule.module.mongo.processors</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/mongo/tools/package-summary.html">org.mule.module.mongo.tools</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../java/org/mule/module/mongo/transformers/package-summary.html">org.mule.module.mongo.transformers</a></li>
               </ul><br/>
             </div> <!-- end packages -->
@@ -526,7 +528,21 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#BACKUP_THREADS">BACKUP_THREADS</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#CAPPED_DEFAULT_VALUE">CAPPED_DEFAULT_VALUE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#DEFAULT_OUTPUT_DIRECTORY">DEFAULT_OUTPUT_DIRECTORY</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
@@ -634,12 +650,34 @@ Summary:
     
       <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          Logger</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#logger">logger</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
           public
           
           
           Integer</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#maxWaitTime">maxWaitTime</a></td>
           <td class="jd-descrcol" width="100%">The max wait time for a blocking thread for a connection from the pool in ms.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Mongo</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#mongo">mongo</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -1010,6 +1048,24 @@ Summary:
             
             
             
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#dump(java.lang.String, java.lang.String, boolean, boolean, int)">dump</a></span>(String outputDirectory, String outputName, boolean zip, boolean oplog, int threads)</nobr>
+        
+        <div class="jd-descrdiv">Executes a dump of the database to the specified output directory.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             DBObject</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -1024,7 +1080,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1044,7 +1100,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1064,7 +1120,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1084,7 +1140,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1102,7 +1158,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1120,7 +1176,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1138,7 +1194,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1156,7 +1212,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1174,7 +1230,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1192,7 +1248,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1208,7 +1264,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1224,7 +1280,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1240,7 +1296,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1256,7 +1312,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1275,7 +1331,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1294,7 +1350,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1310,7 +1366,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1326,7 +1382,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1342,7 +1398,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1358,7 +1414,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1374,7 +1430,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1390,7 +1446,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1406,7 +1462,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1422,7 +1478,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1438,7 +1494,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1450,6 +1506,27 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#getWtimeout()">getWtimeout</a></span>()</nobr>
         
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#incrementalDump(java.lang.String, java.lang.String)">incrementalDump</a></span>(String outputDirectory, String incrementalTimestampFile)</nobr>
+        
+        <div class="jd-descrdiv">Executes an incremental dump of the database
+
+ <p/>
+ </div>
+  
   </td></tr>
 
 
@@ -1721,6 +1798,24 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#restore(java.lang.String, boolean, boolean)">restore</a></span>(String inputPath, boolean drop, boolean oplogReplay)</nobr>
+        
+        <div class="jd-descrdiv">Takes the output from the dump and restores it.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)">saveObject</a></span>(String collection, DBObject element, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Inserts or updates an object based on its object _id.</div>
@@ -1729,7 +1824,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1747,7 +1842,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1763,7 +1858,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1779,7 +1874,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1795,7 +1890,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1811,7 +1906,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1827,7 +1922,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1843,7 +1938,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1859,7 +1954,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1875,7 +1970,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1891,7 +1986,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1907,7 +2002,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1923,7 +2018,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1939,7 +2034,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1955,7 +2050,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1971,7 +2066,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1989,7 +2084,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2010,7 +2105,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2031,7 +2126,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2049,7 +2144,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2336,6 +2431,45 @@ From class
 
 
 
+<A NAME="BACKUP_THREADS"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        String
+      </span>
+        BACKUP_THREADS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "5"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <A NAME="CAPPED_DEFAULT_VALUE"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -2366,6 +2500,45 @@ From class
         <span>
             
                 "false"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DEFAULT_OUTPUT_DIRECTORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        String
+      </span>
+        DEFAULT_OUTPUT_DIRECTORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "dump"
             
         </span>
         </div>
@@ -2640,6 +2813,36 @@ From class
 
 
 
+<A NAME="logger"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        Logger
+      </span>
+        logger
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
 <A NAME="maxWaitTime"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -2664,6 +2867,36 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>The max wait time for a blocking thread for a connection from the pool in ms.
 </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="mongo"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        Mongo
+      </span>
+        mongo
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     
     </div>
@@ -3572,6 +3805,76 @@ From class
         <tr>
           <th>index</td>
           <td>The name of the index to drop
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="dump(java.lang.String, java.lang.String, boolean, boolean, int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">dump</span>
+      <span class="normal">(String outputDirectory, String outputName, boolean zip, boolean oplog, int threads)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Executes a dump of the database to the specified output directory. If no output directory is provided
+ then the default /dump directory is used.
+
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>outputDirectory</td>
+          <td>Output directory path, if no output directory is provided the default /dump directory is assumed</td>
+        </tr>
+        <tr>
+          <th>outputName</td>
+          <td>Output file name, if it's not specified the database name is used</td>
+        </tr>
+        <tr>
+          <th>zip</td>
+          <td>Whether to zip the created dump file or not</td>
+        </tr>
+        <tr>
+          <th>oplog</td>
+          <td>Point in time backup (requires an oplog)</td>
+        </tr>
+        <tr>
+          <th>threads</td>
+          <td>Amount of threads to execute the dump</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>if an error occurs during the dump
 </td>
         </tr>
       </table>
@@ -4646,6 +4949,63 @@ From class
 </div>
 
 
+<A NAME="incrementalDump(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">incrementalDump</span>
+      <span class="normal">(String outputDirectory, String incrementalTimestampFile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Executes an incremental dump of the database
+
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>outputDirectory</td>
+          <td>Output directory path, if no output directory is provided the default /dump directory is assumed</td>
+        </tr>
+        <tr>
+          <th>incrementalTimestampFile</td>
+          <td>File that keeps track of the last timestamp processed, if no file is provided one is created on the output directory</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>if an error occurs during the incremental dump
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="insertObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -5327,6 +5687,68 @@ From class
         <tr>
           <th>writeConcern</td>
           <td>The write concern used to remove the object
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="restore(java.lang.String, boolean, boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">restore</span>
+      <span class="normal">(String inputPath, boolean drop, boolean oplogReplay)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Takes the output from the dump and restores it. Indexes will be created on a restore.
+ It only does inserts with the data to restore, if existing data is there, it will not be replaced.
+
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>inputPath</td>
+          <td>Input path to the dump files, it can be a directory, a zip file or just a bson file</td>
+        </tr>
+        <tr>
+          <th>drop</td>
+          <td>Whether to drop existing collections before restore</td>
+        </tr>
+        <tr>
+          <th>oplogReplay</td>
+          <td>Replay oplog for point-in-time restore</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>if an error occurs during restore of the database
 </td>
         </tr>
       </table>

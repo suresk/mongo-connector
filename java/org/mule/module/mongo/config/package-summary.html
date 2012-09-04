@@ -224,6 +224,8 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/processors/package-summary.html">org.mule.module.mongo.processors</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/tools/package-summary.html">org.mule.module.mongo.tools</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/transformers/package-summary.html">org.mule.module.mongo.transformers</a></li>
               </ul><br/>
             </div> <!-- end packages -->
@@ -258,6 +260,7 @@
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexDefinitionParser.html">DropIndexDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexMessageProcessor.html">DropIndexMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DumpDefinitionParser.html">DumpDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandDefinitionParser.html">ExecuteCommandDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandMessageProcessor.html">ExecuteCommandMessageProcessor</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/ExistsCollectionDefinitionParser.html">ExistsCollectionDefinitionParser</a></li>
@@ -282,6 +285,7 @@
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentMessageProcessor.html">GetFileContentMessageProcessor</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapDefinitionParser.html">GetFileContentUsingQueryMapDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapMessageProcessor.html">GetFileContentUsingQueryMapMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/IncrementalDumpDefinitionParser.html">IncrementalDumpDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/IndexOrderEnumTransformer.html">IndexOrderEnumTransformer</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectDefinitionParser.html">InsertObjectDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/InsertObjectFromMapDefinitionParser.html">InsertObjectFromMapDefinitionParser</a></li>
@@ -321,6 +325,7 @@
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingMapQueryMessageProcessor.html">RemoveUsingMapQueryMessageProcessor</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingQueryMapDefinitionParser.html">RemoveUsingQueryMapDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RemoveUsingQueryMapMessageProcessor.html">RemoveUsingQueryMapMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/RestoreDefinitionParser.html">RestoreDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectDefinitionParser.html">SaveObjectDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapDefinitionParser.html">SaveObjectFromMapDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapMessageProcessor.html">SaveObjectFromMapMessageProcessor</a></li>
@@ -496,100 +501,108 @@
               <td class="jd-descrcol" width="100%">DropIndexMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#dropIndex(java.lang.String, java.lang.String)">dropIndex(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/DumpDefinitionParser.html">DumpDefinitionParser</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandDefinitionParser.html">ExecuteCommandDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/ExecuteCommandMessageProcessor.html">ExecuteCommandMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">ExecuteCommandMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#executeCommand(java.lang.String, java.lang.String)">executeCommand(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/ExistsCollectionDefinitionParser.html">ExistsCollectionDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/ExistsCollectionMessageProcessor.html">ExistsCollectionMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">ExistsCollectionMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#existsCollection(java.lang.String)">existsCollection(java.lang.String)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesDefinitionParser.html">FindFilesDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesMessageProcessor.html">FindFilesMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindFilesMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findFiles(com.mongodb.DBObject)">findFiles(com.mongodb.DBObject)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesUsingQueryMapDefinitionParser.html">FindFilesUsingQueryMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindFilesUsingQueryMapMessageProcessor.html">FindFilesUsingQueryMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindFilesUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findFilesUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">findFilesUsingQueryMap(java.util.Map)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsDefinitionParser.html">FindObjectsDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsMessageProcessor.html">FindObjectsMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindObjectsMessageProcessor invokes the org.mule.module.mongo.MongoCloudConnector#findObjects(java.lang.String, com.mongodb.DBObject, java.util.List) method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsUsingQueryMapDefinitionParser.html">FindObjectsUsingQueryMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindObjectsUsingQueryMapMessageProcessor.html">FindObjectsUsingQueryMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindObjectsUsingQueryMapMessageProcessor invokes the org.mule.module.mongo.MongoCloudConnector#findObjectsUsingQueryMap(java.lang.String, java.util.Map, java.util.List) method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileDefinitionParser.html">FindOneFileDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileMessageProcessor.html">FindOneFileMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindOneFileMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findOneFile(com.mongodb.DBObject)">findOneFile(com.mongodb.DBObject)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileUsingQueryMapDefinitionParser.html">FindOneFileUsingQueryMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneFileUsingQueryMapMessageProcessor.html">FindOneFileUsingQueryMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindOneFileUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findOneFileUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">findOneFileUsingQueryMap(java.util.Map)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectDefinitionParser.html">FindOneObjectDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectMessageProcessor.html">FindOneObjectMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindOneObjectMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findOneObject(java.lang.String, com.mongodb.DBObject, java.util.List<java.lang.String>)">findOneObject(java.lang.String, com.mongodb.DBObject, java.util.List)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectUsingQueryMapDefinitionParser.html">FindOneObjectUsingQueryMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/FindOneObjectUsingQueryMapMessageProcessor.html">FindOneObjectUsingQueryMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">FindOneObjectUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#findOneObjectUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.List<java.lang.String>)">findOneObjectUsingQueryMap(java.lang.String, java.util.Map, java.util.List)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentDefinitionParser.html">GetFileContentDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentMessageProcessor.html">GetFileContentMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">GetFileContentMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#getFileContent(com.mongodb.DBObject)">getFileContent(com.mongodb.DBObject)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapDefinitionParser.html">GetFileContentUsingQueryMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/GetFileContentUsingQueryMapMessageProcessor.html">GetFileContentUsingQueryMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">GetFileContentUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#getFileContentUsingQueryMap(java.util.Map<java.lang.String, java.lang.Object>)">getFileContentUsingQueryMap(java.util.Map)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/IncrementalDumpDefinitionParser.html">IncrementalDumpDefinitionParser</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/IndexOrderEnumTransformer.html">IndexOrderEnumTransformer</a></td>
@@ -748,62 +761,66 @@
               <td class="jd-descrcol" width="100%">RemoveUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#removeUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)">removeUsingQueryMap(java.lang.String, java.util.Map, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/RestoreDefinitionParser.html">RestoreDefinitionParser</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectDefinitionParser.html">SaveObjectDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapDefinitionParser.html">SaveObjectFromMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectFromMapMessageProcessor.html">SaveObjectFromMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">SaveObjectFromMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#saveObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)">saveObjectFromMap(java.lang.String, java.util.Map, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/SaveObjectMessageProcessor.html">SaveObjectMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">SaveObjectMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)">saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionDefinitionParser.html">UpdateObjectsByFunctionDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionMessageProcessor.html">UpdateObjectsByFunctionMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">UpdateObjectsByFunctionMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunction(java.lang.String, java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunction(java.lang.String, java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionUsingMapDefinitionParser.html">UpdateObjectsByFunctionUsingMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsByFunctionUsingMapMessageProcessor.html">UpdateObjectsByFunctionUsingMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">UpdateObjectsByFunctionUsingMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunctionUsingMap(java.lang.String, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunctionUsingMap(java.lang.String, java.lang.String, java.util.Map, java.util.Map, boolean, boolean, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsDefinitionParser.html">UpdateObjectsDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsMessageProcessor.html">UpdateObjectsMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">UpdateObjectsMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#updateObjects(java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjects(java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingMapDefinitionParser.html">UpdateObjectsUsingMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingMapMessageProcessor.html">UpdateObjectsUsingMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">UpdateObjectsUsingMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#updateObjectsUsingMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsUsingMap(java.lang.String, java.util.Map, java.util.Map, boolean, boolean, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingQueryMapDefinitionParser.html">UpdateObjectsUsingQueryMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/UpdateObjectsUsingQueryMapMessageProcessor.html">UpdateObjectsUsingQueryMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">UpdateObjectsUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#updateObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsUsingQueryMap(java.lang.String, java.util.Map, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/WriteConcernEnumTransformer.html">WriteConcernEnumTransformer</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
