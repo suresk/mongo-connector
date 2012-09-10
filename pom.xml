@@ -43,6 +43,13 @@
             <version>${mongo.version}</version>
         </dependency>
 
+	<!-- Eclipse support -->
+	<dependency>
+           <groupId>eclipse</groupId>
+           <artifactId>eclipse-runtime</artifactId>
+           <version>2.1.0</version>
+        </dependency>
+
     </dependencies>
 
     <repositories>
