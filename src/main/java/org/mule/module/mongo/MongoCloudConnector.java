@@ -8,12 +8,10 @@
 
 package org.mule.module.mongo;
 
-import com.mongodb.*;
-import com.mongodb.util.JSON;
-import org.apache.commons.lang.Validate;
-import org.bson.types.BasicBSONList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.mule.module.mongo.api.DBObjects.adapt;
+import static org.mule.module.mongo.api.DBObjects.from;
+import static org.mule.module.mongo.api.DBObjects.fromCommand;
+import static org.mule.module.mongo.api.DBObjects.fromFunction;
 
 import org.mule.api.ConnectionException;
 import org.mule.api.ConnectionExceptionCode;
@@ -39,16 +37,18 @@ import org.mule.module.mongo.api.MongoClientImpl;
 import org.mule.module.mongo.api.MongoCollection;
 import org.mule.module.mongo.api.WriteConcern;
 import org.mule.module.mongo.tools.BackupConstants;
-import org.mule.module.mongo.tools.BackupUtils;
-import org.mule.module.mongo.tools.BsonDumpWriter;
-import org.mule.module.mongo.tools.DumpWriter;
 import org.mule.module.mongo.tools.IncrementalMongoDump;
 import org.mule.module.mongo.tools.MongoDump;
 import org.mule.module.mongo.tools.MongoRestore;
-import org.mule.module.mongo.tools.RestoreFile;
-import org.mule.module.mongo.tools.ZipUtils;
 import org.mule.transformer.types.MimeTypes;
-import org.mule.util.FileUtils;
+
+import com.mongodb.DB;
+import com.mongodb.DBObject;
+import com.mongodb.Mongo;
+import com.mongodb.MongoException;
+import com.mongodb.MongoOptions;
+import com.mongodb.ServerAddress;
+import com.mongodb.util.JSON;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -58,18 +58,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
-import static org.mule.module.mongo.api.DBObjects.adapt;
-import static org.mule.module.mongo.api.DBObjects.from;
-import static org.mule.module.mongo.api.DBObjects.fromFunction;
-import static org.mule.module.mongo.api.DBObjects.fromCommand;
+import org.apache.commons.lang.Validate;
+import org.bson.types.BasicBSONList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * MongoDB is an open source, high-performance, schema-free, document-oriented database that manages collections of
@@ -1104,83 +1100,97 @@ public class MongoCloudConnector
      * 
      * @param username the username to use for authentication. NOTE: Please use a dummy user if you have disabled Mongo authentication
      * @param password the password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication
+     * @param client the client to use in connector. If null then use default impl {@link MongoClientImpl}
+     * 
      * @return the newly created {@link MongoSession}
      * @throws org.mule.api.ConnectionException
      */
     @Connect
-    public void connect(@ConnectionKey String username, @Password String password) throws ConnectionException
+    public void connect(@ConnectionKey String username, @Password String password, @Optional org.mule.module.mongo.api.MongoClient client) throws ConnectionException
     {
-        DB db = null;
         try
         {
-            MongoOptions options = new MongoOptions();
-
-            if (connectionsPerHost != null)
+            if (client == null)
             {
-                options.connectionsPerHost = connectionsPerHost;
-            }
-            if (threadsAllowedToBlockForConnectionMultiplier != null)
-            {
-                options.threadsAllowedToBlockForConnectionMultiplier = threadsAllowedToBlockForConnectionMultiplier;
-            }
-            if (maxWaitTime != null)
-            {
-                options.maxWaitTime = maxWaitTime;
-            }
-            if (connectTimeout != null)
-            {
-                options.connectTimeout = connectTimeout;
-            }
-            if (socketTimeout != null)
-            {
-                options.socketTimeout = socketTimeout;
-            }
-            if (autoConnectRetry != null)
-            {
-                options.autoConnectRetry = autoConnectRetry;
-            }
-            if (slaveOk != null)
-            {
-                options.slaveOk = slaveOk;
-            }
-            if (safe != null)
-            {
-                options.safe = safe;
-            }
-            if (w != null)
-            {
-                options.w = w;
-            }
-            if (wtimeout != null)
-            {
-                options.wtimeout = wtimeout;
-            }
-            if (fsync != null)
-            {
-                options.fsync = fsync;
-            }
-
-            String[] hosts = host.split(",\\s?");
-            if (hosts.length == 1)
-            {
-                mongo = new Mongo(new ServerAddress(host, port), options);
-            }
-            else
-            {
-                List servers = new ArrayList<ServerAddress>();
-                for (String host : hosts)
+                MongoOptions options = createOptions();
+                String[] hosts = host.split(",\\s?");
+                if (hosts.length == 1)
                 {
-                    servers.add(new ServerAddress(host, port));
+                    mongo = new Mongo(new ServerAddress(host, port), options);
                 }
-                mongo = new Mongo(servers, options);
+                else
+                {
+                    List<ServerAddress> servers = new ArrayList<ServerAddress>();
+                    for (String host : hosts)
+                    {
+                        servers.add(new ServerAddress(host, port));
+                    }
+                    mongo = new Mongo(servers, options);
+                }
+                DB db = createDatabase(mongo, username, password);
+                this.client = new MongoClientImpl(db);
+            } 
+            else 
+            {
+                this.client = client;
             }
-            db = getDatabase(mongo, username, password);
+            
         }
         catch (UnknownHostException e)
         {
             throw new ConnectionException(ConnectionExceptionCode.UNKNOWN_HOST, null, e.getMessage());
         }
-        this.client = new MongoClientImpl(db);
+    }
+
+    private MongoOptions createOptions()
+    {
+        MongoOptions options = new MongoOptions();
+
+        if (connectionsPerHost != null)
+        {
+            options.connectionsPerHost = connectionsPerHost;
+        }
+        if (threadsAllowedToBlockForConnectionMultiplier != null)
+        {
+            options.threadsAllowedToBlockForConnectionMultiplier = threadsAllowedToBlockForConnectionMultiplier;
+        }
+        if (maxWaitTime != null)
+        {
+            options.maxWaitTime = maxWaitTime;
+        }
+        if (connectTimeout != null)
+        {
+            options.connectTimeout = connectTimeout;
+        }
+        if (socketTimeout != null)
+        {
+            options.socketTimeout = socketTimeout;
+        }
+        if (autoConnectRetry != null)
+        {
+            options.autoConnectRetry = autoConnectRetry;
+        }
+        if (slaveOk != null)
+        {
+            options.slaveOk = slaveOk;
+        }
+        if (safe != null)
+        {
+            options.safe = safe;
+        }
+        if (w != null)
+        {
+            options.w = w;
+        }
+        if (wtimeout != null)
+        {
+            options.wtimeout = wtimeout;
+        }
+        if (fsync != null)
+        {
+            options.fsync = fsync;
+        }
+        return options;
     }
 
     /**
@@ -1202,7 +1212,7 @@ public class MongoCloudConnector
         return "unknown";
     }
 
-    private DB getDatabase(Mongo mongo, String username, String password)
+    private DB createDatabase(Mongo mongo, String username, String password)
     {
         DB db = mongo.getDB(database);
         if (password != null)
