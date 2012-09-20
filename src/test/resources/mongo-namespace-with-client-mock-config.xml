@@ -14,13 +14,15 @@
                           http://www.mulesoft.org/schema/mule/mongo http://www.mulesoft.org/schema/mule/mongo/2.0/mule-mongo.xsd
                           ">
 
-		<spring:bean id="MongoClient" name="MongoClient"
+	<spring:beans>
+		<spring:bean id="mockClient" 
 			class="org.mule.module.mongo.config.MongoConnectorWithMockMongoClientTestCase"
 			factory-method="createMockClient" >
 		</spring:bean>
+	</spring:beans>
 
 	<mongo:config name="mongo" username="username" password="password"
-		client-ref="MongoClient" />
+		client-ref="mockClient" />
 
 	<flow name="ListCollections">
 		<mongo:list-collections />

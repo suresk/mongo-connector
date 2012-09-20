@@ -12,25 +12,9 @@
 
 package org.mule.module.mongo.config;
 
-import org.mule.MessageExchangePattern;
-import org.mule.api.MuleContext;
-import org.mule.api.MuleEvent;
-import org.mule.api.MuleException;
-import org.mule.api.MuleMessage;
-import org.mule.api.MuleSession;
-import org.mule.api.construct.FlowConstruct;
-import org.mule.api.security.Credentials;
-import org.mule.api.transformer.DataType;
-import org.mule.api.transformer.TransformerException;
-import org.mule.api.transport.ReplyToHandler;
 import org.mule.construct.Flow;
-import org.mule.management.stats.ProcessingTime;
 import org.mule.module.mongo.api.MongoClient;
 import org.mule.tck.junit4.FunctionalTestCase;
-
-import java.io.OutputStream;
-import java.net.URI;
-import java.util.Set;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -51,8 +35,8 @@ public class MongoConnectorWithMockMongoClientTestCase extends FunctionalTestCas
 
     @Test
     public void testSendMessageToFlow() throws Exception {
-        MuleEvent response = this.lookupFlowConstruct("ListCollections").process(getTestEvent(null));
-        Mockito.verify(client.listCollections());
+        this.lookupFlowConstruct("ListCollections").process(getTestEvent(null));
+        Mockito.verify(client).listCollections();
     }
     
     private Flow lookupFlowConstruct(String name) {

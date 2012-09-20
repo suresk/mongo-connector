@@ -68,8 +68,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * MongoDB is an open source, high-performance, schema-free, document-oriented database that manages collections of
- * BSON documents.
+ * MongoDB is an open source, high-performance, schema-free, document-oriented
+ * database that manages collections of BSON documents.
  * 
  * @author MuleSoft, inc.
  */
@@ -84,7 +84,8 @@ public class MongoCloudConnector
     private static final String DEFAULT_OUTPUT_DIRECTORY = "dump";
 
     /**
-     * The host of the Mongo server, it can also be a list of comma separated hosts for replicas
+     * The host of the Mongo server, it can also be a list of comma separated hosts
+     * for replicas
      */
     @Configurable
     @Optional
@@ -129,7 +130,8 @@ public class MongoCloudConnector
     public Integer maxWaitTime;
 
     /**
-     * The connection timeout in milliseconds; this is for establishing the socket connections (open). 0 is default and infinite.
+     * The connection timeout in milliseconds; this is for establishing the socket
+     * connections (open). 0 is default and infinite.
      */
     @Configurable
     @Optional
@@ -157,7 +159,8 @@ public class MongoCloudConnector
     private Boolean slaveOk;
 
     /**
-     * If the driver sends a getLastError command after every update to ensure it succeeded.
+     * If the driver sends a getLastError command after every update to ensure it
+     * succeeded.
      */
     @Configurable
     @Optional
@@ -184,7 +187,11 @@ public class MongoCloudConnector
     @Optional
     public Boolean fsync;
 
-
+    /**
+     * If set, the client to use in module
+     */
+    @Configurable
+    @Optional
     private MongoClient client;
 
     /**
@@ -253,7 +260,7 @@ public class MongoCloudConnector
      * Inserts an object in a collection, setting its id if necessary.
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:insert-object}
-     *
+     * 
      * @param collection the name of the collection where to insert the given object
      * @param dbObject a {@link DBObject} instance.
      * @param writeConcern the optional write concern of insertion
@@ -276,7 +283,6 @@ public class MongoCloudConnector
      * {@sample.xml ../../../doc/mongo-connector.xml.sample
      * mongo:insert-object-from-map}
      * 
-     *
      * @param collection the name of the collection where to insert the given object
      * @param elementAttributes alternative way of specifying the element as a
      *            literal Map inside a Mule Flow
@@ -318,13 +324,14 @@ public class MongoCloudConnector
     {
         client.updateObjects(collection, query, element, upsert, multi, writeConcern);
     }
-    
+
     /**
      * Updates objects that matches the given query. If parameter multi is set to
      * false, only the first document matching it will be updated. Otherwise, all the
      * documents matching it will be updated.
      * <p/>
-     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:update-objects-using-query-map}
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample
+     * mongo:update-objects-using-query-map}
      * 
      * @param collection the name of the collection to update
      * @param queryAttributes the query object used to detect the element to update.
@@ -337,13 +344,14 @@ public class MongoCloudConnector
      */
     @Processor
     public void updateObjectsUsingQueryMap(String collection,
-    						  Map<String, Object> queryAttributes,
-                              DBObject element,
-                              @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
-                              @Optional @Default("true") boolean multi,
-                              @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
+                                           Map<String, Object> queryAttributes,
+                                           DBObject element,
+                                           @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
+                                           @Optional @Default("true") boolean multi,
+                                           @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
-        client.updateObjects(collection, (DBObject) adapt(queryAttributes), element, upsert, multi, writeConcern);
+        client.updateObjects(collection, (DBObject) adapt(queryAttributes), element, upsert, multi,
+            writeConcern);
     }
 
     /**
@@ -371,15 +379,15 @@ public class MongoCloudConnector
                                       @Optional @Default("true") boolean multi,
                                       @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
-        client.updateObjects(collection, (DBObject) adapt(queryAttributes), (DBObject) adapt(elementAttributes), upsert, multi,
-            writeConcern);
+        client.updateObjects(collection, (DBObject) adapt(queryAttributes),
+            (DBObject) adapt(elementAttributes), upsert, multi, writeConcern);
     }
-    
+
     /**
      * Update objects using a mongo function
-     * 
      * <p/>
-     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:update-objects-by-function}
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample
+     * mongo:update-objects-by-function}
      * 
      * @param collection the name of the collection to update
      * @param function the function used to execute the update
@@ -391,27 +399,26 @@ public class MongoCloudConnector
      * @param multi if all or just the first object matching the query will be
      *            updated
      * @param writeConcern the write concern used to update
-     * 
      */
     @Processor
     public void updateObjectsByFunction(String collection,
-				    		  String function,
-				    		  DBObject query,	
-                              DBObject element,
-                              @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
-                              @Optional @Default(value="true")  boolean multi,
-                              @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
+                                        String function,
+                                        DBObject query,
+                                        DBObject element,
+                                        @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
+                                        @Optional @Default(value = "true") boolean multi,
+                                        @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
-    	DBObject functionDbObject = fromFunction(function, element);
-    	
+        DBObject functionDbObject = fromFunction(function, element);
+
         client.updateObjects(collection, query, functionDbObject, upsert, multi, writeConcern);
     }
-    
+
     /**
      * Update objects using a mongo function
-     * 
      * <p/>
-     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:update-objects-by-function-using-map}
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample
+     * mongo:update-objects-by-function-using-map}
      * 
      * @param collection the name of the collection to update
      * @param function the function used to execute the update
@@ -425,16 +432,17 @@ public class MongoCloudConnector
      */
     @Processor
     public void updateObjectsByFunctionUsingMap(String collection,
-                              String function,
-                              Map<String, Object> queryAttributes,
-                              Map<String, Object> elementAttributes,
-                              @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
-                              @Optional @Default(value="true")  boolean multi,
-                              @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
+                                                String function,
+                                                Map<String, Object> queryAttributes,
+                                                Map<String, Object> elementAttributes,
+                                                @Optional @Default(CAPPED_DEFAULT_VALUE) boolean upsert,
+                                                @Optional @Default(value = "true") boolean multi,
+                                                @Optional @Default(WRITE_CONCERN_DEFAULT_VALUE) WriteConcern writeConcern)
     {
-    	DBObject functionDbObject = fromFunction(function, (DBObject) adapt(elementAttributes));
-    	
-        client.updateObjects(collection, (DBObject) adapt(queryAttributes), functionDbObject, upsert, multi, writeConcern);
+        DBObject functionDbObject = fromFunction(function, (DBObject) adapt(elementAttributes));
+
+        client.updateObjects(collection, (DBObject) adapt(queryAttributes), functionDbObject, upsert, multi,
+            writeConcern);
     }
 
     /**
@@ -580,7 +588,8 @@ public class MongoCloudConnector
      * @return the amount of objects that matches the query
      */
     @Processor
-    public long countObjectsUsingQueryMap(String collection, @Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes)
+    public long countObjectsUsingQueryMap(String collection,
+                                          @Placement(group = "Query Attributes") @Optional Map<String, Object> queryAttributes)
     {
         return client.countObjects(collection, (DBObject) adapt(queryAttributes));
     }
@@ -649,7 +658,9 @@ public class MongoCloudConnector
      * @return a non-null {@link DBObject} that matches the query.
      */
     @Processor
-    public DBObject findOneObject(String collection, @Optional @Default("#[payload]") DBObject query, @Placement(group = "Fields") @Optional List<String> fields)
+    public DBObject findOneObject(String collection,
+                                  @Optional @Default("#[payload]") DBObject query,
+                                  @Placement(group = "Fields") @Optional List<String> fields)
     {
         return client.findOneObject(collection, query, fields);
 
@@ -778,7 +789,7 @@ public class MongoCloudConnector
      * @return a {@link DBObject} files iterable
      */
     @Processor
-    public Iterable<DBObject> findFiles(@Optional @Default("#[payload]")  DBObject query)
+    public Iterable<DBObject> findFiles(@Optional @Default("#[payload]") DBObject query)
     {
         return client.findFiles(from(query));
     }
@@ -900,7 +911,7 @@ public class MongoCloudConnector
      * @param query the {@link DBObject} optional query
      */
     @Processor
-    public void removeFiles(@Optional @Default("#[payload]")  DBObject query)
+    public void removeFiles(@Optional @Default("#[payload]") DBObject query)
     {
         client.removeFiles(from(query));
     }
@@ -919,10 +930,9 @@ public class MongoCloudConnector
     {
         client.removeFiles((DBObject) adapt(queryAttributes));
     }
-    
+
     /**
      * Executes a command on the database
-     * 
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:remove-files}
      * 
@@ -933,20 +943,21 @@ public class MongoCloudConnector
     @Processor
     public DBObject executeCommand(String commandName, @Optional String commandValue)
     {
-    	DBObject dbObject = fromCommand(commandName, commandValue);
-    	 
-    	return client.executeComamnd(dbObject);
+        DBObject dbObject = fromCommand(commandName, commandValue);
+
+        return client.executeComamnd(dbObject);
     }
 
     /**
-     * Executes a dump of the database to the specified output directory. If no output directory is provided
-     * then the default /dump directory is used.
-     *
+     * Executes a dump of the database to the specified output directory. If no
+     * output directory is provided then the default /dump directory is used.
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:dump}
-     *
-     * @param outputDirectory output directory path, if no output directory is provided the default /dump directory is assumed
-     * @param outputName output file name, if it's not specified the database name is used
+     * 
+     * @param outputDirectory output directory path, if no output directory is
+     *            provided the default /dump directory is assumed
+     * @param outputName output file name, if it's not specified the database name is
+     *            used
      * @param zip whether to zip the created dump file or not
      * @param oplog point in time backup (requires an oplog)
      * @param threads amount of threads to execute the dump
@@ -961,23 +972,25 @@ public class MongoCloudConnector
     {
         MongoDump mongoDump = new MongoDump(client);
         mongoDump.setZip(zip);
-        if(oplog)
+        if (oplog)
         {
             mongoDump.setOplog(oplog);
             mongoDump.addDB(mongo.getDB(BackupConstants.ADMIN_DB));
             mongoDump.addDB(mongo.getDB(BackupConstants.LOCAL_DB));
         }
-        mongoDump.dump(outputDirectory, database, outputName != null? outputName : database, threads);
+        mongoDump.dump(outputDirectory, database, outputName != null ? outputName : database, threads);
     }
 
     /**
      * Executes an incremental dump of the database
-     *
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:incremental-dump}
-     *
-     * @param outputDirectory output directory path, if no output directory is provided the default /dump directory is assumed
-     * @param incrementalTimestampFile file that keeps track of the last timestamp processed, if no file is provided one is created on the output directory
+     * 
+     * @param outputDirectory output directory path, if no output directory is
+     *            provided the default /dump directory is assumed
+     * @param incrementalTimestampFile file that keeps track of the last timestamp
+     *            processed, if no file is provided one is created on the output
+     *            directory
      * @throws IOException if an error occurs during the incremental dump
      */
     @Processor
@@ -991,18 +1004,18 @@ public class MongoCloudConnector
         incrementalMongoDump.dump(outputDirectory, database);
     }
 
-
     /**
-     * Takes the output from the dump and restores it. Indexes will be created on a restore.
-     * It only does inserts with the data to restore, if existing data is there, it will not be replaced.
-     *
+     * Takes the output from the dump and restores it. Indexes will be created on a
+     * restore. It only does inserts with the data to restore, if existing data is
+     * there, it will not be replaced.
      * <p/>
      * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:restore}
-     *
-     * @param inputPath input path to the dump files, it can be a directory, a zip file or just a bson file
+     * 
+     * @param inputPath input path to the dump files, it can be a directory, a zip
+     *            file or just a bson file
      * @param drop whether to drop existing collections before restore
      * @param oplogReplay replay oplog for point-in-time restore
-     * @throws IOException  if an error occurs during restore of the database
+     * @throws IOException if an error occurs during restore of the database
      */
     @Processor
     public void restore(@Optional @Default(DEFAULT_OUTPUT_DIRECTORY) String inputPath,
@@ -1014,7 +1027,6 @@ public class MongoCloudConnector
         mongoRestore.setOplogReplay(oplogReplay);
         mongoRestore.restore(inputPath);
     }
-
 
     /**
      * Convert JSON to DBObject.
@@ -1079,15 +1091,13 @@ public class MongoCloudConnector
     /**
      * Convert a DBObject into Map.
      * <p/>
-     * {@sample.xml ../../../doc/mongo-connector.xml.sample
-     * mongo:dbObjectToMap}
-     *
-     *
+     * {@sample.xml ../../../doc/mongo-connector.xml.sample mongo:dbObjectToMap}
+     * 
      * @param input the input for this transformer
      * @return the converted Map representation
      */
     @SuppressWarnings("rawtypes")
-	@Transformer(sourceTypes = {DBObject.class})
+    @Transformer(sourceTypes = {DBObject.class})
     public static Map dbObjectToMap(DBObject input)
     {
         return ((DBObject) input).toMap();
@@ -1096,17 +1106,19 @@ public class MongoCloudConnector
     private Mongo mongo;
 
     /**
-     * Method invoked when a {@link MongoSession} needs to be created.  
+     * Method invoked when a {@link MongoSession} needs to be created.
      * 
-     * @param username the username to use for authentication. NOTE: Please use a dummy user if you have disabled Mongo authentication
-     * @param password the password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication
-     * @param client the client to use in connector. If null then use default impl {@link MongoClientImpl}
-     * 
+     * @param username the username to use for authentication. NOTE: Please use a
+     *            dummy user if you have disabled Mongo authentication
+     * @param password the password to use for authentication. NOTE: Please use a
+     *            dummy password if you have disabled Mongo authentication
+     * @param client the client to use in connector. If null then use default impl
+     *            {@link MongoClientImpl}
      * @return the newly created {@link MongoSession}
      * @throws org.mule.api.ConnectionException
      */
     @Connect
-    public void connect(@ConnectionKey String username, @Password String password, @Optional org.mule.module.mongo.api.MongoClient client) throws ConnectionException
+    public void connect(@ConnectionKey String username, @Password String password) throws ConnectionException
     {
         try
         {
@@ -1129,12 +1141,7 @@ public class MongoCloudConnector
                 }
                 DB db = createDatabase(mongo, username, password);
                 this.client = new MongoClientImpl(db);
-            } 
-            else 
-            {
-                this.client = client;
             }
-            
         }
         catch (UnknownHostException e)
         {
@@ -1201,14 +1208,16 @@ public class MongoCloudConnector
     {
         this.client = null;
     }
-    
+
     @ValidateConnection
-    public boolean isConnected() {
+    public boolean isConnected()
+    {
         return this.client != null;
     }
-    
+
     @ConnectionIdentifier
-    public String connectionId() {
+    public String connectionId()
+    {
         return "unknown";
     }
 
@@ -1367,4 +1376,15 @@ public class MongoCloudConnector
     {
         this.fsync = fsync;
     }
+
+    public void setClient(MongoClient client)
+    {
+        this.client = client;
+    }
+
+    public MongoClient getClient()
+    {
+        return client;
+    }
+
 }
