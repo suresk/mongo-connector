@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
 
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
+import com.mongodb.WriteResult;
 
 /**
  * @author flbulgarelli
@@ -79,4 +80,7 @@ public interface MongoClient
     
     DBObject executeComamnd(DBObject command);
 
+    void addUser(String username, String password);
+
+    void dropDatabase();
 }

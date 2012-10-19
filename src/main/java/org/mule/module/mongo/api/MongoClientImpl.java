@@ -64,6 +64,18 @@ public class MongoClientImpl implements MongoClient
         return openSession().getCollection(collection);
     }
 
+    public void addUser(String username, String password) {
+        Validate.notNull(username);
+        Validate.notNull(password);
+        WriteResult writeResult = openSession().addUser(username, password.toCharArray());
+        if( !writeResult.getLastError().ok() ) {
+            throw new MongoException(writeResult.getLastError().getErrorMessage());
+        }
+    }
+
+    public void dropDatabase() {
+        openSession().dropDatabase();
+    }
 
     public void dropCollection(@NotNull String collection)
     {

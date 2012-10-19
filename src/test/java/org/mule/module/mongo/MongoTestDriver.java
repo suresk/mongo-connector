@@ -58,10 +58,9 @@ public class MongoTestDriver
     public void setup() throws Exception
     {
         connector = new MongoCloudConnector();
-        connector.setDatabase("mongo-connector-test");
         connector.setHost("127.0.0.1");
         connector.setPort(27017);
-        connector.connect("user", "pass");
+        connector.connect("user", "pass", "mongo-connector-test");
         connector.createCollection(MAIN_COLLECTION, false, 100, 1000);
     }
 

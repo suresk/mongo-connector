@@ -31,6 +31,14 @@
         <mongo:create-index collection="myCollection" field="myField" order="DESC"/>
 <!-- END_INCLUDE(mongo:create-index) -->
 
+<!-- BEGIN_INCLUDE(mongo:add-user) -->
+        <mongo:add-user newUsername="myUser" newPassword="myPassword"/>
+<!-- END_INCLUDE(mongo:add-user) -->
+
+<!-- BEGIN_INCLUDE(mongo:drop-database) -->
+        <mongo:drop-database/>
+<!-- END_INCLUDE(mongo:drop-database) -->
+
 <!-- BEGIN_INCLUDE(mongo:drop-index) -->
         <mongo:drop-index collection="myCollection" index="myIndex"/>
 <!-- END_INCLUDE(mongo:drop-index) -->
