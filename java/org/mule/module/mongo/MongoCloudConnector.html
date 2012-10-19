@@ -620,8 +620,7 @@ Summary:
           
           String</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#database">database</a></td>
-          <td class="jd-descrcol" width="100%">The database name of the Mongo server
-</td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -809,6 +808,26 @@ Summary:
             
             
             
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#addUser(java.lang.String, java.lang.String)">addUser</a></span>(String newUsername, String newPassword)</nobr>
+        
+        <div class="jd-descrdiv">Adds a new user for this db
+ <p/>
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
             static
             
             String</nobr>
@@ -822,7 +841,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -832,7 +851,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#connect(java.lang.String, java.lang.String)">connect</a></span>(String username, String password)</nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#connect(java.lang.String, java.lang.String, java.lang.String)">connect</a></span>(String username, String password, String database)</nobr>
         
         <div class="jd-descrdiv">Method invoked when a <code><a href="../../../../../java/org/mule/module/mongo/MongoSession.html">MongoSession</a></code> needs to be created.</div>
   
@@ -840,7 +859,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -856,7 +875,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -874,7 +893,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -892,7 +911,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -910,7 +929,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -929,7 +948,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -949,7 +968,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -967,7 +986,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -985,7 +1004,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1003,7 +1022,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1016,6 +1035,28 @@ Summary:
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#dropCollection(java.lang.String)">dropCollection</a></span>(String collection)</nobr>
         
         <div class="jd-descrdiv">Deletes a collection and all the objects it contains.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#dropDatabase()">dropDatabase</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Drop the current database
+ <p/>
+ 
+
+</div>
   
   </td></tr>
 
@@ -1072,7 +1113,7 @@ Summary:
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#executeCommand(java.lang.String, java.lang.String)">executeCommand</a></span>(String commandName, String commandValue)</nobr>
         
         <div class="jd-descrdiv">Executes a command on the database
- 
+ <p/>
  <p/>
  </div>
   
@@ -1523,7 +1564,7 @@ Summary:
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#incrementalDump(java.lang.String, java.lang.String)">incrementalDump</a></span>(String outputDirectory, String incrementalTimestampFile)</nobr>
         
         <div class="jd-descrdiv">Executes an incremental dump of the database
-
+ <p/>
  <p/>
  </div>
   
@@ -2097,7 +2138,7 @@ Summary:
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunction(java.lang.String, java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunction</a></span>(String collection, String function, DBObject query, DBObject element, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Update objects using a mongo function
- 
+ <p/>
  <p/>
  </div>
   
@@ -2118,7 +2159,7 @@ Summary:
         <span class="sympad"><a href="../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunctionUsingMap(java.lang.String, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunctionUsingMap</a></span>(String collection, String function, Map&lt;String,&nbsp;Object&gt; queryAttributes, Map&lt;String,&nbsp;Object&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Update objects using a mongo function
- 
+ <p/>
  <p/>
  </div>
   
@@ -2742,8 +2783,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The database name of the Mongo server
-</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     
     </div>
@@ -3176,6 +3216,53 @@ From class
 
 
 
+<A NAME="addUser(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">addUser</span>
+      <span class="normal">(String newUsername, String newPassword)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Adds a new user for this db
+ <p/>
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>newUsername</td>
+          <td>Name of the user</td>
+        </tr>
+        <tr>
+          <th>newPassword</td>
+          <td>Password that will be used for authentication
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="bsonListToJson(org.bson.types.BasicBSONList)"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -3223,7 +3310,7 @@ From class
 </div>
 
 
-<A NAME="connect(java.lang.String, java.lang.String)"></A>
+<A NAME="connect(java.lang.String, java.lang.String, java.lang.String)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3236,7 +3323,7 @@ From class
         void
       </span>
       <span class="sympad">connect</span>
-      <span class="normal">(String username, String password)</span>
+      <span class="normal">(String username, String password, String database)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3248,7 +3335,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Method invoked when a <code><a href="../../../../../java/org/mule/module/mongo/MongoSession.html">MongoSession</a></code> needs to be created.  </p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Method invoked when a <code><a href="../../../../../java/org/mule/module/mongo/MongoSession.html">MongoSession</a></code> needs to be created.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -3259,6 +3346,10 @@ From class
         <tr>
           <th>password</td>
           <td>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+        </tr>
+        <tr>
+          <th>database</td>
+          <td>Name of the database</td>
         </tr>
       </table>
   </div>
@@ -3350,8 +3441,8 @@ From class
         <tr>
           <th>query</td>
           <td>The optional DBObject query for counting objects. Only
-            objects matching it will be counted. If unspecified, all objects
-            are counted.</td>
+                   objects matching it will be counted. If unspecified, all objects
+                   are counted.</td>
         </tr>
       </table>
   </div>
@@ -3404,8 +3495,8 @@ From class
         <tr>
           <th>queryAttributes</td>
           <td>The optional query for counting objects. Only objects
-            matching it will be counted. If unspecified, all objects are
-            counted.</td>
+                        matching it will be counted. If unspecified, all objects are
+                        counted.</td>
         </tr>
       </table>
   </div>
@@ -3462,7 +3553,7 @@ From class
         <tr>
           <th>maxObjects</td>
           <td>The maximum number of documents the new collection is able
-            to contain</td>
+                   to contain</td>
         </tr>
         <tr>
           <th>size</td>
@@ -3511,7 +3602,7 @@ From class
         <tr>
           <th>payload</td>
           <td>The mandatory content of the new gridfs file. It may be a
-            java.io.File, a byte[] or an InputStream.</td>
+                    java.io.File, a byte[] or an InputStream.</td>
         </tr>
         <tr>
           <th>filename</td>
@@ -3767,6 +3858,41 @@ From class
 </div>
 
 
+<A NAME="dropDatabase()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">dropDatabase</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Drop the current database
+ <p/>
+ 
+
+</p></div>
+
+    </div>
+</div>
+
+
 <A NAME="dropIndex(java.lang.String, java.lang.String)"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -3841,7 +3967,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Executes a dump of the database to the specified output directory. If no output directory is provided
  then the default /dump directory is used.
-
+ <p/>
  <p/>
  </p></div>
   <div class="jd-tagdata">
@@ -3910,7 +4036,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Executes a command on the database
- 
+ <p/>
  <p/>
  </p></div>
   <div class="jd-tagdata">
@@ -4117,7 +4243,7 @@ From class
         <tr>
           <th>query</td>
           <td>The optional DBObject query object. If unspecified, all
-            documents are returned.</td>
+                   documents are returned.</td>
         </tr>
         <tr>
           <th>fields</td>
@@ -4183,7 +4309,7 @@ From class
         <tr>
           <th>queryAttributes</td>
           <td>The optional query object. If unspecified, all
-            documents are returned.</td>
+                        documents are returned.</td>
         </tr>
         <tr>
           <th>fields</td>
@@ -4344,7 +4470,7 @@ From class
         <tr>
           <th>query</td>
           <td>The mandatory DBObject query object that the returned
-            object matches.</td>
+                   object matches.</td>
         </tr>
         <tr>
           <th>fields</td>
@@ -4401,7 +4527,7 @@ From class
         <tr>
           <th>queryAttributes</td>
           <td>The mandatory query object that the returned object
-            matches.</td>
+                        matches.</td>
         </tr>
         <tr>
           <th>fields</td>
@@ -4975,7 +5101,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Executes an incremental dump of the database
-
+ <p/>
  <p/>
  </p></div>
   <div class="jd-tagdata">
@@ -5102,7 +5228,7 @@ From class
         <tr>
           <th>elementAttributes</td>
           <td>Alternative way of specifying the element as a
-            literal Map inside a Mule Flow</td>
+                          literal Map inside a Mule Flow</td>
         </tr>
         <tr>
           <th>writeConcern</td>
@@ -5433,10 +5559,10 @@ From class
         <tr>
           <th>outputCollection</td>
           <td>The name of the output collection to write the
-            results, replacing previous collection if existed, mandatory when
-            results may be larger than 16MB. If outputCollection is
-            unspecified, the computation is performed in-memory and not
-            persisted.</td>
+                         results, replacing previous collection if existed, mandatory when
+                         results may be larger than 16MB. If outputCollection is
+                         unspecified, the computation is performed in-memory and not
+                         persisted.</td>
         </tr>
       </table>
   </div>
@@ -5627,7 +5753,7 @@ From class
         <tr>
           <th>query</td>
           <td>The optional DBObject query object. Objects that match it
-            will be removed.</td>
+                     will be removed.</td>
         </tr>
         <tr>
           <th>writeConcern</td>
@@ -5682,7 +5808,7 @@ From class
         <tr>
           <th>queryAttributes</td>
           <td>The query object. Objects that match it will be
-            removed.</td>
+                        removed.</td>
         </tr>
         <tr>
           <th>writeConcern</td>
@@ -5723,7 +5849,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Takes the output from the dump and restores it. Indexes will be created on a restore.
  It only does inserts with the data to restore, if existing data is there, it will not be replaced.
-
+ <p/>
  <p/>
  </p></div>
   <div class="jd-tagdata">
@@ -6460,12 +6586,12 @@ From class
         <tr>
           <th>query</td>
           <td>The DBObject query object used to detect the element to
-            update.</td>
+                     update.</td>
         </tr>
         <tr>
           <th>element</td>
           <td>The DBObject mandatory object that will replace that
-            one which matches the query.</td>
+                     one which matches the query.</td>
         </tr>
         <tr>
           <th>upsert</td>
@@ -6474,7 +6600,7 @@ From class
         <tr>
           <th>multi</td>
           <td>If all or just the first object matching the query will be
-            updated</td>
+                     updated</td>
         </tr>
         <tr>
           <th>writeConcern</td>
@@ -6514,7 +6640,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Update objects using a mongo function
- 
+ <p/>
  <p/>
  </p></div>
   <div class="jd-tagdata">
@@ -6531,12 +6657,12 @@ From class
         <tr>
           <th>query</td>
           <td>The DBObject query object used to detect the element to
-            update.</td>
+                     update.</td>
         </tr>
         <tr>
           <th>element</td>
           <td>The DBObject mandatory object that will replace that
-            one which matches the query.</td>
+                     one which matches the query.</td>
         </tr>
         <tr>
           <th>upsert</td>
@@ -6545,12 +6671,11 @@ From class
         <tr>
           <th>multi</td>
           <td>If all or just the first object matching the query will be
-            updated</td>
+                     updated</td>
         </tr>
         <tr>
           <th>writeConcern</td>
           <td>The write concern used to update
- 
 </td>
         </tr>
       </table>
@@ -6586,7 +6711,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Update objects using a mongo function
- 
+ <p/>
  <p/>
  </p></div>
   <div class="jd-tagdata">
@@ -6607,7 +6732,7 @@ From class
         <tr>
           <th>elementAttributes</td>
           <td>The mandatory object that will replace that one which
-            matches the query.</td>
+                          matches the query.</td>
         </tr>
         <tr>
           <th>upsert</td>
@@ -6616,7 +6741,7 @@ From class
         <tr>
           <th>multi</td>
           <td>If all or just the first object matching the query will be
-            updated</td>
+                          updated</td>
         </tr>
         <tr>
           <th>writeConcern</td>
@@ -6674,7 +6799,7 @@ From class
         <tr>
           <th>elementAttributes</td>
           <td>The mandatory object that will replace that one which
-            matches the query.</td>
+                          matches the query.</td>
         </tr>
         <tr>
           <th>upsert</td>
@@ -6683,7 +6808,7 @@ From class
         <tr>
           <th>multi</td>
           <td>If all or just the first object matching the query will be
-            updated</td>
+                          updated</td>
         </tr>
         <tr>
           <th>writeConcern</td>
@@ -6741,7 +6866,7 @@ From class
         <tr>
           <th>element</td>
           <td>The DBObject mandatory object that will replace that
-            one which matches the query.</td>
+                        one which matches the query.</td>
         </tr>
         <tr>
           <th>upsert</td>
@@ -6750,7 +6875,7 @@ From class
         <tr>
           <th>multi</td>
           <td>If all or just the first object matching the query will be
-            updated</td>
+                        updated</td>
         </tr>
         <tr>
           <th>writeConcern</td>

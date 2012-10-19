@@ -74,7 +74,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
 
-  ListCollectionsMessageProcessor
+  AddUserMessageProcessor
 
 
 | Mule Mongo Connector
@@ -239,7 +239,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AbstractExpressionEvaluator.html">AbstractExpressionEvaluator</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AbstractListeningMessageProcessor.html">AbstractListeningMessageProcessor</a>&lt;O&gt;</li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AbstractMessageProcessor.html">AbstractMessageProcessor</a>&lt;O&gt;</li>
-          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AddUserMessageProcessor.html">AddUserMessageProcessor</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AddUserMessageProcessor.html">AddUserMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CountObjectsMessageProcessor.html">CountObjectsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CountObjectsUsingQueryMapMessageProcessor.html">CountObjectsUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CreateCollectionMessageProcessor.html">CreateCollectionMessageProcessor</a></li>
@@ -264,7 +264,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/IncrementalDumpMessageProcessor.html">IncrementalDumpMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/InsertObjectFromMapMessageProcessor.html">InsertObjectFromMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/InsertObjectMessageProcessor.html">InsertObjectMessageProcessor</a></li>
-          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html">ListCollectionsMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html">ListCollectionsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListFilesMessageProcessor.html">ListFilesMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListFilesUsingQueryMapMessageProcessor.html">ListFilesUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListIndicesMessageProcessor.html">ListIndicesMessageProcessor</a></li>
@@ -428,6 +428,9 @@ Summary:
   
 
 
+  &#124; <a href="#lfields">Fields</a>
+  
+
 
   &#124; <a href="#inhfields">Inherited Fields</a>
   
@@ -467,7 +470,7 @@ Summary:
      
     
     class
-<h1>ListCollectionsMessageProcessor</h1>
+<h1>AddUserMessageProcessor</h1>
 
 
 
@@ -561,7 +564,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.mongo.processors.ListCollectionsMessageProcessor</td>
+        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.mongo.processors.AddUserMessageProcessor</td>
     </tr>
     
 
@@ -577,7 +580,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>ListCollectionsMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#listCollections()">listCollections()</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
+<p>AddUserMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#addUser(java.lang.String, java.lang.String)">addUser(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
  
 </p>
 
@@ -768,6 +771,59 @@ org.mule.api.lifecycle.Stoppable
 </table>
 
 
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#_newPasswordType">_newPasswordType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#_newUsernameType">_newUsernameType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#newPassword">newPassword</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#newUsername">newUsername</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
 
 
 
@@ -970,7 +1026,7 @@ org.mule.api.lifecycle.Stoppable
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#ListCollectionsMessageProcessor()">ListCollectionsMessageProcessor</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#AddUserMessageProcessor()">AddUserMessageProcessor</a></span>()</nobr>
         
   </td></tr>
 
@@ -999,7 +1055,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#dispose()">dispose</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#dispose()">dispose</a></span>()</nobr>
         
   </td></tr>
 
@@ -1015,7 +1071,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#initialise()">initialise</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#initialise()">initialise</a></span>()</nobr>
         
         <div class="jd-descrdiv">Obtains the expression manager from the Mule context and initialises the connector.</div>
   
@@ -1033,7 +1089,7 @@ org.mule.api.lifecycle.Stoppable
             MuleEvent</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#process(org.mule.api.MuleEvent)">process</a></span>(MuleEvent event)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#process(org.mule.api.MuleEvent)">process</a></span>(MuleEvent event)</nobr>
         
         <div class="jd-descrdiv">Invokes the MessageProcessor.</div>
   
@@ -1051,7 +1107,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#setFlowConstruct(org.mule.api.construct.FlowConstruct)">setFlowConstruct</a></span>(FlowConstruct flowConstruct)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#setFlowConstruct(org.mule.api.construct.FlowConstruct)">setFlowConstruct</a></span>(FlowConstruct flowConstruct)</nobr>
         
         <div class="jd-descrdiv">Sets flow construct</div>
   
@@ -1069,7 +1125,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#setMuleContext(org.mule.api.MuleContext)">setMuleContext</a></span>(MuleContext context)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#setMuleContext(org.mule.api.MuleContext)">setMuleContext</a></span>(MuleContext context)</nobr>
         
         <div class="jd-descrdiv">Set the Mule context</div>
   
@@ -1087,7 +1143,43 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#start()">start</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#setNewPassword(java.lang.Object)">setNewPassword</a></span>(Object value)</nobr>
+        
+        <div class="jd-descrdiv">Sets newPassword</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#setNewUsername(java.lang.Object)">setNewUsername</a></span>(Object value)</nobr>
+        
+        <div class="jd-descrdiv">Sets newUsername</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#start()">start</a></span>()</nobr>
         
   </td></tr>
 
@@ -1103,7 +1195,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#stop()">stop</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AddUserMessageProcessor.html#stop()">stop</a></span>()</nobr>
         
   </td></tr>
 
@@ -2154,6 +2246,133 @@ From interface
 <!-- Fields -->
 
 
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="_newPasswordType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        _newPasswordType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_newUsernameType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        _newUsernameType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="newPassword"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Object
+      </span>
+        newPassword
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="newUsername"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Object
+      </span>
+        newUsername
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
 <!-- Public ctors -->
 
 
@@ -2162,7 +2381,7 @@ From interface
 
 
 
-<A NAME="ListCollectionsMessageProcessor()"></A>
+<A NAME="AddUserMessageProcessor()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2174,7 +2393,7 @@ From interface
          
         
       </span>
-      <span class="sympad">ListCollectionsMessageProcessor</span>
+      <span class="sympad">AddUserMessageProcessor</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2401,6 +2620,88 @@ From interface
         <tr>
           <th>context</td>
           <td>Mule context to set
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setNewPassword(java.lang.Object)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setNewPassword</span>
+      <span class="normal">(Object value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets newPassword</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Value to set
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setNewUsername(java.lang.Object)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setNewUsername</span>
+      <span class="normal">(Object value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets newUsername</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Value to set
 </td>
         </tr>
       </table>

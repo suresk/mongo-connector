@@ -242,6 +242,7 @@
     <li><h2>Classes</h2>
       <ul>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/AbstractDefinitionParser.html">AbstractDefinitionParser</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/AddUserDefinitionParser.html">AddUserDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/BsonListToJsonTransformer.html">BsonListToJsonTransformer</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsDefinitionParser.html">CountObjectsDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsMessageProcessor.html">CountObjectsMessageProcessor</a></li>
@@ -258,6 +259,7 @@
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DbObjectToMapTransformer.html">DbObjectToMapTransformer</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionDefinitionParser.html">DropCollectionDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropDatabaseDefinitionParser.html">DropDatabaseDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexDefinitionParser.html">DropIndexDefinitionParser</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexMessageProcessor.html">DropIndexMessageProcessor</a></li>
         <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/config/DumpDefinitionParser.html">DumpDefinitionParser</a></li>
@@ -429,68 +431,76 @@
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/AddUserDefinitionParser.html">AddUserDefinitionParser</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/BsonListToJsonTransformer.html">BsonListToJsonTransformer</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsDefinitionParser.html">CountObjectsDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsMessageProcessor.html">CountObjectsMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">CountObjectsMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#countObjects(java.lang.String, com.mongodb.DBObject)">countObjects(java.lang.String, com.mongodb.DBObject)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsUsingMapQueryMessageProcessor.html">CountObjectsUsingMapQueryMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">CountObjectsUsingMapQueryMessageProcessor invokes the org.mule.module.mongo.MongoCloudConnector#countObjectsUsingMapQuery(org.mule.module.mongo.MongoSession, java.lang.String, java.util.Map) method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsUsingQueryMapDefinitionParser.html">CountObjectsUsingQueryMapDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CountObjectsUsingQueryMapMessageProcessor.html">CountObjectsUsingQueryMapMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">CountObjectsUsingQueryMapMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#countObjectsUsingQueryMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>)">countObjectsUsingQueryMap(java.lang.String, java.util.Map)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CreateCollectionDefinitionParser.html">CreateCollectionDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CreateCollectionMessageProcessor.html">CreateCollectionMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">CreateCollectionMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#createCollection(java.lang.String, boolean, java.lang.Integer, java.lang.Integer)">createCollection(java.lang.String, boolean, java.lang.Integer, java.lang.Integer)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CreateFileFromPayloadDefinitionParser.html">CreateFileFromPayloadDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CreateFileFromPayloadMessageProcessor.html">CreateFileFromPayloadMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">CreateFileFromPayloadMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#createFileFromPayload(java.lang.Object, java.lang.String, java.lang.String, com.mongodb.DBObject)">createFileFromPayload(java.lang.Object, java.lang.String, java.lang.String, com.mongodb.DBObject)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CreateIndexDefinitionParser.html">CreateIndexDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/CreateIndexMessageProcessor.html">CreateIndexMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">CreateIndexMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#createIndex(java.lang.String, java.lang.String, org.mule.module.mongo.api.IndexOrder)">createIndex(java.lang.String, java.lang.String, org.mule.module.mongo.api.IndexOrder)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/DbobjectToJsonTransformer.html">DbobjectToJsonTransformer</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/DbObjectToMapTransformer.html">DbObjectToMapTransformer</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionDefinitionParser.html">DropCollectionDefinitionParser</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></td>
               <td class="jd-descrcol" width="100%">DropCollectionMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#dropCollection(java.lang.String)">dropCollection(java.lang.String)</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/DropDatabaseDefinitionParser.html">DropDatabaseDefinitionParser</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/config/DropIndexDefinitionParser.html">DropIndexDefinitionParser</a></td>

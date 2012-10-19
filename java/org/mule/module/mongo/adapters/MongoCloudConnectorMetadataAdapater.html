@@ -767,8 +767,7 @@ Summary:
           
           String</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#database">database</a></td>
-          <td class="jd-descrcol" width="100%">The database name of the Mongo server
-</td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -1124,6 +1123,26 @@ From class
             
             
             
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#addUser(java.lang.String, java.lang.String)">addUser</a></span>(String newUsername, String newPassword)</nobr>
+        
+        <div class="jd-descrdiv">Adds a new user for this db
+ <p/>
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
             static
             
             String</nobr>
@@ -1137,7 +1156,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1147,7 +1166,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#connect(java.lang.String, java.lang.String)">connect</a></span>(String username, String password)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#connect(java.lang.String, java.lang.String, java.lang.String)">connect</a></span>(String username, String password, String database)</nobr>
         
         <div class="jd-descrdiv">Method invoked when a <code><a href="../../../../../../java/org/mule/module/mongo/MongoSession.html">MongoSession</a></code> needs to be created.</div>
   
@@ -1155,7 +1174,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1171,7 +1190,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1189,7 +1208,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1207,7 +1226,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1225,7 +1244,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1244,7 +1263,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1264,7 +1283,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1282,7 +1301,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1300,7 +1319,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1318,7 +1337,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1331,6 +1350,28 @@ From class
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#dropCollection(java.lang.String)">dropCollection</a></span>(String collection)</nobr>
         
         <div class="jd-descrdiv">Deletes a collection and all the objects it contains.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#dropDatabase()">dropDatabase</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Drop the current database
+ <p/>
+ 
+
+</div>
   
   </td></tr>
 
@@ -1387,7 +1428,7 @@ From class
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#executeCommand(java.lang.String, java.lang.String)">executeCommand</a></span>(String commandName, String commandValue)</nobr>
         
         <div class="jd-descrdiv">Executes a command on the database
- 
+ <p/>
  <p/>
  </div>
   
@@ -1838,7 +1879,7 @@ From class
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#incrementalDump(java.lang.String, java.lang.String)">incrementalDump</a></span>(String outputDirectory, String incrementalTimestampFile)</nobr>
         
         <div class="jd-descrdiv">Executes an incremental dump of the database
-
+ <p/>
  <p/>
  </div>
   
@@ -2412,7 +2453,7 @@ From class
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunction(java.lang.String, java.lang.String, com.mongodb.DBObject, com.mongodb.DBObject, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunction</a></span>(String collection, String function, DBObject query, DBObject element, boolean upsert, boolean multi, <a href="../../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Update objects using a mongo function
- 
+ <p/>
  <p/>
  </div>
   
@@ -2433,7 +2474,7 @@ From class
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/MongoCloudConnector.html#updateObjectsByFunctionUsingMap(java.lang.String, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>, boolean, boolean, org.mule.module.mongo.api.WriteConcern)">updateObjectsByFunctionUsingMap</a></span>(String collection, String function, Map&lt;String,&nbsp;Object&gt; queryAttributes, Map&lt;String,&nbsp;Object&gt; elementAttributes, boolean upsert, boolean multi, <a href="../../../../../../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a> writeConcern)</nobr>
         
         <div class="jd-descrdiv">Update objects using a mongo function
- 
+ <p/>
  <p/>
  </div>
   
@@ -2991,7 +3032,7 @@ From interface
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "2.2.1-SNAPSHOT"
+                "3.0-SNAPSHOT"
             
         </span>
         </div>

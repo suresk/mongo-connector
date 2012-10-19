@@ -359,9 +359,11 @@ Summary:
 	 
     <tr class="alt-color api apilevel-" >
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../mule/mongo-config.html#count-objects">&lt;mongo:count-objects&gt;</a></nobr>
+        <span class="sympad"><a href="../mule/mongo-config.html#add-user">&lt;mongo:add-user&gt;</a></nobr>
         
-        <div class="jd-descrdiv">Counts the number of objects that match the given query.</div>
+        <div class="jd-descrdiv">Adds a new user for this db
+ <p/>
+ </div>
         
   </td></tr>
 
@@ -369,7 +371,7 @@ Summary:
 	 
     <tr class=" api apilevel-" >
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../mule/mongo-config.html#count-objects-using-query-map">&lt;mongo:count-objects-using-query-map&gt;</a></nobr>
+        <span class="sympad"><a href="../mule/mongo-config.html#count-objects">&lt;mongo:count-objects&gt;</a></nobr>
         
         <div class="jd-descrdiv">Counts the number of objects that match the given query.</div>
         
@@ -379,6 +381,16 @@ Summary:
 	 
     <tr class="alt-color api apilevel-" >
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../mule/mongo-config.html#count-objects-using-query-map">&lt;mongo:count-objects-using-query-map&gt;</a></nobr>
+        
+        <div class="jd-descrdiv">Counts the number of objects that match the given query.</div>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../mule/mongo-config.html#create-collection">&lt;mongo:create-collection&gt;</a></nobr>
         
         <div class="jd-descrdiv">Creates a new collection.</div>
@@ -387,7 +399,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../mule/mongo-config.html#create-file-from-payload">&lt;mongo:create-file-from-payload&gt;</a></nobr>
         
@@ -398,7 +410,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../mule/mongo-config.html#create-index">&lt;mongo:create-index&gt;</a></nobr>
         
@@ -410,11 +422,25 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../mule/mongo-config.html#drop-collection">&lt;mongo:drop-collection&gt;</a></nobr>
         
         <div class="jd-descrdiv">Deletes a collection and all the objects it contains.</div>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../mule/mongo-config.html#drop-database">&lt;mongo:drop-database&gt;</a></nobr>
+        
+        <div class="jd-descrdiv">Drop the current database
+ <p/>
+ 
+
+</div>
         
   </td></tr>
 
@@ -447,7 +473,7 @@ Summary:
         <span class="sympad"><a href="../mule/mongo-config.html#execute-command">&lt;mongo:execute-command&gt;</a></nobr>
         
         <div class="jd-descrdiv">Executes a command on the database
- 
+ <p/>
  <p/>
  </div>
         
@@ -578,7 +604,7 @@ Summary:
         <span class="sympad"><a href="../mule/mongo-config.html#incremental-dump">&lt;mongo:incremental-dump&gt;</a></nobr>
         
         <div class="jd-descrdiv">Executes an incremental dump of the database
-
+ <p/>
  <p/>
  </div>
         
@@ -748,7 +774,7 @@ Summary:
         <span class="sympad"><a href="../mule/mongo-config.html#update-objects-by-function">&lt;mongo:update-objects-by-function&gt;</a></nobr>
         
         <div class="jd-descrdiv">Update objects using a mongo function
- 
+ <p/>
  <p/>
  </div>
         
@@ -761,7 +787,7 @@ Summary:
         <span class="sympad"><a href="../mule/mongo-config.html#update-objects-by-function-using-map">&lt;mongo:update-objects-by-function-using-map&gt;</a></nobr>
         
         <div class="jd-descrdiv">Update objects using a mongo function
- 
+ <p/>
  <p/>
  </div>
         
@@ -881,19 +907,6 @@ specify which configuration to use.</p>
     
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
-          xs:string</nobr></td>
-          <td class="jd-linkcol"><nobr>database</nobr></td>
-          <td class="jd-descrcol">test</td>
-          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The database name of the Mongo server
-</td>
-          <td class="jd-descrcol"></td>
-          <td class="jd-descrcol"></td>
-          <td class="jd-descrcol"></td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
           xs:boolean</nobr></td>
           <td class="jd-linkcol"><nobr>fsync</nobr></td>
           <td class="jd-descrcol"></td>
@@ -904,7 +917,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:string</nobr></td>
           <td class="jd-linkcol"><nobr>host</nobr></td>
@@ -917,7 +930,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>maxWaitTime</nobr></td>
@@ -929,7 +942,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>port</nobr></td>
@@ -942,7 +955,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:boolean</nobr></td>
           <td class="jd-linkcol"><nobr>safe</nobr></td>
@@ -954,7 +967,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:boolean</nobr></td>
           <td class="jd-linkcol"><nobr>slaveOk</nobr></td>
@@ -966,7 +979,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>socketTimeout</nobr></td>
@@ -978,7 +991,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>threadsAllowedToBlockForConnectionMultiplier</nobr></td>
@@ -991,7 +1004,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>w</nobr></td>
@@ -1003,7 +1016,7 @@ specify which configuration to use.</p>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           xs:int</nobr></td>
           <td class="jd-linkcol"><nobr>wtimeout</nobr></td>
@@ -1066,6 +1079,16 @@ resolution.</p>
       </tr>
       
     
+      <tr class=" api apilevel-" >
+          <td class="jd-linkcol"><nobr>database</nobr></td>
+          <td class="jd-descrcol"><nobr>test</nobr></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+          <td class="jd-descrcol">String</td>
+          <td class="jd-descrcol">*/*</td>
+          <td class="jd-descrcol">UTF-8</td>
+      </tr>
+      
+    
 </table>
 <h2>Reconnection Strategies</h2>
 <p>Reconnection Strategies specify how a connector behaves when its connection fails. You can control how Mule attempts to reconnect by specifying a number of criteria:</p>
@@ -1122,6 +1145,108 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
     
 
 
+<A NAME="add-user"></A>
+
+<div class="jd-details api apilevel-">
+    <h4 class="jd-details-title">
+      <span class="sympad">&lt;mongo:add-user&gt;</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Adds a new user for this db
+ <p/>
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:add-user newUsername="myUser" newPassword="myPassword"/&gt;</pre></div></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Attributes</h5>
+
+        <table id="lconfig" class="jd-sumtable">
+        <tr><th>Name</th><th>Default Value</th><th>Description</th><th>Java Type</th><th>MIME Type</th><th>Encoding</th></tr>
+        <tr>
+          <td class="jd-linkcol"><nobr>config-ref</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Specify which configuration to use.</td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol"></td>
+        </tr>
+          
+          
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>newUsername</nobr></td>
+                        <td class="jd-descrcol"></td>
+                        <td class="jd-descrcol">Name of the user</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                
+                
+          
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>newPassword</nobr></td>
+                        <td class="jd-descrcol"></td>
+                        <td class="jd-descrcol">Password that will be used for authentication
+</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                
+                
+          
+          
+              <tr><th colspan="12">Connection Parameters<br/><span style="font-weight: 200;">This are only required if you didn't specified them at the configuration element. They are also useful for overriding the values of the configurations or even if you need to extract them from the Mule message since they support expression evaluation.</span></th></tr>
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>username</nobr></td>
+                        <td class="jd-descrcol"></td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The username to use for authentication. NOTE: Please use a dummy user if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>password</nobr></td>
+                        <td class="jd-descrcol"></td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+          
+          
+        </table>
+  </div>
+  
+  
+    
+  
+
+    </div>
+</div>
+
+
 <A NAME="count-objects"></A>
 
 <div class="jd-details api apilevel-">
@@ -1171,8 +1296,8 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>query</nobr></td>
                         <td class="jd-descrcol">#[payload]</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The optional DBObject query for counting objects. Only
-            objects matching it will be counted. If unspecified, all objects
-            are counted.</td>
+                   objects matching it will be counted. If unspecified, all objects
+                   are counted.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -1197,6 +1322,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -1304,6 +1439,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -1322,8 +1467,8 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td><nobr>&lt;mongo:query-attributes&gt;</nobr></td>
                         <td></td>
                         <td><i>Optional.&nbsp;</i>The optional query for counting objects. Only objects
-            matching it will be counted. If unspecified, all objects are
-            counted.</td>
+                        matching it will be counted. If unspecified, all objects are
+                        counted.</td>
                         <td>Map&lt;String,&nbsp;Object&gt;</td>
                     </tr>
                 
@@ -1415,7 +1560,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>maxObjects</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The maximum number of documents the new collection is able
-            to contain</td>
+                   to contain</td>
                         <td class="jd-descrcol">Integer</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -1453,6 +1598,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -1509,7 +1664,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>payload</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol">The mandatory content of the new gridfs file. It may be a
-            java.io.File, a byte[] or an InputStream.</td>
+                    java.io.File, a byte[] or an InputStream.</td>
                         <td class="jd-descrcol">Object</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -1570,6 +1725,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -1705,6 +1870,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -1780,6 +1955,95 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+          
+          
+        </table>
+  </div>
+  
+  
+    
+  
+
+    </div>
+</div>
+
+
+<A NAME="drop-database"></A>
+
+<div class="jd-details api apilevel-">
+    <h4 class="jd-details-title">
+      <span class="sympad">&lt;mongo:drop-database&gt;</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Drop the current database
+ <p/>
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:drop-database/&gt;</pre></div>
+
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Attributes</h5>
+
+        <table id="lconfig" class="jd-sumtable">
+        <tr><th>Name</th><th>Default Value</th><th>Description</th><th>Java Type</th><th>MIME Type</th><th>Encoding</th></tr>
+        <tr>
+          <td class="jd-linkcol"><nobr>config-ref</nobr></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Specify which configuration to use.</td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol"></td>
+          <td class="jd-descrcol"></td>
+        </tr>
+          
+          
+          
+              <tr><th colspan="12">Connection Parameters<br/><span style="font-weight: 200;">This are only required if you didn't specified them at the configuration element. They are also useful for overriding the values of the configurations or even if you need to extract them from the Mule message since they support expression evaluation.</span></th></tr>
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>username</nobr></td>
+                        <td class="jd-descrcol"></td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The username to use for authentication. NOTE: Please use a dummy user if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>password</nobr></td>
+                        <td class="jd-descrcol"></td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -1878,6 +2142,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -1906,7 +2180,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
       
   <div class="jd-tagdata jd-tagdescr"><p>Executes a dump of the database to the specified output directory. If no output directory is provided
  then the default /dump directory is used.
-
+ <p/>
  <p/>
  <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:dump oplog="true"/&gt;</pre></div></p></div>
   <div class="jd-tagdata">
@@ -2007,6 +2281,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -2046,7 +2330,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Executes a command on the database
- 
+ <p/>
  <p/>
  <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:remove-files query-ref="myDbObject"/&gt;</pre></div></p></div>
   <div class="jd-tagdata">
@@ -2105,6 +2389,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -2204,6 +2498,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -2297,6 +2601,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -2379,6 +2693,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -2486,7 +2810,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>query</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The optional DBObject query object. If unspecified, all
-            documents are returned.</td>
+                   documents are returned.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -2537,6 +2861,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -2698,6 +3032,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -2716,7 +3060,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td><nobr>&lt;mongo:query-attributes&gt;</nobr></td>
                         <td></td>
                         <td><i>Optional.&nbsp;</i>The optional query object. If unspecified, all
-            documents are returned.</td>
+                        documents are returned.</td>
                         <td>Map&lt;String,&nbsp;Object&gt;</td>
                     </tr>
                 
@@ -2828,6 +3172,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -2911,6 +3265,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -3017,7 +3381,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>query</nobr></td>
                         <td class="jd-descrcol">#[payload]</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The mandatory DBObject query object that the returned
-            object matches.</td>
+                   object matches.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -3044,6 +3408,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -3176,6 +3550,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -3194,7 +3578,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td><nobr>&lt;mongo:query-attributes&gt;</nobr></td>
                         <td></td>
                         <td>The mandatory query object that the returned object
-            matches.</td>
+                        matches.</td>
                         <td>Map&lt;String,&nbsp;Object&gt;</td>
                     </tr>
                 
@@ -3302,6 +3686,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -3391,6 +3785,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -3451,7 +3855,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Executes an incremental dump of the database
-
+ <p/>
  <p/>
  <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:incremental-dump /&gt;</pre></div></p></div>
   <div class="jd-tagdata">
@@ -3510,6 +3914,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -3631,6 +4045,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -3746,6 +4170,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -3764,7 +4198,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td><nobr>&lt;mongo:element-attributes&gt;</nobr></td>
                         <td></td>
                         <td><i>Optional.&nbsp;</i>Alternative way of specifying the element as a
-            literal Map inside a Mule Flow</td>
+                          literal Map inside a Mule Flow</td>
                         <td>Map&lt;String,&nbsp;Object&gt;</td>
                     </tr>
                 
@@ -3845,6 +4279,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -3945,6 +4389,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -4028,6 +4482,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -4146,6 +4610,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -4253,10 +4727,10 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>outputCollection</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The name of the output collection to write the
-            results, replacing previous collection if existed, mandatory when
-            results may be larger than 16MB. If outputCollection is
-            unspecified, the computation is performed in-memory and not
-            persisted.</td>
+                         results, replacing previous collection if existed, mandatory when
+                         results may be larger than 16MB. If outputCollection is
+                         unspecified, the computation is performed in-memory and not
+                         persisted.</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -4281,6 +4755,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -4383,6 +4867,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -4452,6 +4946,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -4542,7 +5046,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>query</nobr></td>
                         <td class="jd-descrcol">#[payload]</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The optional DBObject query object. Objects that match it
-            will be removed.</td>
+                     will be removed.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -4580,6 +5084,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -4688,6 +5202,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -4706,7 +5230,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td><nobr>&lt;mongo:query-attributes&gt;</nobr></td>
                         <td></td>
                         <td>The query object. Objects that match it will be
-            removed.</td>
+                        removed.</td>
                         <td>Map&lt;String,&nbsp;Object&gt;</td>
                     </tr>
                 
@@ -4740,7 +5264,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
       
   <div class="jd-tagdata jd-tagdescr"><p>Takes the output from the dump and restores it. Indexes will be created on a restore.
  It only does inserts with the data to restore, if existing data is there, it will not be replaced.
-
+ <p/>
  <p/>
  <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:restore inputPath="dump/test.zip" oplogReplay="true"/&gt;</pre></div></p></div>
   <div class="jd-tagdata">
@@ -4811,6 +5335,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -4933,6 +5467,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -5032,6 +5576,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -5118,7 +5672,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>query</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol">The DBObject query object used to detect the element to
-            update.</td>
+                     update.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5131,7 +5685,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>element</nobr></td>
                         <td class="jd-descrcol">#[payload]</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The DBObject mandatory object that will replace that
-            one which matches the query.</td>
+                     one which matches the query.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5156,7 +5710,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>multi</nobr></td>
                         <td class="jd-descrcol">true</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>If all or just the first object matching the query will be
-            updated</td>
+                     updated</td>
                         <td class="jd-descrcol">boolean</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5200,6 +5754,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -5227,7 +5791,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Update objects using a mongo function
- 
+ <p/>
  <p/>
  <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:update-objects-by-function collection="myCollection" upsert="true" element-ref="elementObject" query-ref="queryObject" function="$set"&gt;
 &lt;/mongo:update-objects-by-function&gt;</pre></div></p></div>
@@ -5275,7 +5839,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>query</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol">The DBObject query object used to detect the element to
-            update.</td>
+                     update.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5288,7 +5852,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>element</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol">The DBObject mandatory object that will replace that
-            one which matches the query.</td>
+                     one which matches the query.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5313,7 +5877,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>multi</nobr></td>
                         <td class="jd-descrcol">true</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>If all or just the first object matching the query will be
-            updated</td>
+                     updated</td>
                         <td class="jd-descrcol">boolean</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5326,7 +5890,6 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>writeConcern</nobr></td>
                         <td class="jd-descrcol">DATABASE_DEFAULT</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>The write concern used to update
- 
 </td>
                         <td class="jd-descrcol"><a href="../java/org/mule/module/mongo/api/WriteConcern.html">WriteConcern</a></td>
                         <td class="jd-descrcol">*/*</td>
@@ -5352,6 +5915,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -5385,7 +5958,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Update objects using a mongo function
- 
+ <p/>
  <p/>
  <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;mongo:update-objects-by-function-using-map collection="myCollection" upsert="true" function="$set"&gt;
     &lt;mongo:query-attributes&gt;
@@ -5457,7 +6030,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>multi</nobr></td>
                         <td class="jd-descrcol">true</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>If all or just the first object matching the query will be
-            updated</td>
+                          updated</td>
                         <td class="jd-descrcol">boolean</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5501,6 +6074,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -5531,7 +6114,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td><nobr>&lt;mongo:element-attributes&gt;</nobr></td>
                         <td></td>
                         <td>The mandatory object that will replace that one which
-            matches the query.</td>
+                          matches the query.</td>
                         <td>Map&lt;String,&nbsp;Object&gt;</td>
                     </tr>
                 
@@ -5629,7 +6212,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>multi</nobr></td>
                         <td class="jd-descrcol">true</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>If all or just the first object matching the query will be
-            updated</td>
+                          updated</td>
                         <td class="jd-descrcol">boolean</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5673,6 +6256,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class=" api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -5701,7 +6294,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td><nobr>&lt;mongo:element-attributes&gt;</nobr></td>
                         <td></td>
                         <td>The mandatory object that will replace that one which
-            matches the query.</td>
+                          matches the query.</td>
                         <td>Map&lt;String,&nbsp;Object&gt;</td>
                     </tr>
                 
@@ -5781,7 +6374,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>element</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol">The DBObject mandatory object that will replace that
-            one which matches the query.</td>
+                        one which matches the query.</td>
                         <td class="jd-descrcol">DBObject</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5806,7 +6399,7 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>multi</nobr></td>
                         <td class="jd-descrcol">true</td>
                         <td class="jd-descrcol"><i>Optional.&nbsp;</i>If all or just the first object matching the query will be
-            updated</td>
+                        updated</td>
                         <td class="jd-descrcol">boolean</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol"></td>
@@ -5844,6 +6437,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -5986,6 +6589,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -6073,6 +6686,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>
@@ -6172,6 +6795,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -6265,6 +6898,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                     </tr>
                     
                 
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
           
           
         </table>
@@ -6352,6 +6995,16 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
                         <td class="jd-linkcol"><nobr>password</nobr></td>
                         <td class="jd-descrcol"></td>
                         <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>The password to use for authentication. NOTE: Please use a dummy password if you have disabled Mongo authentication</td>
+                        <td class="jd-descrcol">String</td>
+                        <td class="jd-descrcol">*/*</td>
+                        <td class="jd-descrcol">UTF-8</td>
+                    </tr>
+                    
+                
+                    <tr class="alt-color api apilevel-" >
+                        <td class="jd-linkcol"><nobr>database</nobr></td>
+                        <td class="jd-descrcol">test</td>
+                        <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Name of the database</td>
                         <td class="jd-descrcol">String</td>
                         <td class="jd-descrcol">*/*</td>
                         <td class="jd-descrcol">UTF-8</td>

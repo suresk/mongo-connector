@@ -239,12 +239,14 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AbstractExpressionEvaluator.html">AbstractExpressionEvaluator</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AbstractListeningMessageProcessor.html">AbstractListeningMessageProcessor</a>&lt;O&gt;</li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AbstractMessageProcessor.html">AbstractMessageProcessor</a>&lt;O&gt;</li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/AddUserMessageProcessor.html">AddUserMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CountObjectsMessageProcessor.html">CountObjectsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CountObjectsUsingQueryMapMessageProcessor.html">CountObjectsUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CreateCollectionMessageProcessor.html">CreateCollectionMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CreateFileFromPayloadMessageProcessor.html">CreateFileFromPayloadMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CreateIndexMessageProcessor.html">CreateIndexMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html">DropDatabaseMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DropIndexMessageProcessor.html">DropIndexMessageProcessor</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DumpMessageProcessor.html">DumpMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ExecuteCommandMessageProcessor.html">ExecuteCommandMessageProcessor</a></li>
@@ -985,7 +987,7 @@ org.mule.api.lifecycle.Stoppable
           
           
           String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#_passwordType">_passwordType</a></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#_databaseType">_databaseType</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
@@ -996,7 +998,29 @@ org.mule.api.lifecycle.Stoppable
           
           
           String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#_passwordType">_passwordType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#_usernameType">_usernameType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#database">database</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
@@ -1519,9 +1543,9 @@ From class
             Object</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#getPassword()">getPassword</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#getDatabase()">getDatabase</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Retrieves password
+        <div class="jd-descrdiv">Retrieves database
  
 </div>
   
@@ -1539,11 +1563,49 @@ From class
             Object</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#getPassword()">getPassword</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Retrieves password
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#getUsername()">getUsername</a></span>()</nobr>
         
         <div class="jd-descrdiv">Retrieves username
  
 </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/AbstractConnectedProcessor.html#setDatabase(java.lang.Object)">setDatabase</a></span>(Object value)</nobr>
+        
+        <div class="jd-descrdiv">Sets database</div>
   
   </td></tr>
 

@@ -74,7 +74,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
 
-  ListCollectionsMessageProcessor
+  DropDatabaseMessageProcessor
 
 
 | Mule Mongo Connector
@@ -246,7 +246,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CreateFileFromPayloadMessageProcessor.html">CreateFileFromPayloadMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/CreateIndexMessageProcessor.html">CreateIndexMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DropCollectionMessageProcessor.html">DropCollectionMessageProcessor</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html">DropDatabaseMessageProcessor</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html">DropDatabaseMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DropIndexMessageProcessor.html">DropIndexMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/DumpMessageProcessor.html">DumpMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ExecuteCommandMessageProcessor.html">ExecuteCommandMessageProcessor</a></li>
@@ -264,7 +264,7 @@
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/IncrementalDumpMessageProcessor.html">IncrementalDumpMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/InsertObjectFromMapMessageProcessor.html">InsertObjectFromMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/InsertObjectMessageProcessor.html">InsertObjectMessageProcessor</a></li>
-          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html">ListCollectionsMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html">ListCollectionsMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListFilesMessageProcessor.html">ListFilesMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListFilesUsingQueryMapMessageProcessor.html">ListFilesUsingQueryMapMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/mongo/processors/ListIndicesMessageProcessor.html">ListIndicesMessageProcessor</a></li>
@@ -467,7 +467,7 @@ Summary:
      
     
     class
-<h1>ListCollectionsMessageProcessor</h1>
+<h1>DropDatabaseMessageProcessor</h1>
 
 
 
@@ -561,7 +561,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.mongo.processors.ListCollectionsMessageProcessor</td>
+        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.mongo.processors.DropDatabaseMessageProcessor</td>
     </tr>
     
 
@@ -577,7 +577,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>ListCollectionsMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#listCollections()">listCollections()</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
+<p>DropDatabaseMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html#dropDatabase()">dropDatabase()</a></code> method in <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
  
 </p>
 
@@ -970,7 +970,7 @@ org.mule.api.lifecycle.Stoppable
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#ListCollectionsMessageProcessor()">ListCollectionsMessageProcessor</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#DropDatabaseMessageProcessor()">DropDatabaseMessageProcessor</a></span>()</nobr>
         
   </td></tr>
 
@@ -999,7 +999,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#dispose()">dispose</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#dispose()">dispose</a></span>()</nobr>
         
   </td></tr>
 
@@ -1015,7 +1015,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#initialise()">initialise</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#initialise()">initialise</a></span>()</nobr>
         
         <div class="jd-descrdiv">Obtains the expression manager from the Mule context and initialises the connector.</div>
   
@@ -1033,7 +1033,7 @@ org.mule.api.lifecycle.Stoppable
             MuleEvent</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#process(org.mule.api.MuleEvent)">process</a></span>(MuleEvent event)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#process(org.mule.api.MuleEvent)">process</a></span>(MuleEvent event)</nobr>
         
         <div class="jd-descrdiv">Invokes the MessageProcessor.</div>
   
@@ -1051,7 +1051,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#setFlowConstruct(org.mule.api.construct.FlowConstruct)">setFlowConstruct</a></span>(FlowConstruct flowConstruct)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#setFlowConstruct(org.mule.api.construct.FlowConstruct)">setFlowConstruct</a></span>(FlowConstruct flowConstruct)</nobr>
         
         <div class="jd-descrdiv">Sets flow construct</div>
   
@@ -1069,7 +1069,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#setMuleContext(org.mule.api.MuleContext)">setMuleContext</a></span>(MuleContext context)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#setMuleContext(org.mule.api.MuleContext)">setMuleContext</a></span>(MuleContext context)</nobr>
         
         <div class="jd-descrdiv">Set the Mule context</div>
   
@@ -1087,7 +1087,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#start()">start</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#start()">start</a></span>()</nobr>
         
   </td></tr>
 
@@ -1103,7 +1103,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/ListCollectionsMessageProcessor.html#stop()">stop</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/processors/DropDatabaseMessageProcessor.html#stop()">stop</a></span>()</nobr>
         
   </td></tr>
 
@@ -2162,7 +2162,7 @@ From interface
 
 
 
-<A NAME="ListCollectionsMessageProcessor()"></A>
+<A NAME="DropDatabaseMessageProcessor()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2174,7 +2174,7 @@ From interface
          
         
       </span>
-      <span class="sympad">ListCollectionsMessageProcessor</span>
+      <span class="sympad">DropDatabaseMessageProcessor</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
