@@ -291,7 +291,7 @@ BSON documents.&lt;/xs:documentation&gt;
               &lt;xs:documentation&gt;The max wait time for a blocking thread for a connection from the pool in ms.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
           &lt;/xs:attribute&gt;
-          &lt;xs:attribute xmlns=&quot;http://www.mulesoft.org/schema/mule/mongo&quot; name=&quot;connectTimeout&quot; use=&quot;optional&quot; type=&quot;integerType&quot;&gt;
+          &lt;xs:attribute xmlns=&quot;http://www.mulesoft.org/schema/mule/mongo&quot; name=&quot;connectTimeout&quot; default=&quot;30000&quot; use=&quot;optional&quot; type=&quot;integerType&quot;&gt;
             &lt;xs:annotation&gt;
               &lt;xs:documentation&gt;The connection timeout in milliseconds; this is for establishing the socket connections (open). 0 is default and infinite.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
