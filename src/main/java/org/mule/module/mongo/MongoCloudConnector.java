@@ -122,6 +122,7 @@ public class MongoCloudConnector {
      */
     @Configurable
     @Optional
+    @Default("30000")
     private Integer connectTimeout;
 
     /**
@@ -1117,6 +1118,8 @@ public class MongoCloudConnector {
                 mongo = new Mongo(servers, options);
             }
             db = getDatabase(mongo, username, password, database);
+        } catch (MongoException me) {
+            throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null, me.getMessage());
         } catch (UnknownHostException e) {
             throw new ConnectionException(ConnectionExceptionCode.UNKNOWN_HOST, null, e.getMessage());
         }
@@ -1141,12 +1144,16 @@ public class MongoCloudConnector {
         return "unknown";
     }
 
-    private DB getDatabase(Mongo mongo, String username, String password, String database) {
+    private DB getDatabase(Mongo mongo, String username, String password, String database)
+            throws ConnectionException {
         DB db = mongo.getDB(database);
         if (password != null) {
             Validate.notNull(username, "Username must not be null if password is set");
             if( !db.isAuthenticated() ) {
-                db.authenticate(username, password.toCharArray());
+                if(!db.authenticate(username, password.toCharArray())) {
+                    throw new ConnectionException(ConnectionExceptionCode.INCORRECT_CREDENTIALS, null,
+                            "Couldn't connect with the given credentials");
+                }
             }
         }
         return db;
