@@ -60,7 +60,7 @@ public class MongoTestDriver
         connector = new MongoCloudConnector();
         connector.setHost("127.0.0.1");
         connector.setPort(27017);
-        connector.connect("user", "pass", "mongo-connector-test");
+        connector.connect("admin", "pepe", "test");
         connector.createCollection(MAIN_COLLECTION, false, 100, 1000);
     }
 
@@ -285,7 +285,7 @@ public class MongoTestDriver
 
         assertEquals(3, iter.next().get("x"));
         assertEquals(4, iter.next().get("x"));
-        assertEquals(null, iter.next().get("x"));
+        assertFalse(iter.hasNext());
     }
 
     @Test
