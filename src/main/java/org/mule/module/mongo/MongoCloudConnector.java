@@ -34,6 +34,7 @@ import org.mule.api.annotations.param.ConnectionKey;
 import org.mule.api.annotations.param.Default;
 import org.mule.api.annotations.param.Optional;
 import org.mule.api.annotations.param.Payload;
+import org.mule.api.annotations.MetaDataSwitch;
 import org.mule.module.mongo.api.IndexOrder;
 import org.mule.module.mongo.api.MongoClient;
 import org.mule.module.mongo.api.MongoClientAdaptor;
@@ -71,7 +72,7 @@ import static org.mule.module.mongo.api.DBObjects.fromFunction;
  *
  * @author MuleSoft, inc.
  */
-@Connector(name = "mongo", schemaVersion = "2.0", friendlyName = "Mongo DB", minMuleVersion = "3.3")
+@Connector(name = "mongo", schemaVersion = "2.0", friendlyName = "Mongo DB", minMuleVersion = "3.3", metaData = MetaDataSwitch.OFF)
 public class MongoCloudConnector {
 
     private static final Logger logger = LoggerFactory.getLogger(MongoCloudConnector.class);
