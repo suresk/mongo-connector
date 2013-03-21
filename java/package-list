@@ -1,11 +1,17 @@
 org.mule.module.mongo
+org.mule.module.mongo.adapter
 org.mule.module.mongo.adapters
 org.mule.module.mongo.agents
 org.mule.module.mongo.api
 org.mule.module.mongo.api.transformers
+org.mule.module.mongo.basic
+org.mule.module.mongo.callback
 org.mule.module.mongo.config
 org.mule.module.mongo.config.spring
+org.mule.module.mongo.connection
 org.mule.module.mongo.connectivity
+org.mule.module.mongo.devkit
+org.mule.module.mongo.oauth
 org.mule.module.mongo.process
 org.mule.module.mongo.processors
 org.mule.module.mongo.tools

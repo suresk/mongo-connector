@@ -205,6 +205,8 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/package-summary.html">org.mule.module.mongo</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/adapter/package-summary.html">org.mule.module.mongo.adapter</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/adapters/package-summary.html">org.mule.module.mongo.adapters</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/agents/package-summary.html">org.mule.module.mongo.agents</a></li>
@@ -213,11 +215,21 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/api/transformers/package-summary.html">org.mule.module.mongo.api.transformers</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/basic/package-summary.html">org.mule.module.mongo.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/callback/package-summary.html">org.mule.module.mongo.callback</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/package-summary.html">org.mule.module.mongo.config</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/spring/package-summary.html">org.mule.module.mongo.config.spring</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/connection/package-summary.html">org.mule.module.mongo.connection</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/connectivity/package-summary.html">org.mule.module.mongo.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/devkit/package-summary.html">org.mule.module.mongo.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/oauth/package-summary.html">org.mule.module.mongo.oauth</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/process/package-summary.html">org.mule.module.mongo.process</a></li>
     <li class="api apilevel-">
@@ -361,7 +373,7 @@ Summary:
   
       implements 
       
-        ProcessTemplate&lt;T,&nbsp;O&gt; 
+        <a href="../../../../../../java/org/mule/module/mongo/process/ProcessTemplate.html">ProcessTemplate</a>&lt;T,&nbsp;O&gt; 
       
   
   
@@ -453,7 +465,7 @@ Summary:
           private
           
           final
-          ProcessInterceptor&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt;</nobr></td>
+          <a href="../../../../../../java/org/mule/module/mongo/process/ProcessInterceptor.html">ProcessInterceptor</a>&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt;</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/mongo/connectivity/ManagedConnectionProcessTemplate.html#processInterceptor">processInterceptor</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
@@ -484,7 +496,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/connectivity/ManagedConnectionProcessTemplate.html#ManagedConnectionProcessTemplate(org.mule.api.ConnectionManager<org.mule.module.mongo.connectivity.MongoCloudConnectorConnectionKey, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.MuleContext)">ManagedConnectionProcessTemplate</a></span>(ConnectionManager&lt;<a href="../../../../../../java/org/mule/module/mongo/connectivity/MongoCloudConnectorConnectionKey.html">MongoCloudConnectorConnectionKey</a>,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; connectionManager, MuleContext muleContext)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/connectivity/ManagedConnectionProcessTemplate.html#ManagedConnectionProcessTemplate(org.mule.module.mongo.connection.ConnectionManager<org.mule.module.mongo.connectivity.MongoCloudConnectorConnectionKey, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.MuleContext)">ManagedConnectionProcessTemplate</a></span>(<a href="../../../../../../java/org/mule/module/mongo/connection/ConnectionManager.html">ConnectionManager</a>&lt;<a href="../../../../../../java/org/mule/module/mongo/connectivity/MongoCloudConnectorConnectionKey.html">MongoCloudConnectorConnectionKey</a>,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; connectionManager, MuleContext muleContext)</nobr>
         
   </td></tr>
 
@@ -513,7 +525,7 @@ Summary:
             P</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/connectivity/ManagedConnectionProcessTemplate.html#execute(org.mule.api.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.processor.MessageProcessor, org.mule.api.MuleEvent)">execute</a></span>(ProcessCallback&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, MessageProcessor messageProcessor, MuleEvent event)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/connectivity/ManagedConnectionProcessTemplate.html#execute(org.mule.module.mongo.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.processor.MessageProcessor, org.mule.api.MuleEvent)">execute</a></span>(<a href="../../../../../../java/org/mule/module/mongo/process/ProcessCallback.html">ProcessCallback</a>&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, MessageProcessor messageProcessor, MuleEvent event)</nobr>
         
   </td></tr>
 
@@ -529,7 +541,7 @@ Summary:
             P</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/connectivity/ManagedConnectionProcessTemplate.html#execute(org.mule.api.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.routing.filter.Filter, org.mule.api.MuleMessage)">execute</a></span>(ProcessCallback&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, Filter filter, MuleMessage message)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/connectivity/ManagedConnectionProcessTemplate.html#execute(org.mule.module.mongo.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.routing.filter.Filter, org.mule.api.MuleMessage)">execute</a></span>(<a href="../../../../../../java/org/mule/module/mongo/process/ProcessCallback.html">ProcessCallback</a>&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, Filter filter, MuleMessage message)</nobr>
         
   </td></tr>
 
@@ -753,19 +765,19 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.process.ProcessTemplate" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.process.ProcessTemplate-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.mongo.process.ProcessTemplate" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.mongo.process.ProcessTemplate-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From interface
 
-  org.mule.api.process.ProcessTemplate
+  <a href="../../../../../../org/mule/module/mongo/process/ProcessTemplate.html">org.mule.module.mongo.process.ProcessTemplate</a>
 
-<div id="inherited-methods-org.mule.api.process.ProcessTemplate">
-  <div id="inherited-methods-org.mule.api.process.ProcessTemplate-list"
+<div id="inherited-methods-org.mule.module.mongo.process.ProcessTemplate">
+  <div id="inherited-methods-org.mule.module.mongo.process.ProcessTemplate-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.api.process.ProcessTemplate-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.module.mongo.process.ProcessTemplate-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -781,7 +793,7 @@ From interface
             T</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">execute</span>(ProcessCallback&lt;T,&nbsp;O&gt; arg0, Filter arg1, MuleMessage arg2)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/process/ProcessTemplate.html#execute(org.mule.module.mongo.process.ProcessCallback<T, O>, org.mule.api.processor.MessageProcessor, org.mule.api.MuleEvent)">execute</a></span>(<a href="../../../../../../java/org/mule/module/mongo/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt; callback, MessageProcessor messageProcessor, MuleEvent event)</nobr>
         
   </td></tr>
 
@@ -797,7 +809,7 @@ From interface
             T</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">execute</span>(ProcessCallback&lt;T,&nbsp;O&gt; arg0, MessageProcessor arg1, MuleEvent arg2)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/process/ProcessTemplate.html#execute(org.mule.module.mongo.process.ProcessCallback<T, O>, org.mule.api.routing.filter.Filter, org.mule.api.MuleMessage)">execute</a></span>(<a href="../../../../../../java/org/mule/module/mongo/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt; callback, Filter filter, MuleMessage message)</nobr>
         
   </td></tr>
 
@@ -848,7 +860,7 @@ From interface
         private 
          
         final 
-        ProcessInterceptor&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt;
+        <a href="../../../../../../java/org/mule/module/mongo/process/ProcessInterceptor.html">ProcessInterceptor</a>&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt;
       </span>
         processInterceptor
     </h4>
@@ -879,7 +891,7 @@ From interface
 
 
 
-<A NAME="ManagedConnectionProcessTemplate(org.mule.api.ConnectionManager<org.mule.module.mongo.connectivity.MongoCloudConnectorConnectionKey, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.MuleContext)"></A>
+<A NAME="ManagedConnectionProcessTemplate(org.mule.module.mongo.connection.ConnectionManager<org.mule.module.mongo.connectivity.MongoCloudConnectorConnectionKey, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.MuleContext)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -892,7 +904,7 @@ From interface
         
       </span>
       <span class="sympad">ManagedConnectionProcessTemplate</span>
-      <span class="normal">(ConnectionManager&lt;<a href="../../../../../../java/org/mule/module/mongo/connectivity/MongoCloudConnectorConnectionKey.html">MongoCloudConnectorConnectionKey</a>,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; connectionManager, MuleContext muleContext)</span>
+      <span class="normal">(<a href="../../../../../../java/org/mule/module/mongo/connection/ConnectionManager.html">ConnectionManager</a>&lt;<a href="../../../../../../java/org/mule/module/mongo/connectivity/MongoCloudConnectorConnectionKey.html">MongoCloudConnectorConnectionKey</a>,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; connectionManager, MuleContext muleContext)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -938,7 +950,7 @@ From interface
 
 
 
-<A NAME="execute(org.mule.api.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.processor.MessageProcessor, org.mule.api.MuleEvent)"></A>
+<A NAME="execute(org.mule.module.mongo.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.processor.MessageProcessor, org.mule.api.MuleEvent)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -951,7 +963,7 @@ From interface
         P
       </span>
       <span class="sympad">execute</span>
-      <span class="normal">(ProcessCallback&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, MessageProcessor messageProcessor, MuleEvent event)</span>
+      <span class="normal">(<a href="../../../../../../java/org/mule/module/mongo/process/ProcessCallback.html">ProcessCallback</a>&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, MessageProcessor messageProcessor, MuleEvent event)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -995,7 +1007,7 @@ From interface
 </div>
 
 
-<A NAME="execute(org.mule.api.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.routing.filter.Filter, org.mule.api.MuleMessage)"></A>
+<A NAME="execute(org.mule.module.mongo.process.ProcessCallback<P, org.mule.module.mongo.adapters.MongoCloudConnectorConnectionIdentifierAdapter>, org.mule.api.routing.filter.Filter, org.mule.api.MuleMessage)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1008,7 +1020,7 @@ From interface
         P
       </span>
       <span class="sympad">execute</span>
-      <span class="normal">(ProcessCallback&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, Filter filter, MuleMessage message)</span>
+      <span class="normal">(<a href="../../../../../../java/org/mule/module/mongo/process/ProcessCallback.html">ProcessCallback</a>&lt;P,&nbsp;<a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a>&gt; processCallback, Filter filter, MuleMessage message)</span>
     </h4>
       <div class="api-level">
         <div>

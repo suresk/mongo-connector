@@ -204,6 +204,8 @@
                 
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/package-summary.html">org.mule.module.mongo</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/adapter/package-summary.html">org.mule.module.mongo.adapter</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/adapters/package-summary.html">org.mule.module.mongo.adapters</a></li>
     <li class="api apilevel-">
@@ -213,11 +215,21 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/api/transformers/package-summary.html">org.mule.module.mongo.api.transformers</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/basic/package-summary.html">org.mule.module.mongo.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/callback/package-summary.html">org.mule.module.mongo.callback</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/package-summary.html">org.mule.module.mongo.config</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/spring/package-summary.html">org.mule.module.mongo.config.spring</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/connection/package-summary.html">org.mule.module.mongo.connection</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/connectivity/package-summary.html">org.mule.module.mongo.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/devkit/package-summary.html">org.mule.module.mongo.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/oauth/package-summary.html">org.mule.module.mongo.oauth</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/process/package-summary.html">org.mule.module.mongo.process</a></li>
     <li class="api apilevel-">
@@ -405,7 +417,7 @@ Summary:
   
       implements 
       
-        MetadataAware 
+        <a href="../../../../../../java/org/mule/module/mongo/basic/MetadataAware.html">MetadataAware</a> 
       
   
   
@@ -519,7 +531,7 @@ Summary:
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a></td>
-              <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionIdentifierAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.api.Connection interface.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionIdentifierAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.devkit.dynamic.api.helper.Connection interface.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/mongo/adapters/MongoCloudConnectorProcessAdapter.html">MongoCloudConnectorProcessAdapter</a></td>
@@ -970,6 +982,9 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/adapters/MongoCloudConnectorMetadataAdapater.html#getDevkitBuild()">getDevkitBuild</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the build of the DevKit used to create this module
+</div>
+  
   </td></tr>
 
 
@@ -986,6 +1001,9 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/adapters/MongoCloudConnectorMetadataAdapater.html#getDevkitVersion()">getDevkitVersion</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the version of the DevKit used to create this module
+</div>
+  
   </td></tr>
 
 
@@ -1002,6 +1020,9 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/adapters/MongoCloudConnectorMetadataAdapater.html#getModuleName()">getModuleName</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the user-friendly name of this module
+</div>
+  
   </td></tr>
 
 
@@ -1018,6 +1039,9 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/adapters/MongoCloudConnectorMetadataAdapater.html#getModuleVersion()">getModuleVersion</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the version of this module
+</div>
+  
   </td></tr>
 
 
@@ -1066,7 +1090,7 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/adapters/MongoCloudConnectorCapabilitiesAdapter.html#isCapableOf(org.mule.api.Capability)">isCapableOf</a></span>(Capability capability)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/adapters/MongoCloudConnectorCapabilitiesAdapter.html#isCapableOf(org.mule.module.mongo.basic.Capability)">isCapableOf</a></span>(<a href="../../../../../../java/org/mule/module/mongo/basic/Capability.html">Capability</a> capability)</nobr>
         
         <div class="jd-descrdiv">Returns true if this module implements such capability
  
@@ -2728,19 +2752,19 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.Capabilities" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.Capabilities-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.mongo.basic.Capabilities" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.mongo.basic.Capabilities-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From interface
 
-  org.mule.api.Capabilities
+  <a href="../../../../../../org/mule/module/mongo/basic/Capabilities.html">org.mule.module.mongo.basic.Capabilities</a>
 
-<div id="inherited-methods-org.mule.api.Capabilities">
-  <div id="inherited-methods-org.mule.api.Capabilities-list"
+<div id="inherited-methods-org.mule.module.mongo.basic.Capabilities">
+  <div id="inherited-methods-org.mule.module.mongo.basic.Capabilities-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.api.Capabilities-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.module.mongo.basic.Capabilities-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -2756,8 +2780,11 @@ From interface
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">isCapableOf</span>(Capability arg0)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/basic/Capabilities.html#isCapableOf(org.mule.module.mongo.basic.Capability)">isCapableOf</a></span>(<a href="../../../../../../java/org/mule/module/mongo/basic/Capability.html">Capability</a> capability)</nobr>
         
+        <div class="jd-descrdiv">Returns true if this module implements such
+ capability</div>
+  
   </td></tr>
 
 
@@ -2770,19 +2797,19 @@ From interface
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.MetadataAware" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.MetadataAware-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.mongo.basic.MetadataAware" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.mongo.basic.MetadataAware-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From interface
 
-  org.mule.api.MetadataAware
+  <a href="../../../../../../org/mule/module/mongo/basic/MetadataAware.html">org.mule.module.mongo.basic.MetadataAware</a>
 
-<div id="inherited-methods-org.mule.api.MetadataAware">
-  <div id="inherited-methods-org.mule.api.MetadataAware-list"
+<div id="inherited-methods-org.mule.module.mongo.basic.MetadataAware">
+  <div id="inherited-methods-org.mule.module.mongo.basic.MetadataAware-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.api.MetadataAware-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.module.mongo.basic.MetadataAware-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -2798,8 +2825,11 @@ From interface
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">getDevkitBuild</span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/basic/MetadataAware.html#getDevkitBuild()">getDevkitBuild</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the build of the DevKit used to create this module
+</div>
+  
   </td></tr>
 
 
@@ -2814,8 +2844,11 @@ From interface
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">getDevkitVersion</span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/basic/MetadataAware.html#getDevkitVersion()">getDevkitVersion</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the version of the DevKit used to create this module
+</div>
+  
   </td></tr>
 
 
@@ -2830,8 +2863,11 @@ From interface
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">getModuleName</span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/basic/MetadataAware.html#getModuleName()">getModuleName</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the user-friendly name of this module
+</div>
+  
   </td></tr>
 
 
@@ -2846,8 +2882,11 @@ From interface
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">getModuleVersion</span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/basic/MetadataAware.html#getModuleVersion()">getModuleVersion</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Returns the version of this module
+</div>
+  
   </td></tr>
 
 
@@ -2915,7 +2954,7 @@ From interface
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "master.1507.19fe486"
+                "master.1541.dda8b3b"
             
         </span>
         </div>
@@ -3125,7 +3164,8 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the build of the DevKit used to create this module
+</p></div>
 
     </div>
 </div>
@@ -3156,7 +3196,8 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the version of the DevKit used to create this module
+</p></div>
 
     </div>
 </div>
@@ -3187,7 +3228,8 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the user-friendly name of this module
+</p></div>
 
     </div>
 </div>
@@ -3218,7 +3260,8 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the version of this module
+</p></div>
 
     </div>
 </div>

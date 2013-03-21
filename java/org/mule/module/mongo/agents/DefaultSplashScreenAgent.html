@@ -205,6 +205,8 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/package-summary.html">org.mule.module.mongo</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/adapter/package-summary.html">org.mule.module.mongo.adapter</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/adapters/package-summary.html">org.mule.module.mongo.adapters</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/agents/package-summary.html">org.mule.module.mongo.agents</a></li>
@@ -213,11 +215,21 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/api/transformers/package-summary.html">org.mule.module.mongo.api.transformers</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/basic/package-summary.html">org.mule.module.mongo.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/callback/package-summary.html">org.mule.module.mongo.callback</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/package-summary.html">org.mule.module.mongo.config</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/config/spring/package-summary.html">org.mule.module.mongo.config.spring</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/connection/package-summary.html">org.mule.module.mongo.connection</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/connectivity/package-summary.html">org.mule.module.mongo.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/devkit/package-summary.html">org.mule.module.mongo.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/mongo/oauth/package-summary.html">org.mule.module.mongo.oauth</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/org/mule/module/mongo/process/package-summary.html">org.mule.module.mongo.process</a></li>
     <li class="api apilevel-">
@@ -318,13 +330,6 @@
    
   
   
-  
-  
-
-  
-   
-  
-  
    
   
   
@@ -358,6 +363,13 @@
   
   
    
+  
+  
+  
+
+  
+   
+  
   
   
   
@@ -434,7 +446,7 @@ Summary:
       
         MuleContextAware 
       
-        SplashScreenAgent 
+        <a href="../../../../../../java/org/mule/module/mongo/devkit/SplashScreenAgent.html">SplashScreenAgent</a> 
       
   
   
@@ -523,8 +535,6 @@ Summary:
 <table id="inhconstants" class="jd-sumtable"><tr><th>
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Constants</div></th></tr>
-
-
 
 
 
@@ -660,6 +670,8 @@ org.mule.api.lifecycle.Stoppable
   </div>
 </div>
 </td></tr>
+
+
 
 
 </table>
@@ -899,6 +911,9 @@ org.mule.api.lifecycle.Stoppable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/mongo/agents/DefaultSplashScreenAgent.html#splash()">splash</a></span>()</nobr>
         
+        <div class="jd-descrdiv">Print version information for all the modules used by the application
+</div>
+  
   </td></tr>
 
 
@@ -1321,64 +1336,6 @@ From interface
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.devkit.SplashScreenAgent" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.devkit.SplashScreenAgent-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  org.mule.api.devkit.SplashScreenAgent
-
-<div id="inherited-methods-org.mule.api.devkit.SplashScreenAgent">
-  <div id="inherited-methods-org.mule.api.devkit.SplashScreenAgent-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-org.mule.api.devkit.SplashScreenAgent-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">getExtensionsCount</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">splash</span>()</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
   <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.lifecycle.Disposable" class="jd-expando-trigger closed"
           ><img id="inherited-methods-org.mule.api.lifecycle.Disposable-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
@@ -1537,6 +1494,69 @@ From interface
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">stop</span>()</nobr>
         
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.mongo.devkit.SplashScreenAgent" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.mongo.devkit.SplashScreenAgent-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="../../../../../../org/mule/module/mongo/devkit/SplashScreenAgent.html">org.mule.module.mongo.devkit.SplashScreenAgent</a>
+
+<div id="inherited-methods-org.mule.module.mongo.devkit.SplashScreenAgent">
+  <div id="inherited-methods-org.mule.module.mongo.devkit.SplashScreenAgent-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.module.mongo.devkit.SplashScreenAgent-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/devkit/SplashScreenAgent.html#getExtensionsCount()">getExtensionsCount</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Retrieve the count of modules used by the application</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/mongo/devkit/SplashScreenAgent.html#splash()">splash</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Print version information for all the modules used by the application
+</div>
+  
   </td></tr>
 
 
@@ -2019,7 +2039,8 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Print version information for all the modules used by the application
+</p></div>
 
     </div>
 </div>

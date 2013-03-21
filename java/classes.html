@@ -205,6 +205,8 @@
     <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/package-summary.html">org.mule.module.mongo</a></li>
     <li class="api apilevel-">
+  <a href="../java/org/mule/module/mongo/adapter/package-summary.html">org.mule.module.mongo.adapter</a></li>
+    <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/adapters/package-summary.html">org.mule.module.mongo.adapters</a></li>
     <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/agents/package-summary.html">org.mule.module.mongo.agents</a></li>
@@ -213,11 +215,21 @@
     <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/api/transformers/package-summary.html">org.mule.module.mongo.api.transformers</a></li>
     <li class="api apilevel-">
+  <a href="../java/org/mule/module/mongo/basic/package-summary.html">org.mule.module.mongo.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../java/org/mule/module/mongo/callback/package-summary.html">org.mule.module.mongo.callback</a></li>
+    <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/config/package-summary.html">org.mule.module.mongo.config</a></li>
     <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/config/spring/package-summary.html">org.mule.module.mongo.config.spring</a></li>
     <li class="api apilevel-">
+  <a href="../java/org/mule/module/mongo/connection/package-summary.html">org.mule.module.mongo.connection</a></li>
+    <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/connectivity/package-summary.html">org.mule.module.mongo.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../java/org/mule/module/mongo/devkit/package-summary.html">org.mule.module.mongo.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../java/org/mule/module/mongo/oauth/package-summary.html">org.mule.module.mongo.oauth</a></li>
     <li class="api apilevel-">
   <a href="../java/org/mule/module/mongo/process/package-summary.html">org.mule.module.mongo.process</a></li>
     <li class="api apilevel-">
@@ -280,6 +292,7 @@
     <a href="#letter_E">E</a>
     <a href="#letter_F">F</a>
     <a href="#letter_G">G</a>
+    <a href="#letter_H">H</a>
     <a href="#letter_I">I</a>
     <a href="#letter_J">J</a>
     <a href="#letter_L">L</a>
@@ -396,6 +409,30 @@
 
 <h2 id="letter_C">C</h2>
 <table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/basic/Capabilities.html">Capabilities</a></td>
+            <td class="jd-descrcol" width="100%">This interface is implemented for every org.mule.api.annotations.Module annotated class, to dynamically query what its capabilities are.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/basic/Capability.html">Capability</a></td>
+            <td class="jd-descrcol" width="100%">Enumeration of possible capabilities of Mule modules.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/connection/Connection.html">Connection</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/connection/ConnectionManager.html">ConnectionManager</a>&lt;K,&nbsp;C&nbsp;extends&nbsp;<a href="../java/org/mule/module/mongo/connection/Connection.html">Connection</a>&gt;</td>
+            <td class="jd-descrcol" width="100%">Wrapper around org.mule.api.annotations.Connector annotated class that will infuse it with connection management capabilities.&nbsp;</td>
+        </tr>
     
     
         <tr class="alt-color api apilevel-" >
@@ -972,6 +1009,25 @@
 </table>
 
 
+<h2 id="letter_H">H</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/callback/HttpCallback.html">HttpCallback</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapter/HttpCallbackAdapter.html">HttpCallbackAdapter</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
 <h2 id="letter_I">I</h2>
 <table class="jd-sumtable">
     
@@ -1238,68 +1294,74 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/basic/MetadataAware.html">MetadataAware</a></td>
+            <td class="jd-descrcol" width="100%">This interface is implemented for every org.mule.api.annotations.Module and org.mule.api.annotations.Connector annotated class and its purpose is to define a contract to query the annotated class about its metadata.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/api/MongoClient.html">MongoClient</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/api/MongoClientAdaptor.html">MongoClientAdaptor</a></td>
             <td class="jd-descrcol" width="100%">Proxy that adds logging to MongoClients
 &nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/api/MongoClientImpl.html">MongoClientImpl</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></td>
             <td class="jd-descrcol" width="100%">MongoDB is an open source, high-performance, schema-free, document-oriented database that manages collections of
  BSON documents.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoCloudConnectorCapabilitiesAdapter.html">MongoCloudConnectorCapabilitiesAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorCapabilitiesAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorCapabilitiesAdapter.html">MongoCloudConnectorCapabilitiesAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorCapabilitiesAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorConfigDefinitionParser.html">MongoCloudConnectorConfigDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/spring/MongoCloudConnectorConfigDefinitionParser.html">MongoCloudConnectorConfigDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/connectivity/MongoCloudConnectorConnectionFactory.html">MongoCloudConnectorConnectionFactory</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionIdentifierAdapter.html">MongoCloudConnectorConnectionIdentifierAdapter</a></td>
-            <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionIdentifierAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.api.Connection interface.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionIdentifierAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that implements org.mule.devkit.dynamic.api.helper.Connection interface.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/connectivity/MongoCloudConnectorConnectionKey.html">MongoCloudConnectorConnectionKey</a></td>
             <td class="jd-descrcol" width="100%">A tuple of connection parameters
  
@@ -1307,25 +1369,25 @@
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionManager.html">MongoCloudConnectorConnectionManager</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionManager</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds connection management capabilities to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorConnectionManager.html">MongoCloudConnectorConnectionManager</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionManager</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds connection management capabilities to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/connectivity/MongoCloudConnectorConnectionManager.html">MongoCloudConnectorConnectionManager</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorConnectionManager</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds connection management capabilities to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoCloudConnectorConnectionManager.ConnectionKey.html">MongoCloudConnectorConnectionManager.ConnectionKey</a></td>
             <td class="jd-descrcol" width="100%">A tuple of connection parameters
  
@@ -1333,163 +1395,163 @@
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorConnectionManager.ConnectionParameters.html">MongoCloudConnectorConnectionManager.ConnectionParameters</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoCloudConnectorLifecycleAdapter.html">MongoCloudConnectorLifecycleAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorLifecycleAdapter.html">MongoCloudConnectorLifecycleAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoCloudConnectorMetadataAdapater.html">MongoCloudConnectorMetadataAdapater</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorMetadataAdapater</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds support for querying metadata about the extension.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorNamespaceHandler.html">MongoCloudConnectorNamespaceHandler</a></td>
             <td class="jd-descrcol" width="100%">Registers bean definitions parsers for handling elements in <code>http://www.mulesoft.org/schema/mule/mongo</code>.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/spring/MongoCloudConnectorNamespaceHandler.html">MongoCloudConnectorNamespaceHandler</a></td>
             <td class="jd-descrcol" width="100%">Registers bean definitions parsers for handling elements in <code>http://www.mulesoft.org/schema/mule/mongo</code>.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoCloudConnectorProcessAdapter.html">MongoCloudConnectorProcessAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorProcessAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that enables custom processing strategies.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorSessionManagerAdapter.html">MongoCloudConnectorSessionManagerAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoCloudConnectorSessionManagerAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code> that adds session management to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCloudConnectorSessionManagerAdapter.SessionKey.html">MongoCloudConnectorSessionManagerAdapter.SessionKey</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/api/MongoCollection.html">MongoCollection</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoCollectionToJsonTransformer.html">MongoCollectionToJsonTransformer</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/transformers/MongoCollectionToJsonTransformer.html">MongoCollectionToJsonTransformer</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/tools/MongoDump.html">MongoDump</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/tools/MongoDumpCollection.html">MongoDumpCollection</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoNamespaceHandler.html">MongoNamespaceHandler</a></td>
             <td class="jd-descrcol" width="100%">Registers bean definitions parsers for handling elements in <code>http://www.mulesoft.org/schema/mule/mongo</code>.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/MongoObjectStore.html">MongoObjectStore</a></td>
             <td class="jd-descrcol" width="100%">A PartitionableExpirableObjectStore backed by MongoDB.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoObjectStoreCapabilitiesAdapter.html">MongoObjectStoreCapabilitiesAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoObjectStoreCapabilitiesAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoObjectStore.html">MongoObjectStore</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoObjectStoreCapabilitiesAdapter.html">MongoObjectStoreCapabilitiesAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoObjectStoreCapabilitiesAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoObjectStore.html">MongoObjectStore</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoObjectStoreConfigDefinitionParser.html">MongoObjectStoreConfigDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/spring/MongoObjectStoreConfigDefinitionParser.html">MongoObjectStoreConfigDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapters/MongoObjectStoreLifecycleAdapter.html">MongoObjectStoreLifecycleAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoObjectStoreLifecycleAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoObjectStore.html">MongoObjectStore</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoObjectStoreLifecycleAdapter.html">MongoObjectStoreLifecycleAdapter</a></td>
             <td class="jd-descrcol" width="100%">A <code>MongoObjectStoreLifecycleAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/mongo/MongoObjectStore.html">MongoObjectStore</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/MongoObjectStoreNamespaceHandler.html">MongoObjectStoreNamespaceHandler</a></td>
             <td class="jd-descrcol" width="100%">Registers bean definitions parsers for handling elements in <code>http://www.mulesoft.org/schema/mule/mongo-object-store</code>.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/spring/MongoObjectStoreNamespaceHandler.html">MongoObjectStoreNamespaceHandler</a></td>
             <td class="jd-descrcol" width="100%">Registers bean definitions parsers for handling elements in <code>http://www.mulesoft.org/schema/mule/mongo-object-store</code>.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/tools/MongoRestore.html">MongoRestore</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/tools/MongoRestoreDirectory.html">MongoRestoreDirectory</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/MongoSession.html">MongoSession</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
@@ -1508,11 +1570,42 @@
         </tr>
     
     
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/NotAuthorizedException.html">NotAuthorizedException</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
 </table>
 
 
 <h2 id="letter_O">O</h2>
 <table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/OAuth1Adapter.html">OAuth1Adapter</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/OAuth2Adapter.html">OAuth2Adapter</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/OAuthAdapter.html">OAuthAdapter</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/OAuthManager.html">OAuthManager</a>&lt;C&nbsp;extends&nbsp;<a href="../java/org/mule/module/mongo/oauth/OAuthAdapter.html">OAuthAdapter</a>&gt;</td>
+            <td class="jd-descrcol" width="100%">Wrapper around org.mule.api.annotations.oauth.OAuth annotated class that will infuse it with
+ access token management capabilities.&nbsp;</td>
+        </tr>
     
     
         <tr class="alt-color api apilevel-" >
@@ -1529,8 +1622,38 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/adapter/PoolManager.html">PoolManager</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/process/ProcessAdapter.html">ProcessAdapter</a>&lt;O&gt;</td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt;</td>
+            <td class="jd-descrcol" width="100%">Callback with logic to execute within a controlled environment provided by <code><a href="../java/org/mule/module/mongo/process/ProcessTemplate.html">ProcessTemplate</a></code>&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/process/ProcessCallbackProcessInterceptor.html">ProcessCallbackProcessInterceptor</a>&lt;T,&nbsp;O&gt;</td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/process/ProcessInterceptor.html">ProcessInterceptor</a>&lt;T,&nbsp;O&gt;</td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/process/ProcessTemplate.html">ProcessTemplate</a>&lt;T,&nbsp;O&gt;</td>
+            <td class="jd-descrcol" width="100%">ProcessTemplate provides a processing context for message processing.&nbsp;</td>
         </tr>
     
     
@@ -1650,24 +1773,30 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/RestoreAccessTokenCallback.html">RestoreAccessTokenCallback</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/RestoreDefinitionParser.html">RestoreDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/tools/RestoreFile.html">RestoreFile</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/processors/RestoreMessageProcessor.html">RestoreMessageProcessor</a></td>
             <td class="jd-descrcol" width="100%">RestoreMessageProcessor invokes the <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html#restore(java.lang.String, boolean, boolean)">restore(java.lang.String, boolean, boolean)</a></code> method in <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/process/RetryProcessInterceptor.html">RetryProcessInterceptor</a>&lt;T,&nbsp;O&gt;</td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
@@ -1681,50 +1810,76 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/SaveAccessTokenCallback.html">SaveAccessTokenCallback</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/SaveObjectDefinitionParser.html">SaveObjectDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/spring/SaveObjectDefinitionParser.html">SaveObjectDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/SaveObjectFromMapDefinitionParser.html">SaveObjectFromMapDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/spring/SaveObjectFromMapDefinitionParser.html">SaveObjectFromMapDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/SaveObjectFromMapMessageProcessor.html">SaveObjectFromMapMessageProcessor</a></td>
             <td class="jd-descrcol" width="100%">SaveObjectFromMapMessageProcessor invokes the <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html#saveObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)">saveObjectFromMap(java.lang.String, java.util.Map, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/processors/SaveObjectFromMapMessageProcessor.html">SaveObjectFromMapMessageProcessor</a></td>
             <td class="jd-descrcol" width="100%">SaveObjectFromMapMessageProcessor invokes the <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html#saveObjectFromMap(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, org.mule.module.mongo.api.WriteConcern)">saveObjectFromMap(java.lang.String, java.util.Map, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/config/SaveObjectMessageProcessor.html">SaveObjectMessageProcessor</a></td>
             <td class="jd-descrcol" width="100%">SaveObjectMessageProcessor invokes the <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html#saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)">saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/processors/SaveObjectMessageProcessor.html">SaveObjectMessageProcessor</a></td>
             <td class="jd-descrcol" width="100%">SaveObjectMessageProcessor invokes the <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html#saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)">saveObject(java.lang.String, com.mongodb.DBObject, org.mule.module.mongo.api.WriteConcern)</a></code> method in <code><a href="../java/org/mule/module/mongo/MongoCloudConnector.html">MongoCloudConnector</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/callback/SourceCallback.html">SourceCallback</a></td>
+            <td class="jd-descrcol" width="100%">Callback interface used by org.mule.api.annotations.Source annotated methods to dispatch messages.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/devkit/SplashScreenAgent.html">SplashScreenAgent</a></td>
+            <td class="jd-descrcol" width="100%">Marks DevKit org.mule.api.agent.Agent implementations to take care of logging information at Mule app level mainly for troubleshooting purposes.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/callback/StopSourceCallback.html">StopSourceCallback</a></td>
+            <td class="jd-descrcol" width="100%">Callback returned by methods that are annotated with @Source
+ <p/>
+ It will be executed when the MessageSource is being stopped.&nbsp;</td>
         </tr>
     
     
@@ -1733,6 +1888,36 @@
 
 <h2 id="letter_U">U</h2>
 <table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/UnableToAcquireAccessTokenException.html">UnableToAcquireAccessTokenException</a></td>
+            <td class="jd-descrcol" width="100%">Exception thrown when the access token needed for accessing a protected resource cannot be acquired
+ 
+&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/connection/UnableToAcquireConnectionException.html">UnableToAcquireConnectionException</a></td>
+            <td class="jd-descrcol" width="100%">Exception thrown when the connection needed for executing an
+  operation is null.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/oauth/UnableToAcquireRequestTokenException.html">UnableToAcquireRequestTokenException</a></td>
+            <td class="jd-descrcol" width="100%">Exception thrown when the request token needed for building the authorization URL cannot be acquired
+ 
+&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/mongo/connection/UnableToReleaseConnectionException.html">UnableToReleaseConnectionException</a></td>
+            <td class="jd-descrcol" width="100%">Exception thrown when the release connection operation of the
+  connection manager fails.&nbsp;</td>
+        </tr>
     
     
         <tr class="alt-color api apilevel-" >
