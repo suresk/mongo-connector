@@ -228,7 +228,7 @@
           <th>Schema Version</th><td>2.0</td>
         </tr>
 <tr>
-          <th>Minimum Mule Version</th><td>3.3</td>
+          <th>Minimum Mule Version</th><td>3.4</td>
         </tr>
     </tbody></table>
   </div>
@@ -2802,6 +2802,30 @@ It only does inserts with the data to restore, if existing data is there, it wil
   &lt;xs:element xmlns:mule=&quot;http://www.mulesoft.org/schema/mule/core&quot; name=&quot;bson-list-to-json&quot; substitutionGroup=&quot;mule:abstract-transformer&quot; type=&quot;mule:abstractTransformerType&quot;&gt;&lt;/xs:element&gt;
   &lt;xs:element xmlns:mule=&quot;http://www.mulesoft.org/schema/mule/core&quot; name=&quot;mongo-collection-to-json&quot; substitutionGroup=&quot;mule:abstract-transformer&quot; type=&quot;mule:abstractTransformerType&quot;&gt;&lt;/xs:element&gt;
   &lt;xs:element xmlns:mule=&quot;http://www.mulesoft.org/schema/mule/core&quot; name=&quot;db-object-to-map&quot; substitutionGroup=&quot;mule:abstract-transformer&quot; type=&quot;mule:abstractTransformerType&quot;&gt;&lt;/xs:element&gt;
+  &lt;xs:simpleType name=&quot;IndexOrderEnumType&quot;&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:union&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+          &lt;xs:enumeration value=&quot;ASC&quot;&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation&gt;&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:enumeration&gt;
+          &lt;xs:enumeration value=&quot;DESC&quot;&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation&gt;&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:enumeration&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction xmlns:mule=&quot;http://www.mulesoft.org/schema/mule/core&quot; base=&quot;mule:propertyPlaceholderType&quot;&gt;&lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:union&gt;
+  &lt;/xs:simpleType&gt;
   &lt;xs:simpleType name=&quot;WriteConcernEnumType&quot;&gt;
     &lt;xs:annotation&gt;
       &lt;xs:documentation&gt;An enum wrapper of&lt;/xs:documentation&gt;
@@ -2840,30 +2864,6 @@ least 2 servers for the write operation&lt;/xs:documentation&gt;
           &lt;xs:enumeration value=&quot;DATABASE_DEFAULT&quot;&gt;
             &lt;xs:annotation&gt;
               &lt;xs:documentation&gt;Database default write access&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-          &lt;/xs:enumeration&gt;
-        &lt;/xs:restriction&gt;
-      &lt;/xs:simpleType&gt;
-      &lt;xs:simpleType&gt;
-        &lt;xs:restriction xmlns:mule=&quot;http://www.mulesoft.org/schema/mule/core&quot; base=&quot;mule:propertyPlaceholderType&quot;&gt;&lt;/xs:restriction&gt;
-      &lt;/xs:simpleType&gt;
-    &lt;/xs:union&gt;
-  &lt;/xs:simpleType&gt;
-  &lt;xs:simpleType name=&quot;IndexOrderEnumType&quot;&gt;
-    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;&lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:union&gt;
-      &lt;xs:simpleType&gt;
-        &lt;xs:restriction base=&quot;xs:string&quot;&gt;
-          &lt;xs:enumeration value=&quot;ASC&quot;&gt;
-            &lt;xs:annotation&gt;
-              &lt;xs:documentation&gt;&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-          &lt;/xs:enumeration&gt;
-          &lt;xs:enumeration value=&quot;DESC&quot;&gt;
-            &lt;xs:annotation&gt;
-              &lt;xs:documentation&gt;&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
           &lt;/xs:enumeration&gt;
         &lt;/xs:restriction&gt;
