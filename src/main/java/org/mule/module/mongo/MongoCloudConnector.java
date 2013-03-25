@@ -72,7 +72,7 @@ import static org.mule.module.mongo.api.DBObjects.fromFunction;
  *
  * @author MuleSoft, inc.
  */
-@Connector(name = "mongo", schemaVersion = "2.0", friendlyName = "Mongo DB", minMuleVersion = "3.3", metaData = MetaDataSwitch.OFF)
+@Connector(name = "mongo", schemaVersion = "2.0", friendlyName = "Mongo DB", minMuleVersion = "3.4", metaData = MetaDataSwitch.OFF)
 public class MongoCloudConnector {
 
     private static final Logger logger = LoggerFactory.getLogger(MongoCloudConnector.class);
