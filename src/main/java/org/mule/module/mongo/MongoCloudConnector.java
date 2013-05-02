@@ -58,6 +58,7 @@ import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -80,6 +81,8 @@ public class MongoCloudConnector {
     private static final String WRITE_CONCERN_DEFAULT_VALUE = "DATABASE_DEFAULT";
     private static final String BACKUP_THREADS = "5";
     private static final String DEFAULT_OUTPUT_DIRECTORY = "dump";
+    
+    private static Map<String, Mongo> mongoInstanceMap = new HashMap<String, Mongo>();
 
     /**
      * The host of the Mongo server, it can also be a list of comma separated hosts for replicas
@@ -1108,16 +1111,7 @@ public class MongoCloudConnector {
                 this.database = database;
             }
 
-            String[] hosts = host.split(",\\s?");
-            if (hosts.length == 1) {
-                mongo = new Mongo(new ServerAddress(host, port), options);
-            } else {
-                List servers = new ArrayList<ServerAddress>();
-                for (String host : hosts) {
-                    servers.add(new ServerAddress(host, port));
-                }
-                mongo = new Mongo(servers, options);
-            }
+            mongo = getOrCreateMongoInstance(host, port, options);
             db = getDatabase(mongo, username, password, database);
         } catch (MongoException me) {
             throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null, me.getMessage());
@@ -1125,6 +1119,26 @@ public class MongoCloudConnector {
             throw new ConnectionException(ConnectionExceptionCode.UNKNOWN_HOST, null, e.getMessage());
         }
         this.client = new MongoClientImpl(db);
+    }
+    
+    private static synchronized Mongo getOrCreateMongoInstance(String host, int port, MongoOptions options) throws UnknownHostException {
+    	String key = String.format("%s:%d", host, port);
+    	Mongo mongo = mongoInstanceMap.get(key);
+    	if(mongo == null) {
+            String[] hosts = host.split(",\\s?");
+            if (hosts.length == 1) {
+                mongo = new Mongo(new ServerAddress(host, port), options);
+            } else {
+                List<ServerAddress> servers = new ArrayList<ServerAddress>();
+                for (String h : hosts) {
+                    servers.add(new ServerAddress(h, port));
+                }
+                mongo = new Mongo(servers, options);
+            }
+            mongoInstanceMap.put(key, mongo);
+    	}
+    	
+    	return mongo;
     }
 
     /**
