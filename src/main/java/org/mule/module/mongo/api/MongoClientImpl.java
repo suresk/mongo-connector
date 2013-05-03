@@ -278,7 +278,6 @@ public class MongoClientImpl implements MongoClient
      */
     private DB openSession()
     {
-        db.requestStart();
         db.requestEnsureConnection();
         return db;
     }
